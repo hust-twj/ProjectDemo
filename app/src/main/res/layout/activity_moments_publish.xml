@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hust_twj.zademo.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="这是发布页"
+        android:gravity="center"
+        android:background="@color/colorAccent"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_select_topic"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="选择话题"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tv_topic_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="选择的话题"
+            android:layout_marginTop="20dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:drawableEnd="@drawable/cancel"
+            android:drawablePadding="6dp"
+            android:background="@drawable/hot_topic_bg"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

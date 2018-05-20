@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:id="@+id/layout_patent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/iv_hot_topic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@mipmap/ic_launcher"
+        tools:background="@mipmap/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp">
+        <TextView
+            android:id="@+id/tv_hot_topic_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="#热门话题"/>
+
+        <TextView
+            android:id="@+id/tv_hot_topic_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            tools:text="100人参加"/>
+
+    </LinearLayout>
+
+</LinearLayout>
