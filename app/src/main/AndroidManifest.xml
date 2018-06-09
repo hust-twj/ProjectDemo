@@ -20,6 +20,8 @@
         <activity android:name=".moments_2_0.hot_topic.HotTopicActivity"/>
         <activity android:name=".moments_2_0.hot_topic.PublishActivity"/>
 
+        <activity android:name=".moment_2_0_optima.SpannableActivity"/>
+
     </application>
 
 </manifest>
