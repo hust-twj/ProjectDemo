@@ -11,6 +11,7 @@ import android.text.Spanned;
 import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.ViewTreeObserver;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.CenteredImageSpan;
@@ -72,53 +73,44 @@ public class ContentIntroductionLayout extends AppCompatTextView  {
             append(" ");
             append(content);
 
-            LogUtils.e("twj123", getLineCount());
-           /* if (getLineCount() > MAX_LINES){
-                // this returns _1 past_ the index of the last character shown
-                // on the indicated line. the lines are zero indexed, so the last
-                // valid line is maxLines -1;
-                int lastCharShown = getLayout().getLineVisibleEnd(MAX_LINES - 1);
-                // chop off some characters. this value is arbitrary, i chose 3 just
-                // to be conservative.
-                int numCharsToChop = 3;
-                String truncatedText = content.substring(0, lastCharShown - numCharsToChop);
-                // ellipsize! note ellipsis character.
-                setText(truncatedText+"…");
-                // reapply the span, since the text has been changed.
-                //spannable.setSpan(boldSpan, 10, 15, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
-            }else {
-                setText("");
-                append(sSIcon);
-                append(" ");
-                append(content);
-            }*/
-/*
-            ImageLoaderFactory.get().with(getContext())
-                    .load(entity.url)
-                    .into(new BitmapTarget() {
-                        @Override
-                        public void onResourceReady(Bitmap bitmap) {
-                            //重新设置大小，否则图片是三倍，在720手机上图会放大
-                            int size = DensityUtils.dp2px(mContext, 16);
-                            bitmap = BitmapUtils.resize(bitmap, size, size);
-                            sSIcon.setSpan(new CenteredImageSpan(mContext, bitmap),
-                                    0, SS_LAB.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
-                            setText("");
-                            append(sSIcon);
-                            append(" ");
-                            append(entity.content);
-                        }
+            ViewTreeObserver viewTreeObserver = getViewTreeObserver();
+            viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener(){
+                @Override
+                public void onGlobalLayout(){
+                    ViewTreeObserver viewTreeObserver = getViewTreeObserver();
+                    viewTreeObserver.removeOnGlobalLayoutListener(this);
+                    LogUtils.e("twj123", getLineCount());
+                   /* if (getLineCount() > MAX_LINES)
+                    {
+                        int endOfLastLine = getLayout().getLineEnd(MAX_LINES - 1);
+                        String newVal = getText().subSequence(0, endOfLastLine - 3) + "...";
+                        setText(newVal);
+                    }*/
+                   //总行数多余3行，显示" ... "
+                   if (getLineCount() > MAX_LINES){
+                       try {
+                           CharSequence charSequence = getText() ;
+                           int lastCharDown = getLayout().getLineVisibleEnd(MAX_LINES - 1) ;
+                           if (charSequence.length() > lastCharDown){
+                               SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder() ;
+                               spannableStringBuilder.append(charSequence.subSequence(0, lastCharDown - 2)).append("...") ;
+                               setText(spannableStringBuilder);
+                           }
+                       }catch (Exception e){
 
-                        @Override
-                        public void onLoadFailed(Exception e) {
-                            setText(entity.content);
-                        }
-                    });*/
+                       }
+                   }
+
+
+                }
+            });
+
         }
     }
 
-    @Override
+ /*   @Override
     protected void onDraw(Canvas canvas) {
+        LogUtils.e("twj123", getLineCount());
         try {
             CharSequence charSequence = getText() ;
             int lastCharDown = getLayout().getLineVisibleEnd(MAX_LINES - 1) ;
@@ -131,40 +123,7 @@ public class ContentIntroductionLayout extends AppCompatTextView  {
 
         }
         super.onDraw(canvas);
-    }
-
-    /*@Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        StaticLayout layout = null;
-        Field field = null;
-        try {
-            Field staticField = DynamicLayout.class.getDeclaredField("sStaticLayout");
-            staticField.setAccessible(true);
-            layout = (StaticLayout) staticField.get(DynamicLayout.class);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-
-        if (layout != null) {
-            try {
-                field = StaticLayout.class.getDeclaredField("mMaximumVisibleLineCount");
-                field.setAccessible(true);
-                field.setInt(layout, getMaxLines());
-            } catch (NoSuchFieldException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        if (layout != null && field != null) {
-            try {
-                field.setInt(layout, Integer.MAX_VALUE);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
     }*/
+
+
 }
