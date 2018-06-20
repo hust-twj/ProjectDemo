@@ -15,4 +15,13 @@
         android:gravity="center"
         android:background="@color/colorAccent"/>
 
+    <TextView
+        android:id="@+id/moment_2_0_optima"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="动态2.0优化"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"/>
+
 </LinearLayout>
