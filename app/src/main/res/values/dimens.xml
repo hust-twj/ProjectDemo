@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_bar_padding_top_height">0dp</dimen>
+    <dimen name="titlebar_height">44dp</dimen>
+    <dimen name="titlebar_shadow_height">8dp</dimen>
+    <dimen name="titlebar_hight_without_shadow">42dp</dimen>
+
+    <!-- 选项文字大小 需要配合 bools.xml 的 pickerview_customTextSize 为 true 才有效果-->
+    <dimen name="pickerview_textsize">20sp</dimen>
+</resources>

@@ -11,15 +11,25 @@
         android:id="@+id/moment_2_0"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="动态2.0"
+        android:text="动态2.0 选择话题"
         android:gravity="center"
-        android:background="@color/colorAccent"/>
+        android:background="@color/colorAccent"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/moment_2_0_optima"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="动态2.0优化"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/moment_topic_detail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="动态2.0-话题详情"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:background="@color/colorAccent"/>

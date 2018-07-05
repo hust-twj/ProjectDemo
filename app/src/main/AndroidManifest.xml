@@ -25,6 +25,9 @@
         <activity android:name=".safety_tips.SafetyDialogActivity"
             android:theme="@android:style/Theme.Dialog"/>
 
+        <activity android:name=".moments_2_0.hot_topic.MomentTopicDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
     </application>
 
 </manifest>

@@ -3,4 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="background">#f3f5f7</color>
+    <color name="title_bg">#fafafa</color>
+    <color name="white">#ffffff</color>
+    <color name="tab_bg">#28282F</color>
+    <color name="app_base_color">#ff9066</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff5d5d</color>
+
+    <color name="color_4d4d4d">#4d4d4d</color>
 </resources>
