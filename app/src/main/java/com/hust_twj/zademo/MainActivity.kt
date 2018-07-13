@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
+import com.hust_twj.zademo.pic_text.PicTextActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,6 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         moment_topic_detail.setOnClickListener {
             MomentTopicDetailActivity.start(this, 10)
+        }
+
+        pic_text.setOnClickListener {
+            startActivity(Intent(this, PicTextActivity::class.java))
         }
     }
 }
