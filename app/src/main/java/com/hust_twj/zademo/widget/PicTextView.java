@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -22,12 +23,17 @@ public class PicTextView  extends RelativeLayout{
 
     private Context mContext;
     public TextView mContentTv1, mContentTv2;
+
+    private TextView mTvIcon;
+    private ImageView mIvIcon;
+    public static final int TYPE_TEXT = 1;
+    public static final int TYPE_PICTURE = 2;
+    private int showType;//icon处的显示样式，图片或者文字
     //上部分显示行数
     private static final int UPPER_LINE = 3;
 
     public PicTextView(Context context) {
         this(context, null);
-
     }
 
     public PicTextView(Context context, AttributeSet attrs) {
@@ -44,6 +50,25 @@ public class PicTextView  extends RelativeLayout{
         LayoutInflater.from(getContext()).inflate(R.layout.layout_picture_and_text, this, true);
         mContentTv1 = findViewById(R.id.textview_up);
         mContentTv2 = findViewById(R.id.textview_down);
+        mTvIcon = findViewById(R.id.tv_icon);
+        mIvIcon = findViewById(R.id.icon_heart_word);
+    }
+
+    public void setType(int type){
+        showType = type;
+        if (type == TYPE_TEXT){
+            mTvIcon.setVisibility(VISIBLE);
+            mIvIcon.setVisibility(GONE);
+        }else if (type == TYPE_PICTURE){
+            mTvIcon.setVisibility(VISIBLE);
+            mIvIcon.setVisibility(GONE);
+        }
+    }
+
+    public void setIconText(String iconText){
+        if (showType == TYPE_TEXT){
+            mTvIcon.setText(iconText);
+        }
     }
 
     public void setContent(String content) {
