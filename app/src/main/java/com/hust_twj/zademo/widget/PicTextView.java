@@ -19,16 +19,16 @@ import com.hust_twj.zademo.utils.LogUtils;
  * 如 最近在做一个类似于QQ空间的一个社交圈的模块的开发。有一个需求是当用户发表的内容超出4行时，显示一个按钮，点击按钮展示全文。我还真没有发现TextView有获取文本内容有没有显示省略号这个方法。没办法，只能自己想办法了。
  */
 
-public class PicTextView  extends RelativeLayout{
+    public class PicTextView  extends RelativeLayout{
 
-    private Context mContext;
-    public TextView mContentTv1, mContentTv2;
+        private Context mContext;
+        public TextView mContentTv1, mContentTv2;
 
-    private TextView mTvIcon;
-    private ImageView mIvIcon;
-    public static final int TYPE_TEXT = 1;
-    public static final int TYPE_PICTURE = 2;
-    private int showType;//icon处的显示样式，图片或者文字
+        private TextView mTvIcon;
+        private ImageView mIvIcon;
+        public static final int TYPE_TEXT = 1;
+        public static final int TYPE_PICTURE = 2;
+        private int showType;//icon处的显示样式，图片或者文字
     //上部分显示行数
     private static final int UPPER_LINE = 3;
 
