@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ZADemo</string>
+    <string name="all_text_count_left">(共%d字</string>
+    <string name="all_text_count_right">)</string>
 </resources>

@@ -28,6 +28,8 @@
         <activity android:name=".moments_2_0.hot_topic.MomentTopicDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
+        <activity android:name=".pic_text.PicTextActivity"/>
+
         <activity android:name=".list.ListActivity"/>
 
     </application>
