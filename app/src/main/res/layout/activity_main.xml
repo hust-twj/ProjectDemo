@@ -53,4 +53,14 @@
         android:layout_marginTop="20dp"
         android:background="@color/colorAccent"/>
 
+    <TextView
+        android:id="@+id/queen_heart"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="女王之心"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"/>
+
+
 </LinearLayout>

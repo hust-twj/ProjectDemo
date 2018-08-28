@@ -32,6 +32,8 @@
 
         <activity android:name=".list.ListActivity"/>
 
+        <activity android:name=".queen_heart.QueenHeartActivity"/>
+
     </application>
 
 </manifest>
