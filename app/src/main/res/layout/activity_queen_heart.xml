@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/tv_queen_heart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textColor="@color/color_4d4d4d"
+        android:shadowColor="@color/red"
+        android:shadowRadius="1"
+        android:shadowDx="0"
+        android:shadowDy="5"
         android:text="555"/>
+
+    <!--    android:shadowDx="20"
+        android:shadowDy="20"
+        android:shadowRadius="20"
+        android:shadowColor="#ff000000"-->
+    <com.hust_twj.zademo.widget.GridentTextView
+        android:id="@+id/tv_grident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textSize="50sp"
+        android:gravity="center"
+
+        android:shadowColor="@color/red"
+        android:shadowRadius="1"
+        android:shadowDx="0"
+        android:shadowDy="5"
+        app:layout_constraintTop_toBottomOf="@+id/tv_queen_heart"/>
+
+    <TextView
+        android:id="@+id/test_shadow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:textColor="@color/color_4d4d4d"
+        android:layout_gravity="center"
+        android:text="Test Shadow"
+        android:shadowColor="@color/red"
+        android:shadowRadius="1"
+        android:shadowDx="0"
+        android:shadowDy="5"
+        app:layout_constraintTop_toBottomOf="@+id/tv_grident"/>
+
 
 </android.support.constraint.ConstraintLayout>
