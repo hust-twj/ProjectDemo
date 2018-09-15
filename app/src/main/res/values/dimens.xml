@@ -7,4 +7,7 @@
 
     <!-- 选项文字大小 需要配合 bools.xml 的 pickerview_customTextSize 为 true 才有效果-->
     <dimen name="pickerview_textsize">20sp</dimen>
+
+    <dimen name="avatar_img_max_dimen">80dp</dimen>
+    <dimen name="follow_fragment_item_avatar_margin_left">25dp</dimen>
 </resources>

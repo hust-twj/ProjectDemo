@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="InputItemLayout">
+        <attr name="inputContentText" format="reference|string"/>
+        <attr name="inputContentHint" format="reference|string"/>
+        <attr name="inputHintColor" format="reference|color"/>
+        <attr name="inputMaxLength" format="integer"/>
+        <attr name="inputType" format="integer"/>
+        <attr name="inputContentSize" format="dimension"/>
+        <attr name="inputContentColor" format="reference|color"/>
+        <attr name="inputLeftIcon" format="reference"/>
+        <attr name="inputLeftIconVisible" format="boolean"/>
+        <attr name="inputLeftTextVisible" format="boolean"/>
+        <attr name="inputLeftText" format="reference|string"/>
+        <attr name="inputRightIcon" format="reference"/>
+        <attr name="inputRightIconVisibility" format="boolean"/>
+        <attr name="inputLineVisibility" format="boolean"/>
+        <attr name="inputRightLayoutVisibility" format="boolean"/>
+        <attr name="inputRightLayoutAlwaysVisibility" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="AvatarProgressView">
+        <attr name="progressView_ringDimen" format="dimension" />
+    </declare-styleable>
+
+    <!-- 视频直播滚动数字控件 -->
+    <declare-styleable name="RollingNumberView">
+        <attr name="rollingNumber_textSize" format="dimension" />
+        <attr name="rollingNumber_textColor" format="color" />
+        <attr name="rollingNumber_rollingUnit" format="dimension" />
+        <attr name="rollingNumber_verticalSpacing" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" format="dimension" />
+        <attr name="roundImageType" />
+        <attr name="radius_left_up" format="dimension" />
+        <attr name="radius_left_down" format="dimension" />
+        <attr name="radius_right_up" format="dimension" />
+        <attr name="radius_right_down" format="dimension" />
+    </declare-styleable>
+
+    <attr name="roundImageType">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+
+    <declare-styleable name="TagColorTextView">
+        <attr name="tagCornerRadius" format="dimension" />
+        <attr name="tagBgColor" format="color" />
+    </declare-styleable>
+
+    <!--资料页中昵称的动画-->
+    <declare-styleable name="NickNameBehavior">
+        <!--竖直方向上需要移动的距离-->
+        <attr name="offsetY" format="dimension" />
+        <!--水平方向上需要移动的距离-->
+        <attr name="offsetX" format="dimension" />
+        <!--需要依赖的view的id-->
+        <attr name="dependencyId" format="reference" />
+        <!--原始的view是在最终要达到的位置的左边还是右边-->
+        <attr name="offsetSide" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--IndicatorLayout-->
+    <declare-styleable name="IndicatorLayout">
+        <attr name="item_selected_image_res_id" format="reference" />
+        <attr name="item_unselected_image_res_id" format="reference" />
+        <attr name="item_image_size" format="dimension" />
+        <attr name="item_image_margin" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="WaveLineView">
+        <attr name="wlvBackgroundColor" format="color"/>
+        <attr name="wlvLineColor" format="color"/>
+        <attr name="wlvThickLineWidth" format="dimension"/>
+        <attr name="wlvFineLineWidth" format="dimension"/>
+        <attr name="wlvMoveSpeed" format="float"/>
+        <attr name="wlvSamplingSize" format="integer"/>
+        <attr name="wlvSensibility" format="integer"/>
+    </declare-styleable>
+
+    <!--控件LabelLayout-->
+    <declare-styleable name="LabelLayout">
+        <attr name="auto_select_effect" format="boolean" />
+        <attr name="max_select" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewPagerIndicator">
+        <!-- Style of the circle indicator. -->
+        <attr name="vpiCirclePageIndicatorStyle" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CirclePageIndicator">
+        <!-- Whether or not the indicators should be centered. -->
+        <!--<attr name="centered" />-->
+        <!-- Color of the filled circle that represents the current page. -->
+        <attr name="fillColor" format="color"/>
+        <!-- Color of the filled circles that represents pages. -->
+        <attr name="pageColor" format="color"/>
+        <!-- Orientation of the indicator. -->
+        <attr name="android:orientation"/>
+        <!-- Radius of the circles. This is also the spacing between circles. -->
+        <attr name="radius" format="dimension"/>
+        <!-- Whether or not the selected indicator snaps to the circles. -->
+        <attr name="snap" format="boolean"/>
+        <!-- Color of the open circles. -->
+        <attr name="strokeColor1" format="color"/>
+        <!-- Width of the stroke used to draw the circles. -->
+        <attr name="strokeWidth"/>
+        <!-- View background -->
+        <attr name="android:background"/>
+    </declare-styleable>
+
+    <declare-styleable name="RedDotView">
+        <!-- 圆角矩形背景色 -->
+        <attr name="backgroundColor" format="color"/>
+        <!-- 圆角弧度,单位dp-->
+        <attr name="cornerRadius" format="dimension"/>
+        <!-- 圆角弧度,单位dp-->
+        <attr name="strokeWidth" format="dimension"/>
+        <!-- 圆角边框颜色-->
+        <attr name="strokeColor" format="color"/>
+        <!-- 圆角弧度是高度一半-->
+        <attr name="isRadiusHalfHeight" format="boolean"/>
+        <!-- 圆角矩形宽高相等,取较宽高中大值-->
+        <attr name="isWidthHeightEqual" format="boolean"/>
+    </declare-styleable>
+
+    <!--圆形进度条-->
+    <declare-styleable name="CircleProgressBar">
+        <attr name="circleColor" format="color"/>
+        <attr name="circleProgressColor" format="color"/>
+        <attr name="circleWidth" format="dimension"/>
+        <attr name="centerTextColor" format="color"/>
+        <attr name="centerTextSize" format="dimension"/>
+        <attr name="max" format="integer"/>
+        <attr name="textIsDisplayable" format="boolean"/>
+        <attr name="shapeType">
+            <enum name="STROKE" value="0"/>
+            <enum name="FILL" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -3,8 +3,8 @@ package com.hust_twj.zademo
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.hust_twj.zademo.R.id.*
 import com.hust_twj.zademo.list.ListActivity
+import com.hust_twj.zademo.live_end.LiveEndActivity
 import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
@@ -41,6 +41,10 @@ class MainActivity : AppCompatActivity() {
 
         queen_heart.setOnClickListener{
             startActivity(Intent(this, QueenHeartActivity::class.java))
+        }
+
+        live_end.setOnClickListener{
+            startActivity(Intent(this, LiveEndActivity::class.java))
         }
 
     }
