@@ -71,5 +71,14 @@
         android:layout_marginTop="20dp"
         android:background="@color/colorAccent"/>
 
+    <TextView
+        android:id="@+id/span"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Span图文混排"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"/>
+
 
 </LinearLayout>

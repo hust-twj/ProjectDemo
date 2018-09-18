@@ -10,6 +10,7 @@ import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
 import com.hust_twj.zademo.pic_text.PicTextActivity
 import com.hust_twj.zademo.queen_heart.QueenHeartActivity
+import com.hust_twj.zademo.span.SpanActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +46,9 @@ class MainActivity : AppCompatActivity() {
 
         live_end.setOnClickListener{
             startActivity(Intent(this, LiveEndActivity::class.java))
+        }
+        span.setOnClickListener{
+            startActivity(Intent(this, SpanActivity::class.java))
         }
 
     }

@@ -36,6 +36,8 @@
 
         <activity android:name=".live_end.LiveEndActivity"/>
 
+        <activity android:name=".span.SpanActivity"/>
+
     </application>
 
 </manifest>
