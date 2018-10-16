@@ -11,6 +11,7 @@ import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
 import com.hust_twj.zademo.pic_text.PicTextActivity
 import com.hust_twj.zademo.queen_heart.QueenHeartActivity
 import com.hust_twj.zademo.span.SpanActivity
+import com.hust_twj.zademo.toast.ToastActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -49,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         }
         span.setOnClickListener{
             startActivity(Intent(this, SpanActivity::class.java))
+        }
+
+        toast.setOnClickListener{
+            startActivity(Intent(this, ToastActivity::class.java))
         }
 
     }

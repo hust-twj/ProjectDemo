@@ -10,4 +10,6 @@
 
     <dimen name="avatar_img_max_dimen">80dp</dimen>
     <dimen name="follow_fragment_item_avatar_margin_left">25dp</dimen>
+
+    <dimen name="main_margin_top">10dp</dimen>
 </resources>

@@ -49,4 +49,65 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_grident"/>
 
 
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/color_4d4d4d"
+        android:layout_gravity="center"
+        android:text="1"
+        android:shadowColor="@color/red"
+        android:shadowRadius="1"
+        android:shadowDx="0"
+        android:shadowDy="5"
+        app:layout_constraintTop_toBottomOf="@+id/test_shadow3"
+        app:layout_constraintLeft_toRightOf="@+id/guide_center"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_center"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.3"
+        android:orientation="vertical"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="1"
+        android:orientation="vertical"/>
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/color_4d4d4d"
+        android:layout_gravity="center"
+        android:text="你好你好"
+        android:shadowColor="@color/red"
+        android:shadowRadius="1"
+        android:shadowDx="0"
+        android:shadowDy="5"
+        app:layout_constraintTop_toBottomOf="@+id/test_shadow3"
+        app:layout_constraintLeft_toRightOf="@+id/guide_center"/>
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/color_4d4d4d"
+        android:layout_gravity="center"
+        android:text="24岁 | 深圳"
+        android:shadowColor="@color/red"
+        android:shadowRadius="1"
+        android:shadowDx="0"
+        android:shadowDy="5"
+        app:layout_constraintTop_toBottomOf="@+id/test_shadow3"
+        app:layout_constraintLeft_toRightOf="@+id/nickname"
+        app:layout_constraintRight_toLeftOf="@+id/guide_end"
+        android:layout_marginStart="0dp"/>
+
 </android.support.constraint.ConstraintLayout>

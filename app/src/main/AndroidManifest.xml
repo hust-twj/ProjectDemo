@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hust_twj.zademo">
+    
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+
 
     <application
         android:allowBackup="true"
@@ -37,6 +41,8 @@
         <activity android:name=".live_end.LiveEndActivity"/>
 
         <activity android:name=".span.SpanActivity"/>
+
+        <activity android:name=".toast.ToastActivity"/>
 
     </application>
 

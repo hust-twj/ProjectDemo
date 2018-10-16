@@ -10,75 +10,91 @@
     <TextView
         android:id="@+id/moment_2_0"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="动态2.0 选择话题"
         android:gravity="center"
-        android:background="@color/colorAccent"
-        android:layout_marginTop="10dp"/>
+        android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/moment_2_0_optima"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="动态2.0优化"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/moment_topic_detail"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="动态2.0-话题详情"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/pic_text"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="图文混排"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
 
     <TextView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="list"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/queen_heart"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="女王之心"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/live_end"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="直播结束"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/span"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:text="Span图文混排"
         android:gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
+    <TextView
+        android:id="@+id/toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="toast显示"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/main_margin_top"
+        android:background="@color/colorAccent"/>
 
 </LinearLayout>

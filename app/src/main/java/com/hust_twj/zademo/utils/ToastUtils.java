@@ -2,9 +2,14 @@ package com.hust_twj.zademo.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.StringRes;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.NotificationManagerCompat;
 import android.view.Gravity;
 import android.widget.Toast;
+
+import com.hust_twj.zademo.toast.BooheeToast;
 
 /**
  * Toast工具类
@@ -58,15 +63,22 @@ public class ToastUtils {
                         ((Activity) context).isDestroyed())) {
             return;
         }
-        if (sToast == null) {
-            sToast = Toast.makeText(context.getApplicationContext(), msg, time);
-            sToast.setGravity(Gravity.CENTER, 0, 0);
-        } else {
-            sToast.setText(msg);
-            sToast.setDuration(time);
-            sToast.setGravity(Gravity.CENTER, 0, 0);
+
+        if (Build.VERSION.SDK_INT >= 19 && NotificationManagerCompat.from(context).areNotificationsEnabled()){
+            if (sToast == null) {
+                sToast = Toast.makeText(context.getApplicationContext(), msg, time);
+                sToast.setGravity(Gravity.CENTER, 0, 0);
+            } else {
+                sToast.setText(msg);
+                sToast.setDuration(time);
+                sToast.setGravity(Gravity.CENTER, 0, 0);
+            }
+            sToast.show();
+        }else {
+            BooheeToast.makeText(context, msg, time).show();
         }
-        sToast.show();
+
+
     }
 
     /**
@@ -82,14 +94,23 @@ public class ToastUtils {
                         ((Activity) context).isDestroyed())) {
             return;
         }
-        if (sToastFromBottom == null) {
-            sToastFromBottom = Toast.makeText(context.getApplicationContext(), msg, time);
-            sToastFromBottom.setGravity(Gravity.BOTTOM, 0, 200);
-        } else {
-            sToastFromBottom.setText(msg);
-            sToastFromBottom.setDuration(time);
-            sToastFromBottom.setGravity(Gravity.BOTTOM, 0, 200);
+        if (Build.VERSION.SDK_INT >= 19 && NotificationManagerCompat.from(context).areNotificationsEnabled()){
+            if (sToastFromBottom == null) {
+                sToastFromBottom = Toast.makeText(context.getApplicationContext(), msg, time);
+                sToastFromBottom.setGravity(Gravity.BOTTOM, 0, 200);
+            } else {
+                sToastFromBottom.setText(msg);
+                sToastFromBottom.setDuration(time);
+                sToastFromBottom.setGravity(Gravity.BOTTOM, 0, 200);
+            }
+            sToastFromBottom.show();
+        }else {
+
         }
-        sToastFromBottom.show();
+
+    }
+
+    public static Toast getsToast(){
+        return sToast;
     }
 }
