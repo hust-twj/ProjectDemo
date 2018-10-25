@@ -3,6 +3,7 @@ package com.hust_twj.zademo
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
 import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
@@ -54,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
         toast.setOnClickListener{
             startActivity(Intent(this, ToastActivity::class.java))
+        }
+
+        frame_layout.setOnClickListener{
+            startActivity(Intent(this, FrameActivity::class.java))
         }
 
     }

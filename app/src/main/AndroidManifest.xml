@@ -44,6 +44,8 @@
 
         <activity android:name=".toast.ToastActivity"/>
 
+        <activity android:name=".frame_layout.FrameActivity"/>
+
     </application>
 
 </manifest>
