@@ -46,6 +46,8 @@
 
         <activity android:name=".frame_layout.FrameActivity"/>
 
+        <activity android:name=".line_space_extra.LineSpaceActivity"/>
+
     </application>
 
 </manifest>

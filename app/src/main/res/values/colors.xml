@@ -14,4 +14,8 @@
     <color name="red">#ff5d5d</color>
 
     <color name="color_4d4d4d">#4d4d4d</color>
+
+    <color name="baseline">#ed6392</color>
+    <color name="bounds">#360eae</color>
+    <color name="text_bottom_line">#000000</color>
 </resources>

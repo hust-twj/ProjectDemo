@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hust_twj.zademo.line_space_extra.TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:lineSpacingExtra="12dp"
+        android:text="我是一只鱼\n与"
+        android:textColor="@android:color/black"
+        android:background="#0c0" />
+
+    <com.hust_twj.zademo.line_space_extra.LineSpaceExtraContainer
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+        <com.hust_twj.zademo.line_space_extra.LineSpaceExtraCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0c0"
+            android:lineSpacingExtra="12dp"
+            android:text="@string/text"
+            android:textColor="@android:color/black" />
+    </com.hust_twj.zademo.line_space_extra.LineSpaceExtraContainer>
+
+    <com.hust_twj.zademo.line_space_extra.LineSpaceExtraContainer
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <com.hust_twj.zademo.line_space_extra.LineSpaceExtraCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0c0"
+            android:lineSpacingExtra="12dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="@string/text"
+            android:textColor="@android:color/black" />
+    </com.hust_twj.zademo.line_space_extra.LineSpaceExtraContainer>
+
+</LinearLayout>
