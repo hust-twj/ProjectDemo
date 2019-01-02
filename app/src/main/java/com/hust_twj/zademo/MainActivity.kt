@@ -12,6 +12,7 @@ import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
 import com.hust_twj.zademo.pic_text.PicTextActivity
 import com.hust_twj.zademo.queen_heart.QueenHeartActivity
+import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.span.SpanActivity
 import com.hust_twj.zademo.toast.ToastActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -64,6 +65,10 @@ class MainActivity : AppCompatActivity() {
 
         line_space.setOnClickListener{
             startActivity(Intent(this, LineSpaceActivity::class.java))
+        }
+
+        round_img_view.setOnClickListener{
+            startActivity(Intent(this, RoundImgActivity::class.java))
         }
 
     }

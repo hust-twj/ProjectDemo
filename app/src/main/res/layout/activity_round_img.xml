@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:orientation="horizontal">
+
+        <com.hust_twj.zademo.utils.RoundImageView
+            android:id="@+id/left_live_img_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:radius_left_up="10dp"
+            app:roundImageType="round"
+            tools:background="@drawable/default_avatar"/>
+
+        <com.hust_twj.zademo.utils.RoundImageView
+            android:id="@+id/center_live_img_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:borderRadius="0dp"
+            app:roundImageType="round"
+            tools:background="@drawable/default_avatar"/>
+
+        <com.hust_twj.zademo.utils.RoundImageView
+            android:id="@+id/right_live_img_view"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            app:radius_right_up="10dp"
+            app:roundImageType="round"
+            tools:background="@drawable/default_avatar"
+            android:paddingStart="-20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/left_live_img_view_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/default_avatar"/>
+
+        <ImageView
+            android:id="@+id/center_live_img_view_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/default_avatar"/>
+
+        <ImageView
+            android:id="@+id/right_live_img_view_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/default_avatar"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

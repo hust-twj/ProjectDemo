@@ -49,6 +49,8 @@
 
         <activity android:name=".line_space_extra.LineSpaceActivity"/>
 
+        <activity android:name=".round_img_view.RoundImgActivity"/>
+
     </application>
 
 </manifest>

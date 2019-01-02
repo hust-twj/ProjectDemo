@@ -23,6 +23,7 @@ import com.hust_twj.zademo.R;
 
 /**
  * 圆角imageview
+ *
  * @author wensibob
  * on 2018/5/23.
  */
@@ -149,15 +150,19 @@ public class RoundImageView extends AppCompatImageView {
             scale = mWidth * 1.0f / bSize;
 
         } else if (type == TYPE_ROUND) {
+            LogUtils.e("twj124", bmp.getWidth() + "  " + getWidth() + "  " + bmp.getHeight() + "  " + getHeight());
             if (!(bmp.getWidth() == getWidth() && bmp.getHeight() == getHeight())) {
                 // 如果图片的宽或者高与view的宽高不匹配，计算出需要缩放的比例；缩放后的图片的宽高，一定要大于我们view的宽高；所以我们这里取大值；
-                scale = Math.max(getWidth() * 1.0f / bmp.getWidth(),
+                scale = Math.min(getWidth() * 1.0f / bmp.getWidth(),
                         getHeight() * 1.0f / bmp.getHeight());
             }
 
         }
         // shader的变换矩阵，我们这里主要用于放大或者缩小
         mMatrix.setScale(scale, scale);
+        mMatrix.postTranslate(-(bmp.getWidth() * scale / 2 - getMeasuredWidth() / 2),
+                -(bmp.getHeight() * scale / 2 - getMeasuredHeight() / 2));
+
         // 设置变换矩阵
         mBitmapShader.setLocalMatrix(mMatrix);
         // 设置shader
@@ -285,7 +290,7 @@ public class RoundImageView extends AppCompatImageView {
     }
 
     private float[] getRadiusArray(int lt, int rt, int rb, int lb) {
-        return new float[] {lt, lt, rt, rt, rb, rb, lb, lb};
+        return new float[]{lt, lt, rt, rt, rb, rb, lb, lb};
     }
 
     private boolean hasDifferentRadius() {

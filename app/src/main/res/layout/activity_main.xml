@@ -117,4 +117,14 @@
         android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
+    <TextView
+        android:id="@+id/round_img_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="RoundImgView"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/main_margin_top"
+        android:background="@color/colorAccent"/>
+
 </LinearLayout>
