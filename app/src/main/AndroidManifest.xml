@@ -51,6 +51,8 @@
 
         <activity android:name=".round_img_view.RoundImgActivity"/>
 
+        <activity android:name=".event_bus.EventBusDemoActivity"/>
+
     </application>
 
 </manifest>

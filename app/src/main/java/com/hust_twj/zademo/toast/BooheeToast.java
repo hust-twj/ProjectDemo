@@ -3,6 +3,7 @@ package com.hust_twj.zademo.toast;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
@@ -56,9 +57,9 @@ public class BooheeToast {
     public BooheeToast(Context context) {
         mContext = context;
         mParams = new WindowManager.LayoutParams();
-        mParams.height = -2;
-        mParams.width = -2;
-        mParams.format = -3;
+        mParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        mParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        mParams.format = PixelFormat.TRANSLUCENT;
         mParams.windowAnimations = 16973828;
         mParams.type = TYPE_SYSTEM_ALERT;
         mParams.setTitle("Toast");
@@ -112,13 +113,13 @@ public class BooheeToast {
     }
 
     public BooheeToast setText(int resId) {
-        setText(this.mContext.getText(resId));
+        setText(mContext.getText(resId));
         return this;
     }
 
     @SuppressWarnings("ResourceType")
     public BooheeToast setText(CharSequence s) {
-        View view = Toast.makeText(this.mContext, s, 0).getView();
+        View view = Toast.makeText(mContext, s, 0).getView();
         if (view != null) {
             ((TextView) view.findViewById(16908299)).setText(s);
             setView(view);
@@ -162,7 +163,7 @@ public class BooheeToast {
                 mWM.removeView(mView);
                 mQueue.poll();
             }
-            this.mView = null;
+            //mView = null;
         }
     }
 

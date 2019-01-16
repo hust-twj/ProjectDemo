@@ -127,4 +127,14 @@
         android:layout_marginTop="@dimen/main_margin_top"
         android:background="@color/colorAccent"/>
 
+    <TextView
+        android:id="@+id/event_bus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:text="Event Bus"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/main_margin_top"
+        android:background="@color/colorAccent"/>
+
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.hust_twj.zademo
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
@@ -69,6 +70,10 @@ class MainActivity : AppCompatActivity() {
 
         round_img_view.setOnClickListener{
             startActivity(Intent(this, RoundImgActivity::class.java))
+        }
+
+        event_bus.setOnClickListener{
+            startActivity(Intent(this, EventBusDemoActivity::class.java))
         }
 
     }
