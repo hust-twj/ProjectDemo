@@ -65,4 +65,11 @@ public class EventBusDemoActivity extends Activity {
 
     }
 
+    //允许一个类有多个参数相同的订阅方法。
+    @Subscribe
+    public void onEventReceive2(MyEvent event){
+        LogUtils.e("twj","this MyEvent receive: ");
+
+    }
+
 }
