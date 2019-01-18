@@ -53,6 +53,8 @@
 
         <activity android:name=".event_bus.EventBusDemoActivity"/>
 
+        <activity android:name=".handler.HandlerActivity"/>
+
     </application>
 
 </manifest>

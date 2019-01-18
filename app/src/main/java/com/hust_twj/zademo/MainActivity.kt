@@ -3,11 +3,15 @@ package com.hust_twj.zademo
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
+import com.hust_twj.zademo.handler.HandlerActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
+import com.hust_twj.zademo.main.MainAdapter
+import com.hust_twj.zademo.main.MainEntity
 import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
@@ -24,57 +28,47 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //动态2.0
-        moment_2_0.setOnClickListener {
-            startActivity(Intent(this, PublishActivity::class.java))
-        }
+        val mAdapter = MainAdapter(this)
+        rv_main.layoutManager = LinearLayoutManager(this)
+        rv_main.adapter = mAdapter
 
-        //动态2.0优化， Spannable测试
-        moment_2_0_optima.setOnClickListener {
-            startActivity(Intent(this, SpannableActivity::class.java))
-        }
+        mAdapter.setOnlClickListener(object : MainAdapter.OnClickListener{
+            override fun onClick(index: Int) {
+                when(index){
+                    //动态2.0
+                    MainEntity.INDEX_PUBLISH -> startActivity(Intent(this@MainActivity, PublishActivity::class.java))
 
-        moment_topic_detail.setOnClickListener {
-            MomentTopicDetailActivity.start(this, 10)
-        }
+                    //动态2.0优化， Spannable测试
+                    MainEntity.INDEX_SPANNABLE -> startActivity(Intent(this@MainActivity, SpannableActivity::class.java))
 
-        pic_text.setOnClickListener {
-            startActivity(Intent(this, PicTextActivity::class.java))
-        }
-        list.setOnClickListener {
-            startActivity(Intent(this, ListActivity::class.java))
-        }
+                    MainEntity.INDEX_MOMENT_DETAIL -> MomentTopicDetailActivity.start(this@MainActivity, 10)
 
-        queen_heart.setOnClickListener{
-            startActivity(Intent(this, QueenHeartActivity::class.java))
-        }
+                    MainEntity.INDEX_PIC_TEXT -> startActivity(Intent(this@MainActivity, PicTextActivity::class.java))
 
-        live_end.setOnClickListener{
-            startActivity(Intent(this, LiveEndActivity::class.java))
-        }
-        span.setOnClickListener{
-            startActivity(Intent(this, SpanActivity::class.java))
-        }
+                    MainEntity.INDEX_LIST -> startActivity(Intent(this@MainActivity, ListActivity::class.java))
 
-        toast.setOnClickListener{
-            startActivity(Intent(this, ToastActivity::class.java))
-        }
+                    MainEntity.INDEX_QUEEN_HEART -> startActivity(Intent(this@MainActivity, QueenHeartActivity::class.java))
 
-        frame_layout.setOnClickListener{
-            startActivity(Intent(this, FrameActivity::class.java))
-        }
+                    MainEntity.INDEX_LIVE_END -> startActivity(Intent(this@MainActivity, LiveEndActivity::class.java))
 
-        line_space.setOnClickListener{
-            startActivity(Intent(this, LineSpaceActivity::class.java))
-        }
+                    MainEntity.INDEX_SPAN -> startActivity(Intent(this@MainActivity, SpanActivity::class.java))
 
-        round_img_view.setOnClickListener{
-            startActivity(Intent(this, RoundImgActivity::class.java))
-        }
+                    MainEntity.INDEX_TOAST -> startActivity(Intent(this@MainActivity, ToastActivity::class.java))
 
-        event_bus.setOnClickListener{
-            startActivity(Intent(this, EventBusDemoActivity::class.java))
-        }
+                    MainEntity.INDEX_FRAME -> startActivity(Intent(this@MainActivity, FrameActivity::class.java))
+
+                    MainEntity.INDEX_LINE_SPACE -> startActivity(Intent(this@MainActivity, LineSpaceActivity::class.java))
+
+                    MainEntity.INDEX_ROUND_IMAGE -> startActivity(Intent(this@MainActivity, RoundImgActivity::class.java))
+
+                    MainEntity.INDEX_EVENT_BUS -> startActivity(Intent(this@MainActivity, EventBusDemoActivity::class.java))
+
+                    MainEntity.INDEX_HANDLER -> startActivity(Intent(this@MainActivity, HandlerActivity::class.java))
+
+                }
+
+            }
+        })
 
     }
 }
