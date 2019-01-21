@@ -55,6 +55,8 @@
 
         <activity android:name=".handler.HandlerActivity"/>
 
+        <activity android:name=".bottom_sheet.BottomSheetActivity"/>
+
     </application>
 
 </manifest>

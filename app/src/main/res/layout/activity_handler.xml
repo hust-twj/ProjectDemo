@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -8,9 +9,26 @@
         android:id="@+id/tv_send"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:text="发送消息"
+        android:text="发送消息_handler"
         android:background="@color/red"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/tv_receive"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text=" 接收_handler"
+        android:background="@color/red"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_update"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="更新UI "
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

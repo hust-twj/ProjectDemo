@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.HandlerActivity
@@ -64,6 +65,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_EVENT_BUS -> startActivity(Intent(this@MainActivity, EventBusDemoActivity::class.java))
 
                     MainEntity.INDEX_HANDLER -> startActivity(Intent(this@MainActivity, HandlerActivity::class.java))
+
+                    MainEntity.INDEX_BOTTOM_SHEET -> startActivity(Intent(this@MainActivity, BottomSheetActivity::class.java))
 
                 }
 

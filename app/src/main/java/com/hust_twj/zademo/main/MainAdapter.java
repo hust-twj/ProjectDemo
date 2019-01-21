@@ -100,6 +100,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity13.title = "handler";
         mDataList.add(entity13);
 
+        MainEntity entity14 = new MainEntity();
+        entity14.index = MainEntity.INDEX_BOTTOM_SHEET;
+        entity14.title = "BottomSheet";
+        mDataList.add(entity14);
+
         setDataList(mDataList);
     }
 
