@@ -9,7 +9,17 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="弹出Bottom_Sheet_Dialog"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:background="@color/app_base_color" />
+
+    <TextView
+        android:id="@+id/tv_bottom_sheet_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Bottom_Sheet_Behavior"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/app_base_color"/>
 
     <TextView
         android:id="@+id/tv_bottom_sheet_fragment"
@@ -17,7 +27,7 @@
         android:layout_height="100dp"
         android:text="弹出Bottom_Sheet_Fragment"
         android:layout_marginTop="20dp"
-        android:gravity="center"/>
-
+        android:gravity="center"
+        android:background="@color/app_base_color"/>
 
 </LinearLayout>

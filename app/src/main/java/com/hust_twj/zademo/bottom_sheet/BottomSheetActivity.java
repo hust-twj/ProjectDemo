@@ -1,6 +1,7 @@
 package com.hust_twj.zademo.bottom_sheet;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetDialog;
@@ -19,6 +20,7 @@ public class BottomSheetActivity extends Activity implements View.OnClickListene
 
         findViewById(R.id.tv_bottom_sheet_dialog).setOnClickListener(this);
         findViewById(R.id.tv_bottom_sheet_fragment).setOnClickListener(this);
+        findViewById(R.id.tv_bottom_sheet_behavior).setOnClickListener(this);
     }
 
     @Override
@@ -28,6 +30,9 @@ public class BottomSheetActivity extends Activity implements View.OnClickListene
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
                 bottomSheetDialog.setContentView(R.layout.layout_bottom_sheet_dialog);
                 bottomSheetDialog.show();
+                break;
+            case R.id.tv_bottom_sheet_behavior:
+                startActivity(new Intent(BottomSheetActivity.this, BottomSheetBehaviorActivity.class));
                 break;
             case R.id.tv_bottom_sheet_fragment:
                 break;
