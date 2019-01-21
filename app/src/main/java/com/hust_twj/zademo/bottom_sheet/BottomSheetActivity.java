@@ -1,16 +1,17 @@
 package com.hust_twj.zademo.bottom_sheet;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.hust_twj.zademo.R;
 
 
-public class BottomSheetActivity extends Activity implements View.OnClickListener {
+public class BottomSheetActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,13 @@ public class BottomSheetActivity extends Activity implements View.OnClickListene
                 startActivity(new Intent(BottomSheetActivity.this, BottomSheetBehaviorActivity.class));
                 break;
             case R.id.tv_bottom_sheet_fragment:
+                MyBottomSheetFragment fragment = new MyBottomSheetFragment();
+                if (fragment.getBehavior() != null) {
+                    fragment.getBehavior().setState(BottomSheetBehavior.STATE_COLLAPSED);
+                }
+
+                fragment.show(getSupportFragmentManager(), "dialog");
+                fragment.setTopOffset(100);
                 break;
                 default:
                     break;
