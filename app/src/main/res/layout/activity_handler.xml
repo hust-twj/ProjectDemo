@@ -31,4 +31,13 @@
         android:gravity="center"
         android:layout_marginTop="20dp"/>
 
+    <TextView
+        android:id="@+id/tv_create_handler"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="子线程创建Handler "
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
 </LinearLayout>

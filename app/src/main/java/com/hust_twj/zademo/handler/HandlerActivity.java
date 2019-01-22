@@ -3,12 +3,15 @@ package com.hust_twj.zademo.handler;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.LogUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -32,6 +35,7 @@ public class HandlerActivity extends Activity implements View.OnClickListener {
 
         mTvSend.setOnClickListener(this);
         mTvUpdate.setOnClickListener(this);
+        findViewById(R.id.tv_create_handler).setOnClickListener(this);
 
         myHandler = new MyHandler(this);
 
@@ -42,7 +46,7 @@ public class HandlerActivity extends Activity implements View.OnClickListener {
         //MyHandler 弱引用 HandlerActivity
         private WeakReference<HandlerActivity> mActivity;
 
-        public  MyHandler(HandlerActivity activity) {
+        public MyHandler(HandlerActivity activity) {
             mActivity = new WeakReference<>(activity);
         }
 
@@ -64,23 +68,31 @@ public class HandlerActivity extends Activity implements View.OnClickListener {
 
                 break;
             case R.id.tv_update:
-                /*new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mTvSend.setText("haha2");
-                        *//*try {
-                           // Thread.sleep(2000);
-                            mTvSend.setText("haha2");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }*//*
-                        LogUtils.e("twj124", Thread.currentThread().getName());
-                    }
-                }).start();*/
                 myHandler.sendEmptyMessage(MSG_UPDATE);
                 break;
-                default:
-                    break;
+            case R.id.tv_create_handler:
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        //需要加Looper.prepare(); 不然会在低版本上报错；高版本为啥不会？
+                        Looper.prepare();
+                        Handler handler = new Handler(){
+                            @Override
+                            public void handleMessage(Message msg) {
+                                //super.handleMessage(msg);
+                                LogUtils.e("twj124", "handleMessage");
+                                Toast.makeText(getApplicationContext(), "handler msg", Toast.LENGTH_LONG).show();
+                            }
+                        };
+                        handler.sendEmptyMessage(1);
+                        //需要加Looper.loop() 需要放在发送消息之后
+                        Looper.loop();
+                    }
+                }).start();
+                break;
+            default:
+                break;
         }
     }
 
