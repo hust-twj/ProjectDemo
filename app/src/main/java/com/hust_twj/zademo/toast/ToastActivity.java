@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.utils.ToastUtils;
+import com.hust_twj.zademo.toast.utils.ToastUtils;
 
 public class ToastActivity extends Activity {
 
@@ -26,8 +26,9 @@ public class ToastActivity extends Activity {
         mtvToast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtils.toast(getApplicationContext(), "显示toast");
+                //ToastUtils.toast(getApplicationContext(), "显示toast");
                 //BooheeToast.makeText(getApplicationContext(), "test", Toast.LENGTH_SHORT).show();
+                ToastUtils.toast(ToastActivity.this,"haha");
             }
         });
 
