@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_window_live_share"
+    android:paddingBottom="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share_live_to"
+        android:layout_marginTop="16dp"
+        android:textSize="16sp"
+        android:textColor="#221C33"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_live_share_close"
+        android:padding="15dp"
+        android:layout_alignParentEnd="true" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp">
+
+        <TextView
+            android:id="@+id/tv_live_share_we_chat"
+            android:layout_width="56dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/live_share_we_chat"
+            android:drawableTop="@drawable/icon_live_share_wechat"
+            android:drawablePadding="10dp"
+            android:textSize="12sp"
+            android:textColor="#626166" />
+
+        <TextView
+            android:id="@+id/tv_live_share_moment"
+            android:layout_width="56dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/live_share_moment"
+            android:drawableTop="@drawable/icon_live_share_moment"
+            android:drawablePadding="10dp"
+            android:textSize="12sp"
+            android:textColor="#626166" />
+
+        <TextView
+            android:id="@+id/tv_live_share_qq"
+            android:layout_width="56dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/live_share_qq"
+            android:drawableTop="@drawable/icon_live_share_qq"
+            android:drawablePadding="10dp"
+            android:textSize="12sp"
+            android:textColor="#626166" />
+
+        <TextView
+            android:id="@+id/tv_live_share_copy_link"
+            android:layout_width="56dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/live_share_copy_link"
+            android:drawableTop="@drawable/icon_live_share_copy_link"
+            android:drawablePadding="10dp"
+            android:textSize="12sp"
+            android:textColor="#626166" />
+
+    </LinearLayout>
+
+</RelativeLayout>

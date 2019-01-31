@@ -4,4 +4,11 @@
     <string name="all_text_count_right">)</string>
 
     <string name="text">鱼姓是中文的一个姓氏，主要出自子姓，是商汤的后裔。在宋版《百家姓》中排名第335位。得姓始祖是宋襄公的庶兄公子目夷，字子鱼。子鱼的后世子孙有一支以先祖的字为姓，称鱼姓。唐代亦有鲜卑族人改姓鱼氏等。</string>
+
+    <string name="share_live_to">分享直播到</string>
+    <string name="live_share_we_chat">微信好友</string>
+    <string name="live_share_moment">朋友圈</string>
+    <string name="live_share_qq">QQ好友</string>
+    <string name="live_share_copy_link">复制链接</string>
+
 </resources>

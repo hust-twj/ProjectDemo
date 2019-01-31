@@ -27,5 +27,7 @@ public class MainEntity implements Serializable {
     public static final int INDEX_EVENT_BUS = 12;
     public static final int INDEX_HANDLER = 13;
     public static final int INDEX_BOTTOM_SHEET = 14;
+    public static final int INDEX_SHARE = 15;
+    public static final int INDEX_PAY = 16;
 
 }

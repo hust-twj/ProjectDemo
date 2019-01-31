@@ -16,9 +16,11 @@ import com.hust_twj.zademo.main.MainEntity
 import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
+import com.hust_twj.zademo.pay.PayActivity
 import com.hust_twj.zademo.pic_text.PicTextActivity
 import com.hust_twj.zademo.queen_heart.QueenHeartActivity
 import com.hust_twj.zademo.round_img_view.RoundImgActivity
+import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
 import com.hust_twj.zademo.toast.ToastActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -67,6 +69,10 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_HANDLER -> startActivity(Intent(this@MainActivity, HandlerActivity::class.java))
 
                     MainEntity.INDEX_BOTTOM_SHEET -> startActivity(Intent(this@MainActivity, BottomSheetActivity::class.java))
+
+                    MainEntity.INDEX_SHARE -> startActivity(Intent(this@MainActivity, ShareActivity::class.java))
+
+                    MainEntity.INDEX_PAY -> startActivity(Intent(this@MainActivity, PayActivity::class.java))
 
                 }
 

@@ -2,16 +2,11 @@ package com.hust_twj.zademo.bottom_sheet;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.line_space_extra.TextView;
 
 /**
  * Created by Wenjing.Tang
@@ -21,7 +16,6 @@ public class MyBottomSheetFragment extends BaseFullBottomSheetFragment/*BottomSh
 
     private BottomSheetBehavior mBehavior;
 
-    private TextView mTv;
 
    /* @Nullable
     @Override
