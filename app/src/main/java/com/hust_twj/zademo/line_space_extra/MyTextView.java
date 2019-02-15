@@ -2,7 +2,6 @@ package com.hust_twj.zademo.line_space_extra;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
@@ -12,7 +11,7 @@ import android.util.AttributeSet;
 import com.hust_twj.zademo.R;
 
 
-public class TextView extends AppCompatTextView {
+public class MyTextView extends AppCompatTextView {
 
 	private Paint mPaint;
 	private Rect  mRect;
@@ -21,15 +20,15 @@ public class TextView extends AppCompatTextView {
 	private int boundsColor;
 	private int textBottomColor;
 
-	public TextView(Context context) {
+	public MyTextView(Context context) {
 		this(context, null);
 	}
 
-	public TextView(Context context, @Nullable AttributeSet attrs) {
+	public MyTextView(Context context, @Nullable AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
-	public TextView(Context context, AttributeSet attrs, int defStyleAttr) {
+	public MyTextView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 		init();
 	}

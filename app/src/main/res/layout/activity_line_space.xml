@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.hust_twj.zademo.line_space_extra.TextView
+    <com.hust_twj.zademo.line_space_extra.MyTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
