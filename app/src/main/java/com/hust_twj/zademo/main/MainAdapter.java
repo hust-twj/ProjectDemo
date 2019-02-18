@@ -115,6 +115,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity16.title = "支付";
         mDataList.add(entity16);
 
+        MainEntity entity17 = new MainEntity();
+        entity17.index = MainEntity.INDEX_REMOTE_VIEW;
+        entity17.title = "RemoteView";
+        mDataList.add(entity17);
+
         setDataList(mDataList);
     }
 

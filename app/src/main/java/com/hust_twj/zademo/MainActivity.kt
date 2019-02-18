@@ -19,6 +19,7 @@ import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
 import com.hust_twj.zademo.pay.PayActivity
 import com.hust_twj.zademo.pic_text.PicTextActivity
 import com.hust_twj.zademo.queen_heart.QueenHeartActivity
+import com.hust_twj.zademo.remote_view.RemoteViewActivity
 import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
@@ -73,6 +74,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_SHARE -> startActivity(Intent(this@MainActivity, ShareActivity::class.java))
 
                     MainEntity.INDEX_PAY -> startActivity(Intent(this@MainActivity, PayActivity::class.java))
+
+                    MainEntity.INDEX_REMOTE_VIEW -> startActivity(Intent(this@MainActivity, RemoteViewActivity::class.java))
 
                 }
 
