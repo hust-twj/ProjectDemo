@@ -1,6 +1,7 @@
 package com.hust_twj.zademo.handler;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -128,6 +129,7 @@ public class HandlerActivity extends Activity implements View.OnClickListener {
                 }).start();
                 break;
             case R.id.tv_handler_thread:
+                startActivity(new Intent(this, HandlerThreadActivity.class));
                 break;
             default:
                 break;

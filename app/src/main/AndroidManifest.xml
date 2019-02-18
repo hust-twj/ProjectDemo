@@ -67,6 +67,8 @@
         <activity android:name=".remote_view.RemoteViewActivity1"/>
         <activity android:name=".remote_view.RemoteViewActivity2"/>
 
+        <activity android:name=".handler.HandlerThreadActivity"/>
+
     </application>
 
 </manifest>

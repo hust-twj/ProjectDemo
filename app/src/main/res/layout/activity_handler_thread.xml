@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_handler_sub_to_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="子线程发消息主线程处理"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginStart="100dp"/>
+
+    <TextView
+        android:id="@+id/tv_handler_main_to_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="主线程发消息子线程处理"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginStart="100dp"
+        android:layout_below="@+id/tv_handler_sub_to_main"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/tv_handler_sub_to_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="子线程发消息子线程处理"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_marginStart="100dp"
+        android:layout_below="@+id/tv_handler_main_to_sub"
+        android:layout_marginTop="40dp"/>
+
+</RelativeLayout>
