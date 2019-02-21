@@ -8,6 +8,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class HandlerActivity extends Activity implements View.OnClickListener {
         mTvUpdate.setOnClickListener(this);
         findViewById(R.id.tv_create_handler).setOnClickListener(this);
         findViewById(R.id.tv_handler_thread).setOnClickListener(this);
+        findViewById(R.id.thread_local).setOnClickListener(this);
 
         myHandler = new MyHandler(this);
 
@@ -131,9 +133,39 @@ public class HandlerActivity extends Activity implements View.OnClickListener {
             case R.id.tv_handler_thread:
                 startActivity(new Intent(this, HandlerThreadActivity.class));
                 break;
+            case R.id.thread_local:
+                doThreadLocal();
+                break;
             default:
                 break;
         }
+    }
+
+    private void doThreadLocal() {
+        final ThreadLocal<String> threadLocal = new ThreadLocal<>();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                threadLocal.set("Thread 1");
+                Log.e("twj", Thread.currentThread().getName() + "  " + threadLocal.get());
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                threadLocal.set("Thread 2");
+                Log.e("twj", Thread.currentThread().getName() + "  " + threadLocal.get());
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Log.e("twj", Thread.currentThread().getName() + "  " + threadLocal.get());
+            }
+        }).start();
+
     }
 
     @Override
