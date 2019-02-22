@@ -7,6 +7,7 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -103,4 +104,10 @@ public class HandlerThreadActivity extends Activity implements View.OnClickListe
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //养成好习惯：在不需要HandlerThread的时候需要手动停止掉
+        mHandlerThread.quit();
+    }
 }
