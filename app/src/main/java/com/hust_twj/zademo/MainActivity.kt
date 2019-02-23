@@ -24,6 +24,7 @@ import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
 import com.hust_twj.zademo.toast.ToastActivity
+import com.hust_twj.zademo.xfermode.XfermodeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -77,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
                     MainEntity.INDEX_REMOTE_VIEW -> startActivity(Intent(this@MainActivity, RemoteViewActivity::class.java))
 
-                    MainEntity.INDEX_XFERMODE -> startActivity(Intent(this@MainActivity, RemoteViewActivity::class.java))
+                    MainEntity.INDEX_XFERMODE -> startActivity(Intent(this@MainActivity, XfermodeActivity::class.java))
 
                 }
 

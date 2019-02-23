@@ -69,6 +69,7 @@
 
         <activity android:name=".handler.HandlerThreadActivity"/>
         <activity android:name=".xfermode.XfermodeActivity"/>
+        <activity android:name=".xfermode.ScratchCardActivity"/>
 
     </application>
 
