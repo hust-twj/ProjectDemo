@@ -120,6 +120,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity17.title = "RemoteView";
         mDataList.add(entity17);
 
+        MainEntity entity18 = new MainEntity();
+        entity18.index = MainEntity.INDEX_XFERMODE;
+        entity18.title = "Xfermode";
+        mDataList.add(entity18);
+
         setDataList(mDataList);
     }
 

@@ -68,6 +68,7 @@
         <activity android:name=".remote_view.RemoteViewActivity2"/>
 
         <activity android:name=".handler.HandlerThreadActivity"/>
+        <activity android:name=".xfermode.XfermodeActivity"/>
 
     </application>
 

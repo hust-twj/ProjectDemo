@@ -77,6 +77,8 @@ class MainActivity : AppCompatActivity() {
 
                     MainEntity.INDEX_REMOTE_VIEW -> startActivity(Intent(this@MainActivity, RemoteViewActivity::class.java))
 
+                    MainEntity.INDEX_XFERMODE -> startActivity(Intent(this@MainActivity, RemoteViewActivity::class.java))
+
                 }
 
             }
