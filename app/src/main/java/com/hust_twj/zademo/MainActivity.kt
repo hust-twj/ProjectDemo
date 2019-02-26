@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
@@ -79,6 +80,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_REMOTE_VIEW -> startActivity(Intent(this@MainActivity, RemoteViewActivity::class.java))
 
                     MainEntity.INDEX_XFERMODE -> startActivity(Intent(this@MainActivity, XfermodeActivity::class.java))
+
+                    MainEntity.INDEX_BITMAP -> startActivity(Intent(this@MainActivity, BitmapOptiActivity::class.java))
 
                 }
 

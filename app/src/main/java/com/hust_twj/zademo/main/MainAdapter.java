@@ -125,6 +125,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity18.title = "Xfermode";
         mDataList.add(entity18);
 
+        MainEntity entity19 = new MainEntity();
+        entity19.index = MainEntity.INDEX_BITMAP;
+        entity19.title = "Bitmap加载";
+        mDataList.add(entity19);
+
         setDataList(mDataList);
     }
 

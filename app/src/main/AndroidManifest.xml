@@ -71,6 +71,10 @@
         <activity android:name=".xfermode.XfermodeActivity"/>
         <activity android:name=".xfermode.ScratchCardActivity"/>
 
+        <activity android:name=".bitmap_opti.BitmapOptiActivity"/>
+        <activity android:name=".bitmap_opti.BitmapOriginalActivity"/>
+        <activity android:name=".bitmap_opti.BitmapSampleSizeActivity"/>
+
     </application>
 
 </manifest>
