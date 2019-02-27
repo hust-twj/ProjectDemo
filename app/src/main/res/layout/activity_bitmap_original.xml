@@ -8,7 +8,7 @@
         android:id="@+id/tv_load_original"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch/SeekBar"
+        android:text="点击 加载原图"
         android:background="@drawable/bg_moment_hot_topic_publish"
         android:textSize="17sp"
         android:textColor="#ffffff"
@@ -16,7 +16,17 @@
         android:gravity="center"
         android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
-        android:onClick="switch"/>
+        android:onClick="loadImage"/>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv_load_original"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"/>
 
 
 
