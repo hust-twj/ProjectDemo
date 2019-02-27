@@ -36,7 +36,7 @@ public class FuParamsAdjustPanel extends BasePopupWindow implements SeekBar.OnSe
 
         initData();
         setListener();
-        updateParentWindowAlpha(BasePopupWindow.ALPHA_HALF_TRANSPARENT);
+        updateParentWindowAlpha(BasePopupWindow.ALPHA_TRANSPARENT);
     }
 
     private void initData() {
@@ -69,6 +69,12 @@ public class FuParamsAdjustPanel extends BasePopupWindow implements SeekBar.OnSe
                 }
             }
         });
+    }
+
+    @Override
+    public void popupFromBottom() {
+        super.popupFromBottom();
+        updateParentWindowAlpha(BasePopupWindow.ALPHA_TRANSPARENT);
     }
 
     @Override
