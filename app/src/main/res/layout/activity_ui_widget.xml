@@ -16,7 +16,7 @@
         android:gravity="center"
         android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
-        android:onClick="switch"/>
+        android:onClick="switchOrSeekBar"/>
 
 
 

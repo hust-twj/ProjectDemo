@@ -130,6 +130,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity19.title = "Bitmap加载";
         mDataList.add(entity19);
 
+        MainEntity entity20 = new MainEntity();
+        entity20.index = MainEntity.INDEX_UI_WIDGET;
+        entity20.title = "UI控件";
+        mDataList.add(entity20);
+
         setDataList(mDataList);
     }
 

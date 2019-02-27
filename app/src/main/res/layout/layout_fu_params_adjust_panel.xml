@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_fu_params_adjust_panel"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:gravity="center_vertical"
+            android:text="@string/fu_beauty"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <Switch
+            android:id="@+id/beauty_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:thumb="@drawable/fu_switch_thumb"
+            android:track="@drawable/fu_switch_track_selector" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fu_params_panel_margin_start"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="@dimen/fu_params_panel_margin_end"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fu_blur_level"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+        <SeekBar
+            android:id="@+id/blur_level_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/fu_seekbar_bg"
+            android:thumb="@drawable/fu_seekbar_thumb" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fu_params_panel_margin_start"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="@dimen/fu_params_panel_margin_end"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fu_color_level"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+        <SeekBar
+            android:id="@+id/color_level_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/fu_seekbar_bg"
+            android:thumb="@drawable/fu_seekbar_thumb" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fu_params_panel_margin_start"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="@dimen/fu_params_panel_margin_end"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fu_cheek_thinning"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+        <SeekBar
+            android:id="@+id/cheek_thinning_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/fu_seekbar_bg"
+            android:thumb="@drawable/fu_seekbar_thumb" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/fu_params_panel_margin_start"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="@dimen/fu_params_panel_margin_end"
+        android:layout_marginBottom="35dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fu_eye_enlarging"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+
+        <SeekBar
+            android:id="@+id/eye_enlarging_seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:progress="0"
+            android:progressDrawable="@drawable/fu_seekbar_bg"
+            android:thumb="@drawable/fu_seekbar_thumb" />
+
+    </LinearLayout>
+
+</LinearLayout>

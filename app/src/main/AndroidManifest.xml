@@ -75,6 +75,8 @@
         <activity android:name=".bitmap_opti.BitmapOriginalActivity"/>
         <activity android:name=".bitmap_opti.BitmapSampleSizeActivity"/>
 
+        <activity android:name=".ui_widget.UIWidgetActivity"/>
+
     </application>
 
 </manifest>

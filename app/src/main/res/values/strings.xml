@@ -11,4 +11,10 @@
     <string name="live_share_qq">QQ好友</string>
     <string name="live_share_copy_link">复制链接</string>
 
+    <string name="fu_beauty">美颜</string>
+    <string name="fu_blur_level">磨皮</string>
+    <string name="fu_color_level">美白</string>
+    <string name="fu_cheek_thinning">瘦脸</string>
+    <string name="fu_eye_enlarging">大眼</string>
+
 </resources>

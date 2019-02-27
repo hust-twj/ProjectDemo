@@ -25,6 +25,7 @@ import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
 import com.hust_twj.zademo.toast.ToastActivity
+import com.hust_twj.zademo.ui_widget.UIWidgetActivity
 import com.hust_twj.zademo.xfermode.XfermodeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -82,6 +83,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_XFERMODE -> startActivity(Intent(this@MainActivity, XfermodeActivity::class.java))
 
                     MainEntity.INDEX_BITMAP -> startActivity(Intent(this@MainActivity, BitmapOptiActivity::class.java))
+
+                    MainEntity.INDEX_UI_WIDGET -> startActivity(Intent(this@MainActivity, UIWidgetActivity::class.java))
 
                 }
 

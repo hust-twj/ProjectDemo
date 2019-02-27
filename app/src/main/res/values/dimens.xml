@@ -12,4 +12,8 @@
     <dimen name="follow_fragment_item_avatar_margin_left">25dp</dimen>
 
     <dimen name="main_margin_top">10dp</dimen>
+
+    <dimen name="fu_params_panel_margin_start">25dp</dimen>
+    <dimen name="fu_params_panel_margin_end">10dp</dimen>
+
 </resources>
