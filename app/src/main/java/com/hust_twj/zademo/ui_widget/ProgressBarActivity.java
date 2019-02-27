@@ -3,7 +3,7 @@ package com.hust_twj.zademo.ui_widget;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
+import android.widget.ProgressBar;
 
 import com.hust_twj.zademo.R;
 
@@ -13,20 +13,18 @@ import com.hust_twj.zademo.R;
  * on 2019/2/26
  *
  */
-public class SwitchOrSeekbarActivity extends Activity {
+public class ProgressBarActivity extends Activity {
 
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_ui_widget);
+        setContentView(R.layout.activity_progress_bar);
 
-
-    }
-
-    public void switchOrSeekBar(View view){
-
+        progressBar = findViewById(R.id.pb);
+        progressBar.setProgress(50);
 
     }
 
