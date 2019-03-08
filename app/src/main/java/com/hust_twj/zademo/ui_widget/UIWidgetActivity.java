@@ -18,22 +18,21 @@ public class UIWidgetActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_ui_widget);
-
     }
 
     public void switchOrSeekBar(View view) {
         FuParamsAdjustPanel paramsAdjustPanel = new FuParamsAdjustPanel(this);
         paramsAdjustPanel.popupFromBottom();
-
     }
 
     public void goProgressBar(View view) {
         startActivity(new Intent(this, ProgressBarActivity.class));
-
     }
 
+    public void goGradientRing(View view) {
+        startActivity(new Intent(this, GradientRingActivity.class));
 
+    }
 
 }

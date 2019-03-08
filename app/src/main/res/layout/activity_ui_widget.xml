@@ -19,6 +19,7 @@
         android:onClick="switchOrSeekBar"/>
 
     <TextView
+        android:id="@+id/tv_ProgressBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ProgressBar"
@@ -30,6 +31,21 @@
         android:layout_marginStart="100dp"
         android:onClick="goProgressBar"
         android:layout_below="@+id/tv_switch"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/tv_gradient_ring"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="渐变圆环"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginStart="100dp"
+        android:onClick="goGradientRing"
+        android:layout_below="@+id/tv_ProgressBar"
         android:layout_marginTop="40dp"/>
 
 

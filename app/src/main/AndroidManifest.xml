@@ -77,6 +77,7 @@
 
         <activity android:name=".ui_widget.UIWidgetActivity"/>
         <activity android:name=".ui_widget.ProgressBarActivity"/>
+        <activity android:name=".ui_widget.GradientRingActivity"/>
 
     </application>
 
