@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/layout_voice_record"
@@ -20,5 +21,27 @@
             android:src="@drawable/icon_moment_upload_voice_end" />
 
     </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_voice_record"
+        android:layout_centerInParent="true">
+
+        <com.hust_twj.zademo.ui_widget.ProgressRing
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_centerInParent="true"
+            app:pr_bg_end_color="#0f221c33"
+            app:pr_bg_start_color="#0f221c33"
+            app:pr_progress="15"
+            app:pr_progress_end_color="#F794BF"
+            app:pr_progress_start_color="#A686FF"
+            app:pr_progress_width="2dp"
+            app:pr_bg_width="1dp"
+            app:pr_show_anim="false"/>
+
+    </RelativeLayout>
+
 
 </RelativeLayout>
