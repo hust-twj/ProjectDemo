@@ -27,8 +27,6 @@ public class GradientRingActivity extends Activity implements View.OnClickListen
     private RoundLightBarView roundLightBarView;
     private int currentProgress2 = 20;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +55,6 @@ public class GradientRingActivity extends Activity implements View.OnClickListen
         roundLightBarView = findViewById(R.id.round_bar_view);
         roundLightBarView.setProgress(currentProgress2);
 
-
     }
 
     @Override
@@ -81,8 +78,6 @@ public class GradientRingActivity extends Activity implements View.OnClickListen
                 currentProgress = 0;
                 mProgressRing.setProgress(currentProgress);
                 break;
-
-
 
             case R.id.progress_add2:
                 currentProgress2 += 5;

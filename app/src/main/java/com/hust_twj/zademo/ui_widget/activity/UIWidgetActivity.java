@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.ui_widget.FuParamsAdjustPanel;
-import com.hust_twj.zademo.ui_widget.activity.GradientRingActivity;
-import com.hust_twj.zademo.ui_widget.activity.ProgressBarActivity;
-
 
 /**
  * Created by hust_twj

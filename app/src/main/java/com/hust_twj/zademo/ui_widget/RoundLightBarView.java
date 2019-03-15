@@ -56,7 +56,6 @@ public class RoundLightBarView extends View {
 
     public RoundLightBarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
     }
 
     public RoundLightBarView(Context context, AttributeSet attrs) {

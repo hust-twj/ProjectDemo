@@ -134,7 +134,6 @@ public class ProgressRing extends View {
                     mMeasureHeight - halfProgressWidth - getPaddingBottom());
             LogUtils.e("twj124", halfProgressWidth + "  " + halfProgressWidth + "  " +
                     (mMeasureWidth - halfProgressWidth) + "  " + (mMeasureHeight - halfProgressWidth));
-
         }
 
         for (int i = 0, end = (int) (curProgress * unitAngle); i <= end; i++) {

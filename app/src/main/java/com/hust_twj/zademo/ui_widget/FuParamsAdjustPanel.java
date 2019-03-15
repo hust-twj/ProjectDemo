@@ -25,10 +25,10 @@ public class FuParamsAdjustPanel extends BasePopupWindow implements SeekBar.OnSe
     //磨皮/美白/瘦脸/大眼
     private float mBlurLevel, mColorLevel, mCheekThinning, mEyeEnlarging;
 
-    public static final int FLAG_BLUR_LEVEL = 1;
-    public static final int FLAG_COLOR_LEVEL = 2;
-    public static final int FLAG_CHEEK_THINNING = 3;
-    public static final int FLAG_EYE_ENLARGING = 4;
+    private static final int FLAG_BLUR_LEVEL = 1;
+    private static final int FLAG_COLOR_LEVEL = 2;
+    private static final int FLAG_CHEEK_THINNING = 3;
+    private static final int FLAG_EYE_ENLARGING = 4;
 
     public FuParamsAdjustPanel(Activity activity) {
         super(activity);
