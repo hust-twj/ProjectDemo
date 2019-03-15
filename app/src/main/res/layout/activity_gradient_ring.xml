@@ -23,12 +23,14 @@
     </FrameLayout>
 
     <RelativeLayout
+        android:id="@+id/layout_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_voice_record"
         android:layout_centerInParent="true">
 
         <com.hust_twj.zademo.ui_widget.ProgressRing
+            android:id="@+id/progress_ring"
             android:layout_width="106dp"
             android:layout_height="106dp"
             android:layout_centerInParent="true"
@@ -42,6 +44,87 @@
             app:pr_show_anim="false"/>
 
     </RelativeLayout>
+
+    <LinearLayout
+       android:id="@+id/layout_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/layout_progress">
+        <TextView
+            android:id="@+id/progress_add"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="进度+5"
+            android:gravity="center"
+            android:background="@color/red"/>
+
+        <TextView
+            android:id="@+id/progress_sub"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="进度-5"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/red"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/progress_reset"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="进度重置"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/red"
+            android:layout_marginStart="40dp"/>
+
+    </LinearLayout>
+
+    <com.hust_twj.zademo.ui_widget.RoundLightBarView
+        android:id="@+id/round_bar_view"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
+        android:layout_below="@+id/layout_control"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/layout_control2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/round_bar_view">
+        <TextView
+            android:id="@+id/progress_add2"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="进度+5"
+            android:gravity="center"
+            android:background="@color/red"/>
+
+        <TextView
+            android:id="@+id/progress_sub2"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="进度-5"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/red"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/progress_reset2"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="进度重置"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@color/red"
+            android:layout_marginStart="40dp"/>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
