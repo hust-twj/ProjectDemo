@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.ui_widget;
+package com.hust_twj.zademo.ui_widget.activity;
 
 import android.app.Activity;
 import android.os.Bundle;

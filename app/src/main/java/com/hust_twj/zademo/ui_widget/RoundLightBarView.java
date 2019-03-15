@@ -149,7 +149,7 @@ public class RoundLightBarView extends View {
         if (curProgress == 0) {
             mMatrix.postScale(0, 0);
         } else {
-            mMatrix.postScale(0.8f, 0.8f);
+            mMatrix.postScale(1.5f, 1.5f);
         }
         // 将图片绘制中心调整到与当前点重合
         mMatrix.postTranslate(pos[0] - mLittleBitmap.getWidth(), pos[1] - mLittleBitmap.getHeight());

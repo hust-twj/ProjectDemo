@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.ui_widget;
+package com.hust_twj.zademo.ui_widget.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,9 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.ui_widget.FuParamsAdjustPanel;
+import com.hust_twj.zademo.ui_widget.activity.GradientRingActivity;
+import com.hust_twj.zademo.ui_widget.activity.ProgressBarActivity;
 
 
 /**

@@ -75,9 +75,11 @@
         <activity android:name=".bitmap_opti.BitmapOriginalActivity"/>
         <activity android:name=".bitmap_opti.BitmapSampleSizeActivity"/>
 
-        <activity android:name=".ui_widget.UIWidgetActivity"/>
-        <activity android:name=".ui_widget.ProgressBarActivity"/>
-        <activity android:name=".ui_widget.GradientRingActivity"/>
+        <activity android:name=".ui_widget.activity.UIWidgetActivity"/>
+        <activity android:name=".ui_widget.activity.ProgressBarActivity"/>
+        <activity android:name=".ui_widget.activity.GradientRingActivity"/>
+
+        <activity android:name=".aidl.AidlActivity"/>
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.ui_widget;
+package com.hust_twj.zademo.ui_widget.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.ui_widget.ProgressRing;
+import com.hust_twj.zademo.ui_widget.RoundLightBarView;
 
 
 /**

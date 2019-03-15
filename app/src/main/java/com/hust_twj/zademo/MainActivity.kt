@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
@@ -25,7 +26,7 @@ import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
 import com.hust_twj.zademo.toast.ToastActivity
-import com.hust_twj.zademo.ui_widget.UIWidgetActivity
+import com.hust_twj.zademo.ui_widget.activity.UIWidgetActivity
 import com.hust_twj.zademo.xfermode.XfermodeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -85,6 +86,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_BITMAP -> startActivity(Intent(this@MainActivity, BitmapOptiActivity::class.java))
 
                     MainEntity.INDEX_UI_WIDGET -> startActivity(Intent(this@MainActivity, UIWidgetActivity::class.java))
+
+                    MainEntity.INDEX_AIDL -> startActivity(Intent(this@MainActivity, AidlActivity::class.java))
 
                 }
 

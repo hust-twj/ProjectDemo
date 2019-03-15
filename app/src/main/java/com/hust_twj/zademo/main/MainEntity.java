@@ -33,5 +33,6 @@ public class MainEntity implements Serializable {
     public static final int INDEX_XFERMODE = 18;
     public static final int INDEX_BITMAP = 19;
     public static final int INDEX_UI_WIDGET = 20;
+    public static final int INDEX_AIDL = 21;
 
 }
