@@ -151,6 +151,8 @@
     <declare-styleable name="ProgressRing">
         <!--进度起始色-->
         <attr name="pr_progress_start_color" format="color" />
+        <!--进度中间色-->
+        <attr name="pr_progress_mid_color" format="color" />
         <!--进度结束色-->
         <attr name="pr_progress_end_color" format="color" />
         <!--背景起始色-->

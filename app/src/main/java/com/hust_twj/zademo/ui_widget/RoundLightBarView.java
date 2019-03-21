@@ -113,7 +113,7 @@ public class RoundLightBarView extends View {
         int startAngle = -90;
         canvas.drawCircle(mCenterX, mCenterY, mCenterX - mCircleR - interval, mCirclePaint);
         //画进度条
-        int colorSweep[] = {0xFFA686FF,0xFFF794BF};
+        int colorSweep[] = {0xFFA686FF, 0xFFF794BF, 0xFFA686FF};
 
         //设置渐变色
         SweepGradient sweepGradient = new SweepGradient(mCenterX, mCenterY, colorSweep, null);

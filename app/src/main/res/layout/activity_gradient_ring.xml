@@ -37,8 +37,9 @@
             app:pr_bg_end_color="#0f221c33"
             app:pr_bg_start_color="#0f221c33"
             app:pr_progress="15"
-            app:pr_progress_end_color="#F794BF"
             app:pr_progress_start_color="#A686FF"
+            app:pr_progress_mid_color="#F794BF"
+            app:pr_progress_end_color="#A686FF"
             app:pr_progress_width="2dp"
             app:pr_bg_width="1dp"
             app:pr_show_anim="false"/>

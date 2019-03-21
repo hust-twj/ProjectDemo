@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.SweepGradient;
 import android.support.annotation.IntRange;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -22,9 +24,9 @@ import com.hust_twj.zademo.utils.LogUtils;
 public class ProgressRing extends View {
 
     private int progressStartColor;
+    private int progressMidColor;
     private int progressEndColor;
     private int bgStartColor;
-    //private int bgMidColor;
     private int bgEndColor;
     private int progress;
     private float progressWidth;//进度圆环的宽度
@@ -49,8 +51,9 @@ public class ProgressRing extends View {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ProgressRing);
         progressStartColor = ta.getColor(R.styleable.ProgressRing_pr_progress_start_color, Color.YELLOW);
         progressEndColor = ta.getColor(R.styleable.ProgressRing_pr_progress_end_color, progressStartColor);
+        progressMidColor = ta.getColor(R.styleable.ProgressRing_pr_progress_mid_color, progressStartColor);
         bgStartColor = ta.getColor(R.styleable.ProgressRing_pr_bg_start_color, Color.LTGRAY);
-       // bgMidColor = ta.getColor(R.styleable.ProgressRing_pr_bg_mid_color, bgStartColor);
+        // bgMidColor = ta.getColor(R.styleable.ProgressRing_pr_bg_mid_color, bgStartColor);
         bgEndColor = ta.getColor(R.styleable.ProgressRing_pr_bg_end_color, bgStartColor);
         progress = ta.getInt(R.styleable.ProgressRing_pr_progress, 0);
         progressWidth = ta.getDimension(R.styleable.ProgressRing_pr_progress_width, 2f);
@@ -81,9 +84,6 @@ public class ProgressRing extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        //LogUtils.e("twj124", mMeasureWidth + "  " + mMeasureHeight + "  " + getWidth() );
-        //LogUtils.e("twj124", getPaddingLeft() + "  " + getPaddingTop() + "  " + getPaddingRight() + "  " +getPaddingBottom());
-
         if (!showAnim) {
             curProgress = progress;
         }
@@ -99,6 +99,7 @@ public class ProgressRing extends View {
 
     /**
      * 画进度圆环之外的背景
+     *
      * @param canvas canvas
      */
     private void drawBg(Canvas canvas) {
@@ -111,24 +112,38 @@ public class ProgressRing extends View {
                     (mMeasureWidth - halfBgWidth) + "  " + (mMeasureHeight - halfBgWidth));
 
         }
-        float halfSweep = sweepAngle / 2.0f;
+
+        //画进度条
+        int colorSweep[] = {bgStartColor, bgEndColor};
+
+        float mCenterX = (getPaddingLeft() + mMeasureWidth - getPaddingRight()) / 2.0f;
+        float mCenterY = (getPaddingTop() + mMeasureHeight - getPaddingBottom()) / 2.0f;
+
+        //设置渐变色
+        SweepGradient sweepGradient = new SweepGradient(mCenterX, mCenterY, colorSweep, null);
+
+        //按照圆心旋转
+        Matrix matrix = new Matrix();
+        matrix.setRotate(startAngle, mCenterX, mCenterY);
+        sweepGradient.setLocalMatrix(matrix);
+
         for (int i = sweepAngle, st = (int) (curProgress * unitAngle); i > st; --i) {
-            if (i - halfSweep > 0) {
-                bgPaint.setColor(getGradient((i - halfSweep) / halfSweep, bgStartColor, bgEndColor));
-            } else {
-                bgPaint.setColor(getGradient((halfSweep - i) / halfSweep, bgStartColor, bgStartColor));
-            }
+            bgPaint.setShader(sweepGradient);
             canvas.drawArc(mBgRect, startAngle + i, 1, false, bgPaint);
         }
     }
 
     /**
      * 画进度圆环
+     *
      * @param canvas canvas
      */
     private void drawProgress(Canvas canvas) {
+        if (curProgress <= 0) {
+            return;
+        }
+        float halfProgressWidth = progressWidth / 2;
         if (mProgressRectF == null) {
-            float halfProgressWidth = progressWidth / 2;
             mProgressRectF = new RectF(halfProgressWidth + getPaddingLeft(), halfProgressWidth + getPaddingTop(),
                     mMeasureWidth - halfProgressWidth - getPaddingRight(),
                     mMeasureHeight - halfProgressWidth - getPaddingBottom());
@@ -136,14 +151,29 @@ public class ProgressRing extends View {
                     (mMeasureWidth - halfProgressWidth) + "  " + (mMeasureHeight - halfProgressWidth));
         }
 
+        //画进度条
+        int colorSweep[] = {progressStartColor, progressMidColor, progressEndColor};
+
+        float mCenterX = (getPaddingLeft() + mMeasureWidth - getPaddingRight()) / 2.0f;
+        float mCenterY = (getPaddingTop() + mMeasureHeight - getPaddingBottom()) / 2.0f;
+
+        //设置渐变色
+        SweepGradient sweepGradient = new SweepGradient(mCenterX, mCenterY, colorSweep, null);
+
+        //按照圆心旋转
+        Matrix matrix = new Matrix();
+        matrix.setRotate(startAngle, mCenterX, mCenterY);
+        sweepGradient.setLocalMatrix(matrix);
+
         for (int i = 0, end = (int) (curProgress * unitAngle); i <= end; i++) {
-            progressPaint.setColor(getGradient(i / (float) end, progressStartColor, progressEndColor));
+            progressPaint.setShader(sweepGradient);
             canvas.drawArc(mProgressRectF, startAngle + i, 1, false, progressPaint);
         }
     }
 
     /**
      * 设置进度
+     *
      * @param progress 进度
      */
     public void setProgress(@IntRange(from = 0, to = 100) int progress) {
@@ -155,24 +185,4 @@ public class ProgressRing extends View {
         return progress;
     }
 
-    public int getGradient(float fraction, int startColor, int endColor) {
-        if (fraction > 1) fraction = 1;
-        int alphaStart = Color.alpha(startColor);
-        int redStart = Color.red(startColor);
-        int blueStart = Color.blue(startColor);
-        int greenStart = Color.green(startColor);
-        int alphaEnd = Color.alpha(endColor);
-        int redEnd = Color.red(endColor);
-        int blueEnd = Color.blue(endColor);
-        int greenEnd = Color.green(endColor);
-        int alphaDifference = alphaEnd - alphaStart;
-        int redDifference = redEnd - redStart;
-        int blueDifference = blueEnd - blueStart;
-        int greenDifference = greenEnd - greenStart;
-        int alphaCurrent = (int) (alphaStart + fraction * alphaDifference);
-        int redCurrent = (int) (redStart + fraction * redDifference);
-        int blueCurrent = (int) (blueStart + fraction * blueDifference);
-        int greenCurrent = (int) (greenStart + fraction * greenDifference);
-        return Color.argb(alphaCurrent, redCurrent, greenCurrent, blueCurrent);
-    }
 }
