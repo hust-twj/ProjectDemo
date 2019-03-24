@@ -28,9 +28,12 @@ public class ProgressRing extends View {
     private int progressEndColor;
     private int bgStartColor;
     private int bgEndColor;
+    private int bgMidColor;
+    private int dotColor;
     private int progress;
     private float progressWidth;//进度圆环的宽度
     private float bgWidth;//背景宽度
+    private float dotWidth;
     private int startAngle;
     private int sweepAngle;
     private boolean showAnim;
@@ -39,6 +42,7 @@ public class ProgressRing extends View {
 
     private Paint bgPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
     private Paint progressPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+    private Paint dotPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
 
     private RectF mProgressRectF;//背景的外接矩形
     private RectF mBgRect;//进度圆环的外接矩形
@@ -48,20 +52,22 @@ public class ProgressRing extends View {
 
     public ProgressRing(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ProgressRing);
+        /*TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ProgressRing);
         progressStartColor = ta.getColor(R.styleable.ProgressRing_pr_progress_start_color, Color.YELLOW);
         progressEndColor = ta.getColor(R.styleable.ProgressRing_pr_progress_end_color, progressStartColor);
         progressMidColor = ta.getColor(R.styleable.ProgressRing_pr_progress_mid_color, progressStartColor);
         bgStartColor = ta.getColor(R.styleable.ProgressRing_pr_bg_start_color, Color.LTGRAY);
-        // bgMidColor = ta.getColor(R.styleable.ProgressRing_pr_bg_mid_color, bgStartColor);
+        bgMidColor = ta.getColor(R.styleable.ProgressRing_pr_bg_mid_color, bgStartColor);
         bgEndColor = ta.getColor(R.styleable.ProgressRing_pr_bg_end_color, bgStartColor);
+        dotColor = progressMidColor;
         progress = ta.getInt(R.styleable.ProgressRing_pr_progress, 0);
         progressWidth = ta.getDimension(R.styleable.ProgressRing_pr_progress_width, 2f);
         bgWidth = ta.getDimension(R.styleable.ProgressRing_pr_bg_width, 1f);
+        dotWidth = progressWidth * 2;
         startAngle = ta.getInt(R.styleable.ProgressRing_pr_start_angle, -90);
         sweepAngle = ta.getInt(R.styleable.ProgressRing_pr_sweep_angle, 360);
         showAnim = ta.getBoolean(R.styleable.ProgressRing_pr_show_anim, true);
-        ta.recycle();
+        ta.recycle();*/
 
         unitAngle = (float) (sweepAngle / 100.0);
 
@@ -72,6 +78,10 @@ public class ProgressRing extends View {
         progressPaint.setStyle(Paint.Style.STROKE);
         progressPaint.setStrokeCap(Paint.Cap.ROUND);
         progressPaint.setStrokeWidth(progressWidth);
+
+        dotPaint.setStyle(Paint.Style.FILL);
+        dotPaint.setStrokeWidth(20);
+        dotPaint.setColor(dotColor);
     }
 
     @Override
@@ -169,6 +179,22 @@ public class ProgressRing extends View {
             progressPaint.setShader(sweepGradient);
             canvas.drawArc(mProgressRectF, startAngle + i, 1, false, progressPaint);
         }
+
+        if (curProgress >= 0 && curProgress < 100) {
+            canvas.save();
+
+            // 将画布坐标原点移动至圆心
+            canvas.translate(mCenterX, mCenterX);
+            // 旋转和进度相同的角度,因为进度是从-90度开始的所以-90度
+            canvas.rotate(curProgress * unitAngle - 90);
+            // 同理从圆心出发直接将原点平移至要画小球的位置
+            canvas.translate(mCenterX - 3*dotWidth, 0);
+            canvas.drawCircle(0, 0, dotWidth, dotPaint);
+
+            // 画完之后恢复画布坐标
+            canvas.restore();
+        }
+
     }
 
     /**

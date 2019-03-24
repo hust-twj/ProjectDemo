@@ -134,7 +134,7 @@
     </declare-styleable>
 
     <!--圆形进度条-->
-    <declare-styleable name="CircleProgressBar">
+   <!-- <declare-styleable name="CircleProgressBar">
         <attr name="circleColor" format="color"/>
         <attr name="circleProgressColor" format="color"/>
         <attr name="circleWidth" format="dimension"/>
@@ -146,33 +146,33 @@
             <enum name="STROKE" value="0"/>
             <enum name="FILL" value="1"/>
         </attr>
-    </declare-styleable>
+    </declare-styleable>-->
 
-    <declare-styleable name="ProgressRing">
+    <declare-styleable name="VoiceProgressRing">
         <!--进度起始色-->
         <attr name="pr_progress_start_color" format="color" />
         <!--进度中间色-->
         <attr name="pr_progress_mid_color" format="color" />
         <!--进度结束色-->
         <attr name="pr_progress_end_color" format="color" />
-        <!--背景起始色-->
-        <attr name="pr_bg_start_color" format="color" />
-        <!--背景中间色-->
-        <attr name="pr_bg_mid_color" format="color" />
-        <!--背景结束色-->
-        <attr name="pr_bg_end_color" format="color" />
+        <!--背景色-->
+        <attr name="pr_bg_color" format="color" />
+        <!--原点色-->
+        <attr name="pr_dot_color" format="color" />
         <!--进度值 介于0-100-->
         <attr name="pr_progress" format="integer" />
         <!--进度宽度-->
         <attr name="pr_progress_width" format="dimension" />
+        <!--原点半径-->
+        <attr name="pr_dot_radius" format="dimension" />
         <!--背景宽度-->
         <attr name="pr_bg_width" format="dimension" />
-        <!--起始角度-->
-        <attr name="pr_start_angle" format="integer" />
-        <!--扫过的角度-->
-        <attr name="pr_sweep_angle" format="integer" />
-        <!--是否显示动画-->
-        <attr name="pr_show_anim" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressBar">
+        <attr name="inCircleColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="lineWidth" format="dimension"/>
     </declare-styleable>
 
 </resources>
