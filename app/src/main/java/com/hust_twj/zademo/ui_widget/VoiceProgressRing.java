@@ -28,7 +28,6 @@ public class VoiceProgressRing extends View {
     private int progressEndColor;
     private int bgColor;
     private int dotColor;
-    private float progress;
     private float progressWidth;//进度圆环的宽度
     private float bgWidth;//背景宽度
     private float dotWidth; //最后的小圆点的宽度
@@ -37,7 +36,7 @@ public class VoiceProgressRing extends View {
     private Paint progressPaint;
     private Paint dotPaint;
 
-    private float mProgress = 0;
+    private float mProgress;
 
     private static final int MAX_PROGRESS = 100;
     private static final int SWEEP_ANGLE = 360;
@@ -51,7 +50,6 @@ public class VoiceProgressRing extends View {
     private float mAngle;
     private Matrix matrix = new Matrix();
 
-
     private SweepGradient progressSeepGradient;
 
     public VoiceProgressRing(Context context, @Nullable AttributeSet attrs) {
@@ -62,7 +60,7 @@ public class VoiceProgressRing extends View {
         progressEndColor = ta.getColor(R.styleable.VoiceProgressRing_pr_progress_end_color, progressStartColor);
         bgColor = ta.getColor(R.styleable.VoiceProgressRing_pr_bg_color, Color.LTGRAY);
         dotColor = ta.getColor(R.styleable.VoiceProgressRing_pr_dot_color, progressMidColor);
-        progress = ta.getInt(R.styleable.VoiceProgressRing_pr_progress, 0);
+        mProgress = ta.getInt(R.styleable.VoiceProgressRing_pr_progress, 0);
         progressWidth = ta.getDimension(R.styleable.VoiceProgressRing_pr_progress_width, 2f);
         bgWidth = ta.getDimension(R.styleable.VoiceProgressRing_pr_bg_width, 1f);
         dotWidth = ta.getDimension(R.styleable.VoiceProgressRing_pr_dot_radius, 2.5f);
@@ -93,8 +91,6 @@ public class VoiceProgressRing extends View {
         super.onDraw(canvas);
         center = getWidth() / 2;
         radius = (center - bgWidth / 2);// 半径
-
-        mProgress = progress;
 
         radius = radius - bgWidth;
         //画背景
@@ -153,17 +149,17 @@ public class VoiceProgressRing extends View {
      */
     public void setProgress(@FloatRange(from = 0f, to = 100f) float progress) {
         if (progress > MAX_PROGRESS) {
-            this.progress = MAX_PROGRESS;
+            mProgress = MAX_PROGRESS;
             mAngle = SWEEP_ANGLE;
         } else {
-            this.progress = progress;
+            mProgress = progress;
             mAngle = SWEEP_ANGLE * progress / MAX_PROGRESS;
         }
         invalidate();
     }
 
     public float getProgress() {
-        return progress;
+        return mProgress;
     }
 
 }

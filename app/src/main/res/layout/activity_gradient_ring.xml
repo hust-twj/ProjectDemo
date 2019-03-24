@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <FrameLayout
@@ -35,12 +36,12 @@
             android:layout_height="106dp"
             android:layout_centerHorizontal="true"
             app:pr_bg_color="#0f221c33"
-            app:pr_bg_width="1.5dp"
-            app:pr_progress="15"
+            app:pr_bg_width="2dp"
+            tools:pr_progress="15"
             app:pr_progress_start_color="#A686FF"
             app:pr_progress_mid_color="#F794BF"
             app:pr_progress_end_color="#A686FF"
-            app:pr_progress_width="1.5dp"
+            app:pr_progress_width="2dp"
             app:pr_dot_radius="2.5dp"
             app:pr_dot_color="#F494C1"/>
 
