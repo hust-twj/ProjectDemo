@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import com.hust_twj.zademo.App;
+import com.hust_twj.zademo.DemoApplication;
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.ToastUtils;
 import com.hust_twj.zademo.utils.ViewsUtil;
@@ -156,7 +156,7 @@ public class LiveShareDialog extends Dialog implements View.OnClickListener {
 
     private void copy(String content) {
         //获取剪贴板管理器
-        ClipboardManager manager = (ClipboardManager) App.getContext().getSystemService(CLIPBOARD_SERVICE);
+        ClipboardManager manager = (ClipboardManager) DemoApplication.getContext().getSystemService(CLIPBOARD_SERVICE);
         // 创建普通字符型ClipData
         ClipData mClipData = ClipData.newPlainText("copied_link", content);
         // 将ClipData内容放到系统剪贴板里
