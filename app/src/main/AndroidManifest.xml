@@ -83,6 +83,8 @@
 
         <activity android:name=".leak_canary.LeakCanaryActivity"/>
 
+        <activity android:name=".view.ViewActivity"/>
+
     </application>
 
 </manifest>
