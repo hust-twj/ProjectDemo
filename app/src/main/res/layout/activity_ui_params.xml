@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_ui_params"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="UI参数"
+        android:background="@color/red"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:onClick="scratchCard"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>
