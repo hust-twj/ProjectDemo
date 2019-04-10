@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.hust_twj.zademo.ui_params.TestTextView
         android:id="@+id/tv_ui_params"
         android:layout_width="100dp"
         android:layout_height="100dp"
