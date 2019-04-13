@@ -16,6 +16,10 @@ import com.hust_twj.zademo.utils.LogUtils;
 public class UIParamsActivity extends Activity {
 
     private TextView mTvUIParams;
+    private TextView mTvScrollTo;
+    private TextView mTvScrollBy;
+    private int mScrollX = -20;
+    private int mScrollY = -20;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +28,8 @@ public class UIParamsActivity extends Activity {
         setContentView(R.layout.activity_ui_params);
 
         mTvUIParams = findViewById(R.id.tv_ui_params);
+        mTvScrollTo = findViewById(R.id.tv_scroll_to);
+        mTvScrollBy = findViewById(R.id.tv_scroll_by);
 
         mTvUIParams.post(new Runnable() {
             @Override
@@ -97,6 +103,14 @@ public class UIParamsActivity extends Activity {
 
             }
         });
+    }
+
+    public void scrollTo(View view) {
+        mTvScrollTo.scrollTo(mScrollX, mScrollY);
+    }
+
+    public void scrollBy(View view) {
+        mTvScrollBy.scrollBy(mScrollX, mScrollY);
     }
 
 }

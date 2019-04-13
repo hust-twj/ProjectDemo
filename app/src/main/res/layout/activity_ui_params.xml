@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:background="@color/white">
 
     <com.hust_twj.zademo.ui_params.TestTextView
         android:id="@+id/tv_ui_params"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="UI参数"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:background="@color/red"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
         android:gravity="center"
         android:onClick="scratchCard"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"/>
+        android:text="UI参数"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_scroll_to"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_ui_params"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="ScrollTo"
+        android:onClick="scrollTo"/>
+
+    <TextView
+        android:id="@+id/tv_scroll_by"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_scroll_to"
+        android:layout_marginTop="20dp"
+        android:background="@color/red"
+        android:gravity="center"
+        android:text="ScrollBy"
+        android:onClick="scrollBy"/>
 
 </RelativeLayout>
