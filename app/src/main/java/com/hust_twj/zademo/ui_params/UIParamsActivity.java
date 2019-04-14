@@ -5,6 +5,7 @@ import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -21,6 +22,9 @@ public class UIParamsActivity extends Activity {
     private int mScrollX = -20;
     private int mScrollY = -20;
 
+    private TextView mTvAction;
+    private ActionParentView mActionView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,8 @@ public class UIParamsActivity extends Activity {
         mTvUIParams = findViewById(R.id.tv_ui_params);
         mTvScrollTo = findViewById(R.id.tv_scroll_to);
         mTvScrollBy = findViewById(R.id.tv_scroll_by);
+        mTvAction = findViewById(R.id.action_down_cancel);
+        mActionView = findViewById(R.id.view_action);
 
         mTvUIParams.post(new Runnable() {
             @Override
@@ -37,6 +43,27 @@ public class UIParamsActivity extends Activity {
                 LogUtils.e("twj124", mTvUIParams.getLeft() + "  " + mTvUIParams.getTop() +
                         "  " + mTvUIParams.getRight() + "  " + mTvUIParams.getBottom() + "  " +
                         mTvUIParams.getX() + "  " + mTvUIParams.getTranslationX());
+            }
+        });
+
+        mTvAction.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        LogUtils.e("twj124", "ACTION_DOWN");
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        LogUtils.e("twj124", "ACTION_MOVE");
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        LogUtils.e("twj124", "ACTION_UP");
+                        break;
+                    case MotionEvent.ACTION_CANCEL:
+                        LogUtils.e("twj124", "ACTION_CANCEL");
+                        break;
+                }
+                return false;
             }
         });
 
