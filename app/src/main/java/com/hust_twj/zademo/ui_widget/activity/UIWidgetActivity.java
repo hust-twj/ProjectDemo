@@ -32,7 +32,10 @@ public class UIWidgetActivity extends Activity {
 
     public void goGradientRing(View view) {
         startActivity(new Intent(this, GradientRingActivity.class));
+    }
 
+    public void goConstraintGroup(View view) {
+        startActivity(new Intent(this, ConstraintGroupActivity.class));
     }
 
 }

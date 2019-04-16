@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="10dp"
+        app:fabSize="normal"
+        app:layout_constraintCircle="@+id/btn_action"
+        app:layout_constraintCircleRadius="80dp"
+        app:layout_constraintCircleAngle="270"
+        app:pressedTranslationZ="20dp"
+        app:rippleColor="#1f000000" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="10dp"
+        app:layout_constraintCircle="@+id/btn_action"
+        app:layout_constraintCircleRadius="80dp"
+        app:layout_constraintCircleAngle="315"
+        app:pressedTranslationZ="20dp"
+        app:rippleColor="#1f000000"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="visible"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="10dp"
+        app:fabSize="normal"
+        app:layout_constraintCircle="@+id/btn_action"
+        app:layout_constraintCircleRadius="80dp"
+        app:layout_constraintCircleAngle="360"
+        app:pressedTranslationZ="20dp"
+        app:rippleColor="#1f000000"/>
+
+   <!-- <android.support.constraint.Group
+        android:id="@+id/gp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btn_1"/>
+
+    <android.support.constraint.Group
+        android:id="@+id/gp_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="btn_2"/>-->
+
+    <android.support.constraint.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="btn_1, btn_2, btn_3"/>
+
+</android.support.constraint.ConstraintLayout>
