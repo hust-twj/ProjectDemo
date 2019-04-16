@@ -10,6 +10,7 @@ import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.event_bus.event.ChildEvent;
 import com.hust_twj.zademo.event_bus.event.FatherEvent;
 import com.hust_twj.zademo.event_bus.event.MyEvent;
+import com.hust_twj.zademo.event_bus.event.StickyEvent;
 import com.hust_twj.zademo.utils.LogUtils;
 import com.hust_twj.zademo.utils.ToastUtils;
 
@@ -44,7 +45,8 @@ public class EventBusDemoActivity extends Activity {
     }
 
     public void sendSticky(View view) {
-        eventBus.postSticky(new FatherEvent("粘性广播"));
+        EventBus.getDefault().postSticky(new StickyEvent("粘性广播"));
+        //eventBus.postSticky(new StickyEvent("粘性广播"));
         ToastUtils.toast(this, "已发送");
     }
 
@@ -72,14 +74,14 @@ public class EventBusDemoActivity extends Activity {
 
     @Subscribe
     public void onEventReceive(MyEvent event){
-        LogUtils.e("twj","this MyEvent receive: ");
+        LogUtils.e("twj","this MyEvent receive: " + event.toString());
 
     }
 
     //允许一个类有多个参数相同的订阅方法。
     @Subscribe
     public void onEventReceive2(MyEvent event){
-        LogUtils.e("twj","this MyEvent receive: ");
+        LogUtils.e("twj","this MyEvent receive: " + event.toString());
 
     }
 
