@@ -26,17 +26,21 @@ public class StickyActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.builder().build().register(this);
 
         setContentView(R.layout.activity_sticky);
 
         mTvSticky = findViewById(R.id.tv_sticky);
+
+        //注册需要放在获取控件之后
+        Event.register(this);
+
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        EventBus.builder().build().unregister(this);
+        Event.unregister(this);
+        EventBus.getDefault().removeAllStickyEvents();
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)

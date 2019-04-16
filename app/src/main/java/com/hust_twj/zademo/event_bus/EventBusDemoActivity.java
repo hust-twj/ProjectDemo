@@ -14,21 +14,13 @@ import com.hust_twj.zademo.event_bus.event.StickyEvent;
 import com.hust_twj.zademo.utils.LogUtils;
 import com.hust_twj.zademo.utils.ToastUtils;
 
-import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 public class EventBusDemoActivity extends Activity {
 
-    private EventBus eventBus;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        //使用建造者模式，构建EventBus实例
-        eventBus = EventBus.builder().eventInheritance(true).build();
-        eventBus.register(this);
-        //EventBus.getDefault().register(this);
 
         setContentView(R.layout.activity_event_bus_demo);
 
@@ -36,17 +28,19 @@ public class EventBusDemoActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //事件继承：post一个事件A时，若A是B的子类或者A实现了接口B，订阅B的订阅者也能接收到事件。
-                eventBus.post(new ChildEvent("haha")); //ChildEvent  FatherEvent 和 MyEvent 均可以收到
+                Event.post(new ChildEvent("haha")); //ChildEvent  FatherEvent 和 MyEvent 均可以收到
 
-                // EventBus.getDefault().post(new FatherEvent("haha"));  -> FatherEvent 和 MyEvent可以收到
             }
         });
+
+        //使用建造者模式，构建EventBus实例
+        //eventBus = EventBus.builder().eventInheritance(true).build();
+        Event.register(this);
 
     }
 
     public void sendSticky(View view) {
-        EventBus.getDefault().postSticky(new StickyEvent("粘性广播"));
-        //eventBus.postSticky(new StickyEvent("粘性广播"));
+        Event.postSticky(new StickyEvent("粘性广播"));
         ToastUtils.toast(this, "已发送");
     }
 
@@ -57,7 +51,7 @@ public class EventBusDemoActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        eventBus.unregister(this);
+        Event.unregister(this);
     }
 
     @Subscribe
