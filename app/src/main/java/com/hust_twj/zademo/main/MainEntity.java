@@ -35,4 +35,6 @@ public class MainEntity implements Serializable {
     public static final int INDEX_UI_WIDGET = 20;
     public static final int INDEX_AIDL = 21;
     public static final int INDEX_VIEW= 22;
+    public static final int INDEX_UI_PARAMS = 23;
+
 }

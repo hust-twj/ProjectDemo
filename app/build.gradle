@@ -6,6 +6,38 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.mob.sdk'
 
+task helloWorld {
+    group = "Hello World"
+    println("111 Hello World")
+    doLast {
+        println("Hello World!")
+    }
+    println("222 Hello World")
+}
+
+task hello {
+    group = "hello"
+    println("111 hello")
+    doLast {
+        println("Hello!")
+    }
+    println("222 hello")
+}
+
+
+task goForit<< {
+    println "go for it"
+}
+
+task go(dependsOn:hello) << {
+    println("go")
+}
+
+def Task nihao = task("nihao")
+nihao.doLast {
+    println("nihao --- haha")
+}
+
 MobSDK {
     appKey "29fe80bb5ba40"
     appSecret "c6972df17f80f8e04484b26afaed4780"
