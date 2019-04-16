@@ -12,5 +12,35 @@
         android:background="@color/red"
         android:gravity="center"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/tv_send_sticky"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:text="发送粘性消息"
+            android:background="@color/red"
+            android:gravity="center"
+            android:onClick="sendSticky"/>
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="1dp" />
+
+        <TextView
+            android:id="@+id/tv_goto"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:text="发跳转"
+            android:background="@color/red"
+            android:gravity="center"
+            android:onClick="goTo"/>
+    </LinearLayout>
+
 
 </LinearLayout>

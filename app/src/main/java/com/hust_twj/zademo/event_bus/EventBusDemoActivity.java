@@ -1,6 +1,7 @@
 package com.hust_twj.zademo.event_bus;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.hust_twj.zademo.event_bus.event.ChildEvent;
 import com.hust_twj.zademo.event_bus.event.FatherEvent;
 import com.hust_twj.zademo.event_bus.event.MyEvent;
 import com.hust_twj.zademo.utils.LogUtils;
+import com.hust_twj.zademo.utils.ToastUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -39,6 +41,15 @@ public class EventBusDemoActivity extends Activity {
             }
         });
 
+    }
+
+    public void sendSticky(View view) {
+        eventBus.postSticky(new FatherEvent("粘性广播"));
+        ToastUtils.toast(this, "已发送");
+    }
+
+    public void goTo(View view) {
+        startActivity(new Intent(this, StickyActivity.class));
     }
 
     @Override
