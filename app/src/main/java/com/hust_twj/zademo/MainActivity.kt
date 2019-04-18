@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
+import com.hust_twj.zademo.down_load.DownloadActivity
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.HandlerActivity
@@ -94,6 +95,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_VIEW -> startActivity(Intent(this@MainActivity, ViewActivity::class.java))
 
                     MainEntity.INDEX_UI_PARAMS -> startActivity(Intent(this@MainActivity, UIParamsActivity::class.java))
+
+                    MainEntity.INDEX_DOWNLOAD -> startActivity(Intent(this@MainActivity, DownloadActivity::class.java))
 
                 }
 

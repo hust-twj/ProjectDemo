@@ -150,6 +150,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity23.title = "UI参数";
         mDataList.add(entity23);
 
+        MainEntity entity24 = new MainEntity();
+        entity24.index = MainEntity.INDEX_DOWNLOAD;
+        entity24.title = "下载 断点续传 ";
+        mDataList.add(entity24);
+
         setDataList(mDataList);
     }
 

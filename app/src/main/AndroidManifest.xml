@@ -89,6 +89,8 @@
 
         <activity android:name=".ui_params.UIParamsActivity"/>
 
+        <activity android:name=".down_load.DownloadActivity"/>
+
     </application>
 
 </manifest>
