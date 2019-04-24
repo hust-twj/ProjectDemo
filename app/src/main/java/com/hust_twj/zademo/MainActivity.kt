@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
+import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.down_load.DownloadActivity
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
@@ -97,6 +98,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_UI_PARAMS -> startActivity(Intent(this@MainActivity, UIParamsActivity::class.java))
 
                     MainEntity.INDEX_DOWNLOAD -> startActivity(Intent(this@MainActivity, DownloadActivity::class.java))
+
+                    MainEntity.INDEX_BLOCK_QUEUE -> startActivity(Intent(this@MainActivity, BlockQueueActivity::class.java))
 
                 }
 

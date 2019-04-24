@@ -91,6 +91,8 @@
 
         <activity android:name=".down_load.DownloadActivity"/>
 
+        <activity android:name=".block_queue.BlockQueueActivity"/>
+
     </application>
 
 </manifest>
