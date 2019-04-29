@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.down_load;
+package com.hust_twj.zademo.download;
 
 import android.app.Activity;
 import android.os.Bundle;
