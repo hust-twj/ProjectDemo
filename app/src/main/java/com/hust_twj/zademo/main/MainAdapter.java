@@ -155,6 +155,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity24.title = "下载 断点续传 ";
         mDataList.add(entity24);
 
+        MainEntity entity25 = new MainEntity();
+        entity25.index = MainEntity.INDEX_BLOCK_QUEUE;
+        entity25.title = "BlockQueue（生产者/消费者模式）";
+        mDataList.add(entity25);
+
         setDataList(mDataList);
     }
 
