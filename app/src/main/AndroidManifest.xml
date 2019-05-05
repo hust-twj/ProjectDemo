@@ -93,6 +93,8 @@
 
         <activity android:name=".block_queue.BlockQueueActivity"/>
 
+        <activity android:name=".butter_knife.ButterKnifeActivity"/>
+
     </application>
 
 </manifest>

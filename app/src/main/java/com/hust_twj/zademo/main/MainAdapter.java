@@ -160,6 +160,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity25.title = "BlockQueue（生产者/消费者模式）";
         mDataList.add(entity25);
 
+        MainEntity entity26 = new MainEntity();
+        entity26.index = MainEntity.INDEX_BUTTER_KNIFE;
+        entity26.title = "ButterKnife";
+        mDataList.add(entity26);
+
         setDataList(mDataList);
     }
 

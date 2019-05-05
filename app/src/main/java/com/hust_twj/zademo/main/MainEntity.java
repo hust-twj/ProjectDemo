@@ -38,5 +38,6 @@ public class MainEntity implements Serializable {
     public static final int INDEX_UI_PARAMS = 23;
     public static final int INDEX_DOWNLOAD = 24;
     public static final int INDEX_BLOCK_QUEUE = 25;
+    public static final int INDEX_BUTTER_KNIFE = 26;
 
 }
