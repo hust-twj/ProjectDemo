@@ -33,5 +33,21 @@ public class ListActivity extends Activity {
 
         TextView textView = findViewById(R.id.tv_list);
         textView.setText(list.toString());
+
+        //交集
+
+        //并集
+
+        //差集
+        List<String> aList = new ArrayList<>();
+        aList.add("1");
+        aList.add("2");
+        List<String> bList = new ArrayList<>();
+        bList.add("2");
+        bList.add("3");
+        bList.add(null);
+        aList.removeAll(bList);
+        LogUtils.e("twj123", aList.toString());
+
     }
 }
