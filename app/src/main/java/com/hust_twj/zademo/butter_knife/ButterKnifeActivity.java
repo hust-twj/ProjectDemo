@@ -3,19 +3,37 @@ package com.hust_twj.zademo.butter_knife;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.LogUtils;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
-public class ButterKnifeActivity extends AppCompatActivity{
+public class ButterKnifeActivity extends AppCompatActivity {
+
+    @BindView(R.id.tv_butter_knife)
+    TextView mTvButterKnife;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_bottom_sheet);
+        setContentView(R.layout.activity_butter_knife);
+
+        ButterKnife.bind(this);
+
+        mTvButterKnife.setText("haha");
 
     }
 
+    @OnClick(R.id.tv_butter_knife)
+    public void click(View view) {
+        LogUtils.e("twj124", "点击了黄油刀");
+    }
 
 }
