@@ -43,37 +43,37 @@ public class DemoApplication extends Application {
         registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                LogUtils.e("tw234", "onActivityCreated");
+                //LogUtils.e("tw234", "onActivityCreated");
             }
 
             @Override
             public void onActivityStarted(Activity activity) {
-                LogUtils.e("tw234", "onActivityStarted");
+                // LogUtils.e("tw234", "onActivityStarted");
             }
 
             @Override
             public void onActivityResumed(Activity activity) {
-                LogUtils.e("tw234", "onActivityResumed");
+                // LogUtils.e("tw234", "onActivityResumed");
             }
 
             @Override
             public void onActivityPaused(Activity activity) {
-                LogUtils.e("tw234", "onActivityPaused");
+                //LogUtils.e("tw234", "onActivityPaused");
             }
 
             @Override
             public void onActivityStopped(Activity activity) {
-                LogUtils.e("tw234", "onActivityStopped");
+                //LogUtils.e("tw234", "onActivityStopped");
             }
 
             @Override
             public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-                LogUtils.e("tw234", "onActivitySaveInstanceState");
+                //LogUtils.e("tw234", "onActivitySaveInstanceState");
             }
 
             @Override
             public void onActivityDestroyed(Activity activity) {
-                LogUtils.e("tw234", "onActivityDestroyed");
+                //LogUtils.e("tw234", "onActivityDestroyed");
 
             }
         });

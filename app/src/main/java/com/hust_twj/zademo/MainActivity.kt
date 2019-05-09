@@ -13,6 +13,7 @@ import com.hust_twj.zademo.download.DownloadActivity
 import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.HandlerActivity
+import com.hust_twj.zademo.jvm.JVMActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
@@ -103,6 +104,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_BLOCK_QUEUE -> startActivity(Intent(this@MainActivity, BlockQueueActivity::class.java))
 
                     MainEntity.INDEX_BUTTER_KNIFE -> startActivity(Intent(this@MainActivity, ButterKnifeActivity::class.java))
+
+                    MainEntity.INDEX_JVM -> startActivity(Intent(this@MainActivity, JVMActivity::class.java))
 
                 }
 

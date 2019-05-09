@@ -95,6 +95,9 @@
 
         <activity android:name=".butter_knife.ButterKnifeActivity"/>
 
+        <activity android:name=".jvm.JVMActivity"/>
+        <activity android:name=".jvm.ReferenceQueueActivity"/>
+
     </application>
 
 </manifest>
