@@ -4,11 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.util.SparseLongArray;
 import android.view.View;
 import android.widget.TextView;
 
+import com.gyf.barlibrary.ImmersionBar;
 import com.hust_twj.zademo.R;
 
 /**
@@ -31,6 +30,8 @@ public class PublishActivity extends Activity implements View.OnClickListener{
 
         mTvSelectTopic.setOnClickListener(this);
         mTvTopicSelected.setOnClickListener(this);
+
+        ImmersionBar.with(this).init();
     }
 
     @Override
