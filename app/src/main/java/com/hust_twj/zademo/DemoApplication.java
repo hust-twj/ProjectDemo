@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 
 import com.hust_twj.zademo.utils.CrashHandler;
-import com.hust_twj.zademo.utils.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
 
 /**
@@ -26,6 +25,7 @@ public class DemoApplication extends Application {
         if (LeakCanary.isInAnalyzerProcess(this)) {
             return;
         }
+
         LeakCanary.install(this);
 
         registerLifeCallback();

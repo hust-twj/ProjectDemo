@@ -17,19 +17,19 @@
         android:background="@color/red"/>
 
     <TextView
-        android:id="@+id/tv_handler"
+        android:id="@+id/tv_handler_leak"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Handler"
+        android:text="Handler 泄露"
         android:gravity="center"
         android:background="@color/red"
         android:layout_marginTop="30dp"/>
 
     <TextView
-        android:id="@+id/tv_non_static"
+        android:id="@+id/tv_non_static_leak"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="非静态内部类"
+        android:text="非静态内部类 泄露"
         android:gravity="center"
         android:background="@color/red"
         android:layout_marginTop="30dp"/>

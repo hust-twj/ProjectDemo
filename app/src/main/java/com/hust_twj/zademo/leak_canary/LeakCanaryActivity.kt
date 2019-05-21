@@ -1,6 +1,7 @@
 package com.hust_twj.zademo.leak_canary
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 
 import com.hust_twj.zademo.R
@@ -17,11 +18,11 @@ class LeakCanaryActivity : Activity() {
 
         setContentView(R.layout.activity_leak_canary)
 
-        tv_handler.setOnClickListener {
-
+        tv_handler_leak.setOnClickListener {
+            startActivity(Intent(this@LeakCanaryActivity, HandlerLeakActivity::class.java))
         }
 
-        tv_non_static.setOnClickListener {
+        tv_non_static_leak.setOnClickListener {
 
         }
 

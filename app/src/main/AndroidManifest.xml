@@ -84,6 +84,10 @@
         <activity android:name=".aidl.AidlActivity"/>
 
         <activity android:name=".leak_canary.LeakCanaryActivity"/>
+        <activity android:name=".leak_canary.HandlerLeakActivity"/>
+        <activity android:name=".leak_canary.SingletonLeakActivity"/>
+        <activity android:name=".leak_canary.StaticLeakActivity"/>
+        <activity android:name=".leak_canary.ThreadLeakActivity"/>
 
         <activity android:name=".view.ViewActivity"/>
 

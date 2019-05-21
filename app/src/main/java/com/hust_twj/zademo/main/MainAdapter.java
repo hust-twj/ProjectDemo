@@ -170,6 +170,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity27.title = "JVM";
         mDataList.add(entity27);
 
+        MainEntity entity28 = new MainEntity();
+        entity28.index = MainEntity.INDEX_LEAK_CANARY;
+        entity28.title = "LeakCanary";
+        mDataList.add(entity28);
+
         setDataList(mDataList);
     }
 

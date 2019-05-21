@@ -14,6 +14,7 @@ import com.hust_twj.zademo.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.HandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
+import com.hust_twj.zademo.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
@@ -106,6 +107,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_BUTTER_KNIFE -> startActivity(Intent(this@MainActivity, ButterKnifeActivity::class.java))
 
                     MainEntity.INDEX_JVM -> startActivity(Intent(this@MainActivity, JVMActivity::class.java))
+
+                    MainEntity.INDEX_LEAK_CANARY -> startActivity(Intent(this@MainActivity, LeakCanaryActivity::class.java))
 
                 }
 
