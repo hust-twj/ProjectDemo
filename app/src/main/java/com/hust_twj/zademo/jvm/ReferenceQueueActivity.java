@@ -1,11 +1,12 @@
-package com.twj.zademo.jvm;
+package com.hust_twj.zademo.jvm;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.twj.zademo.R;
-import com.twj.zademo.utils.LogUtils;
+
+import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.LogUtils;
 
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;

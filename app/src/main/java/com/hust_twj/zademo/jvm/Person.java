@@ -1,4 +1,4 @@
-package com.twj.zademo.jvm;
+package com.hust_twj.zademo.jvm;
 
 import java.io.Serializable;
 
