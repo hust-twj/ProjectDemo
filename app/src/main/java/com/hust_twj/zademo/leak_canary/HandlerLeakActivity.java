@@ -4,18 +4,18 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.LogUtils;
 
 /**
+ * handler 内存泄露
  * Created by Wenjing.Tang
- * on 2019/3/30
+ * on 2019/5/5
  */
 public class HandlerLeakActivity extends Activity {
 
     private Handler mHandler = new Handler();
-    private TextView mTextView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,12 +23,11 @@ public class HandlerLeakActivity extends Activity {
 
         setContentView(R.layout.activity_handler_leak);
 
-        mTextView = findViewById(R.id.text);
         //模拟内存泄露
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mTextView.setText("twj");
+                LogUtils.e("twj","haha");
             }
         }, 10 * 1000);
 

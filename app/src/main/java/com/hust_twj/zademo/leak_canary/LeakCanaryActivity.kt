@@ -18,12 +18,16 @@ class LeakCanaryActivity : Activity() {
 
         setContentView(R.layout.activity_leak_canary)
 
+        tv_singleton.setOnClickListener {
+            startActivity(Intent(this@LeakCanaryActivity, SingletonLeakActivity::class.java))
+        }
+
         tv_handler_leak.setOnClickListener {
             startActivity(Intent(this@LeakCanaryActivity, HandlerLeakActivity::class.java))
         }
 
         tv_non_static_leak.setOnClickListener {
-
+            startActivity(Intent(this@LeakCanaryActivity, NonStaticLeakActivity::class.java))
         }
 
     }

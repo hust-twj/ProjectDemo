@@ -6,15 +6,20 @@ import android.support.annotation.Nullable;
 
 import com.hust_twj.zademo.R;
 
+/**
+ * 单例 内存泄露
+ * Created by Wenjing.Tang
+ * on 2019/5/5
+ */
 public class SingletonLeakActivity extends Activity {
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_leak_canary);
+        setContentView(R.layout.activity_singleton_canary);
 
+        CommonUtils.getInstance(this);
 
     }
 
