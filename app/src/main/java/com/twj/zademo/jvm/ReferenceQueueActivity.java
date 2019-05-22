@@ -1,11 +1,11 @@
-package com.hust_twj.zademo.jvm;
+package com.twj.zademo.jvm;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.utils.LogUtils;
+import com.twj.zademo.R;
+import com.twj.zademo.utils.LogUtils;
 
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
@@ -23,7 +23,7 @@ public class ReferenceQueueActivity extends Activity {
 
         setContentView(R.layout.activity_reference_queue);
 
-        test();
+        referenceQueueTest();
 
         // test2();
     }
@@ -49,10 +49,19 @@ public class ReferenceQueueActivity extends Activity {
 
     }
 
-    private void test() {
+    private void referenceQueueTest() {
         ReferenceQueue mReferenceQueue = new ReferenceQueue<>();
+
+        Person person1 = new Person("张无忌1", 99);
+        Person person2 = new Person("张无忌2", 999);
+
         // 定义一个弱引用对象引用, 并指定引用队列为 mReferenceQueue
-        WeakReference<Object> weakReference = new WeakReference<Object>(new Object(), mReferenceQueue);
+        WeakReference<Object> weakReference = new WeakReference<Object>(person1, mReferenceQueue);
+        WeakReference<Object> weakReference2 = new WeakReference<Object>(person2, mReferenceQueue);
+
+        person1 = null;
+        person2 = null;
+
         // 触发应用进行垃圾回收
         Runtime.getRuntime().gc();
 
@@ -63,11 +72,15 @@ public class ReferenceQueueActivity extends Activity {
             e.printStackTrace();
         }
 
-        LogUtils.e("twj124", mReferenceQueue.toString());
+        // Reference reference = mReferenceQueue.poll();
+        Reference reference;
 
         // 遍历 mReferenceQueue，取出所有弱引用
-        while (mReferenceQueue.poll() != null) {
-            LogUtils.e("twj124", "============ ref in queue");
+        while ((reference = (WeakReference)mReferenceQueue.poll()) != null) {
+            LogUtils.e("twj124", "------  " + reference);
+            if (reference.get() instanceof Person) {
+                LogUtils.e("twj124", "------  " + reference.get().toString());
+            }
         }
     }
 
