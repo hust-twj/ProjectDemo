@@ -80,6 +80,7 @@
         <activity android:name=".ui_widget.activity.ProgressBarActivity"/>
         <activity android:name=".ui_widget.activity.GradientRingActivity"/>
         <activity android:name=".ui_widget.activity.ConstraintGroupActivity"/>
+        <activity android:name=".ui_widget.activity.FragmentActivity"/>
 
         <activity android:name=".aidl.AidlActivity"/>
 

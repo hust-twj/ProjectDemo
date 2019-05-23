@@ -38,4 +38,8 @@ public class UIWidgetActivity extends Activity {
         startActivity(new Intent(this, ConstraintGroupActivity.class));
     }
 
+    public void goFragment(View view){
+        startActivity(new Intent(this, FragmentActivity.class));
+    }
+
 }
