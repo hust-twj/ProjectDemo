@@ -41,6 +41,7 @@ public class MainEntity implements Serializable {
     public static final int INDEX_BUTTER_KNIFE = 26;
     public static final int INDEX_JVM = 27;
     public static final int INDEX_LEAK_CANARY = 28;
+    public static final int INDEX_THREAD = 29;
 
 
 }

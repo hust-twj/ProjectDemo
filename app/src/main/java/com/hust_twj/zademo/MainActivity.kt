@@ -30,6 +30,7 @@ import com.hust_twj.zademo.remote_view.RemoteViewActivity
 import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
+import com.hust_twj.zademo.thread.ThreadActivity
 import com.hust_twj.zademo.toast.ToastActivity
 import com.hust_twj.zademo.ui_params.UIParamsActivity
 import com.hust_twj.zademo.ui_widget.activity.UIWidgetActivity
@@ -109,6 +110,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_JVM -> startActivity(Intent(this@MainActivity, JVMActivity::class.java))
 
                     MainEntity.INDEX_LEAK_CANARY -> startActivity(Intent(this@MainActivity, LeakCanaryActivity::class.java))
+
+                    MainEntity.INDEX_THREAD -> startActivity(Intent(this@MainActivity, ThreadActivity::class.java))
 
                 }
 

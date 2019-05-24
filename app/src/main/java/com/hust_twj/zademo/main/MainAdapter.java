@@ -175,6 +175,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         entity28.title = "LeakCanary";
         mDataList.add(entity28);
 
+        MainEntity entity29 = new MainEntity();
+        entity29.index = MainEntity.INDEX_THREAD;
+        entity29.title = "多线程 并发";
+        mDataList.add(entity29);
+
         setDataList(mDataList);
     }
 
