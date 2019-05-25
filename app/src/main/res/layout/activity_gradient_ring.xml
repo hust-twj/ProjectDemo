@@ -30,7 +30,7 @@
         android:layout_below="@+id/layout_voice_record"
         android:layout_centerInParent="true">
 
-        <com.hust_twj.zademo.ui_widget.VoiceProgressRing
+        <com.hust_twj.zademo.ui_widget.widget.VoiceProgressRing
             android:id="@+id/progress_ring"
             android:layout_width="106dp"
             android:layout_height="106dp"
@@ -84,7 +84,7 @@
 
     </LinearLayout>
 
-    <com.hust_twj.zademo.ui_widget.RoundLightBarView
+    <com.hust_twj.zademo.ui_widget.widget.RoundLightBarView
         android:id="@+id/round_bar_view"
         android:layout_width="116dp"
         android:layout_height="116dp"
@@ -129,7 +129,7 @@
     </LinearLayout>
 
 
-    <com.hust_twj.zademo.ui_widget.activity.CircularProgressView
+    <com.hust_twj.zademo.ui_widget.widget.CircularProgressView
         android:id="@+id/circle_progress_ring"
         android:layout_width="106dp"
         android:layout_height="106dp"

@@ -78,4 +78,19 @@
         android:layout_below="@+id/tv_constraint_group"
         android:layout_marginTop="40dp"/>
 
+    <TextView
+        android:id="@+id/tv_list_count_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列表倒计时"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginStart="100dp"
+        android:onClick="goListCountDown"
+        android:layout_below="@+id/tv_constraint_group"
+        android:layout_marginTop="40dp"/>
+
 </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.ui_widget;
+package com.hust_twj.zademo.ui_widget.widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;

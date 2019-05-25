@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.ui_widget;
+package com.hust_twj.zademo.ui_widget.widget;
 
 import android.app.Activity;
 import android.widget.CompoundButton;

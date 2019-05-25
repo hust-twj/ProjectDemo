@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.ui_widget.RoundLightBarView;
-import com.hust_twj.zademo.ui_widget.VoiceProgressRing;
+import com.hust_twj.zademo.ui_widget.widget.CircularProgressView;
+import com.hust_twj.zademo.ui_widget.widget.RoundLightBarView;
+import com.hust_twj.zademo.ui_widget.widget.VoiceProgressRing;
 
 
 /**

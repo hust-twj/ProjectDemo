@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.ui_widget.FuParamsAdjustPanel;
+import com.hust_twj.zademo.ui_widget.widget.FuParamsAdjustPanel;
 
 /**
  * Created by hust_twj
@@ -40,6 +40,10 @@ public class UIWidgetActivity extends Activity {
 
     public void goFragment(View view){
         startActivity(new Intent(this, FragmentActivity.class));
+    }
+
+    public void goListCountDown(View view) {
+        startActivity(new Intent(this, ListCountDownActivity.class));
     }
 
 }
