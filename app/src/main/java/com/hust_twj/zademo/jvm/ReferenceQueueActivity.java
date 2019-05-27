@@ -3,9 +3,11 @@ package com.hust_twj.zademo.jvm;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.jvm.utils.KeyedWeakReference;
 import com.hust_twj.zademo.utils.LogUtils;
 
 import java.lang.ref.Reference;
@@ -24,8 +26,6 @@ public class ReferenceQueueActivity extends Activity {
 
         setContentView(R.layout.activity_reference_queue);
 
-        referenceQueueTest();
-
         // test2();
     }
 
@@ -35,7 +35,7 @@ public class ReferenceQueueActivity extends Activity {
         WeakReference reference = new WeakReference<Object>(new Object(), queue);
         LogUtils.e("twj124", reference);
         // 当GC执行后，由于是弱引用，所以回收该object对象，并且置于pending上，此时reference的状态为PENDING
-        System.gc();
+        runGc();
 
         /* ReferenceHandler从pending中取下该元素，并且将该元素放入到queue中，此时Reference状态为ENQUEUED，Reference.queue = ReferenceENQUEUED */
 
@@ -50,39 +50,55 @@ public class ReferenceQueueActivity extends Activity {
 
     }
 
+    public void gcTrigger(View view) {
+        referenceQueueTest();
+    }
+
+    @SuppressWarnings("unchecked")
     private void referenceQueueTest() {
         ReferenceQueue mReferenceQueue = new ReferenceQueue<>();
 
-        Person person1 = new Person("张无忌1", 99);
-        Person person2 = new Person("张无忌2", 999);
+        Person wuji = new Person("张无忌", 20);
+        Person zhaoming = new Person("赵敏", 18);
 
         // 定义一个弱引用对象引用, 并指定引用队列为 mReferenceQueue
-        WeakReference<Object> weakReference = new WeakReference<Object>(person1, mReferenceQueue);
-        WeakReference<Object> weakReference2 = new WeakReference<Object>(person2, mReferenceQueue);
+        KeyedWeakReference weakReference = new KeyedWeakReference(wuji, "1", "wuji", mReferenceQueue);
+        KeyedWeakReference weakReference2 = new KeyedWeakReference(zhaoming, "2", "zhaoming", mReferenceQueue);
 
-        person1 = null;
-        person2 = null;
+        wuji = null;
+        zhaoming = null;
 
         // 触发应用进行垃圾回收
-        Runtime.getRuntime().gc();
+        runGc();
 
-        // 延时1000ms,等待gc完成
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Reference reference = mReferenceQueue.poll();
-        Reference reference;
+        KeyedWeakReference reference;
 
         // 遍历 mReferenceQueue，取出所有弱引用
-        while ((reference = (WeakReference)mReferenceQueue.poll()) != null) {
-            LogUtils.e("twj124", "------  " + reference);
-            if (reference.get() instanceof Person) {
-                LogUtils.e("twj124", "------  " + reference.get().toString());
-            }
+        while ((reference = (KeyedWeakReference) mReferenceQueue.poll()) != null) {
+            LogUtils.e("twj124", "------  " + reference.key + "   " + reference.name);
         }
     }
+
+    public void runGc() {
+        // Code taken from AOSP FinalizationTest:
+        // https://android.googlesource.com/platform/libcore/+/master/support/src/test/java/libcore/
+        // java/lang/ref/FinalizationTester.java
+        // System.gc() does not garbage collect every time. Runtime.gc() is
+        // more likely to perform a gc.
+        Runtime.getRuntime().gc();
+        enqueueReferences();
+        System.runFinalization();
+    }
+
+    private void enqueueReferences() {
+        // Hack. We don't have a programmatic way to wait for the reference queue daemon to move
+        // references to the appropriate queues.
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new AssertionError();
+        }
+    }
+
 
 }

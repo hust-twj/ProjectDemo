@@ -12,9 +12,10 @@
         android:id="@+id/tv_activity"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="reference_queue"
+        android:text="点我开始GC"
         android:gravity="center"
-        android:background="@color/red"/>
+        android:background="@color/red"
+        android:onClick="gcTrigger"/>
 
 
 </LinearLayout>
