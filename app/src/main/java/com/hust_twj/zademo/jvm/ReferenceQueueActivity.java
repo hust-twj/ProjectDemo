@@ -3,6 +3,7 @@ package com.hust_twj.zademo.jvm;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 
 
@@ -75,7 +76,7 @@ public class ReferenceQueueActivity extends Activity {
 
         // 遍历 mReferenceQueue，取出所有弱引用
         while ((reference = (KeyedWeakReference) mReferenceQueue.poll()) != null) {
-            LogUtils.e("twj124", "------  " + reference.key + "   " + reference.name);
+            Log.e("twj124", "key: " + reference.key + " | name: " + reference.name);
         }
     }
 

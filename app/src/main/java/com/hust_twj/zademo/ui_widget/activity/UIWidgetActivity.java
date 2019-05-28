@@ -46,4 +46,11 @@ public class UIWidgetActivity extends Activity {
         startActivity(new Intent(this, ListCountDownActivity.class));
     }
 
+    public void goArcRv(View view) {
+        startActivity(new Intent(this, ArcRecycleViewActivity.class));
+    }
+
+    public void goCircleRv(View view) {
+        startActivity(new Intent(this, CircleRecycleViewActivity.class));
+    }
 }

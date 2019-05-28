@@ -17,4 +17,6 @@
     <string name="fu_cheek_thinning">瘦脸</string>
     <string name="fu_eye_enlarging">大眼</string>
 
+    <string name="tag_is_center">tagIsCenter</string>
+
 </resources>
