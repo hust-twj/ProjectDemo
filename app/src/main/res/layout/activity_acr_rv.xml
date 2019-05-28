@@ -6,7 +6,7 @@
     <com.hust_twj.zademo.ui_widget.widget.CircleRecyclerView
         android:id="@+id/rv_acr"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     </com.hust_twj.zademo.ui_widget.widget.CircleRecyclerView>
 

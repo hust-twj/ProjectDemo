@@ -32,7 +32,6 @@ public class ArcRecycleViewActivity extends Activity {
     private ItemViewMode mItemViewMode;
     private LinearLayoutManager mLayoutManager;
     private List<Integer> mImgList;
-    private boolean mIsNotLoop;
 
     private Integer[] mImgs = {
             R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4,
@@ -53,15 +52,7 @@ public class ArcRecycleViewActivity extends Activity {
         mCircleRecyclerView.setLayoutManager(mLayoutManager);
         mCircleRecyclerView.setViewMode(mItemViewMode);
         mCircleRecyclerView.setNeedCenterForce(true);
-        mCircleRecyclerView.setNeedLoop(!mIsNotLoop);
-
-        mCircleRecyclerView.setOnCenterItemClickListener(new CircleRecyclerView.OnCenterItemClickListener() {
-            @Override
-            public void onCenterItemClick(View v) {
-                LogUtils.e("twj", "Center Clicked");
-            }
-        });
-
+        mCircleRecyclerView.setNeedLoop(true);
 
         mImgList = Arrays.asList(mImgs);
         Collections.shuffle(mImgList);
@@ -81,20 +72,25 @@ public class ArcRecycleViewActivity extends Activity {
                     h = new VH(LayoutInflater.from(ArcRecycleViewActivity.this)
                             .inflate(R.layout.item_v, parent, false));
             }
-
             return h;
         }
 
         @Override
-        public void onBindViewHolder(VH holder, int position) {
+        public void onBindViewHolder(final VH holder, int position) {
             holder.tv.setText("Number :" + (position % mImgList.size()));
             holder.iv.setBackground(getResources().getDrawable(mImgList.get(position % mImgList.size())));
 
+            holder.iv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    LogUtils.e("twj124", holder.tv.getText());
+                }
+            });
         }
 
         @Override
         public int getItemCount() {
-            return mIsNotLoop ? mImgList.size() : Integer.MAX_VALUE;
+            return Integer.MAX_VALUE;
         }
     }
 
