@@ -5,6 +5,30 @@
     android:layout_height="match_parent"
     tools:background="@color/white">
 
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="tv_1"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="tv_2"
+            android:gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"/>
+
+    </FrameLayout>
+
     <com.hust_twj.zademo.ui_params.TestTextView
         android:id="@+id/tv_ui_params"
         android:layout_width="100dp"

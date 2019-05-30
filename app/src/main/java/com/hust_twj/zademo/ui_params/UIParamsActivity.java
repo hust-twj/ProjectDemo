@@ -25,6 +25,9 @@ public class UIParamsActivity extends Activity {
     private TextView mTvAction;
     private ActionParentView mActionView;
 
+    private TextView mTv1, mTv2;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +39,16 @@ public class UIParamsActivity extends Activity {
         mTvScrollBy = findViewById(R.id.tv_scroll_by);
         mTvAction = findViewById(R.id.action_down_cancel);
         mActionView = findViewById(R.id.view_action);
+
+        //验证getTop()
+        mTv1 = findViewById(R.id.tv_1);
+        mTv2 = findViewById(R.id.tv_2);
+        mTv1.post(new Runnable() {
+            @Override
+            public void run() {
+                LogUtils.e("twj12345", mTv1.getTop() + "  " + mTv1.getY() + "  " + mTv2.getTop() + "  " + mTv2.getY());
+            }
+        });
 
         mTvUIParams.post(new Runnable() {
             @Override

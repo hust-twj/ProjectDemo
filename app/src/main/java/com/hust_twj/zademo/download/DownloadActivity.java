@@ -20,7 +20,7 @@ public class DownloadActivity extends Activity implements View.OnClickListener {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_ui_params);
+        setContentView(R.layout.activity_down_load);
 
         initViews();
         initListeners();
