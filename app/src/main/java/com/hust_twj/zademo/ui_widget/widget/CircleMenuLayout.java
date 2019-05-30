@@ -3,6 +3,7 @@ package com.hust_twj.zademo.ui_widget.widget;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.DensityUtils;
 
 import java.util.List;
 
@@ -26,10 +28,6 @@ public class CircleMenuLayout<T> extends ViewGroup {
      */
     private static final float RADIO_DEFAULT_CHILD_DIMENSION = 1 / 4f;
     /**
-     * 该容器的内边距,无视padding属性，如需边距请用该变量
-     */
-    private static final float RADIO_PADDING_LAYOUT = 1 / 12f;
-    /**
      * 当每秒移动角度达到该值时，认为是快速移动
      */
     private static final int FLINGABLE_VALUE = 300;
@@ -40,17 +38,9 @@ public class CircleMenuLayout<T> extends ViewGroup {
     private List<T> mItems;
     private int mRadius;
     /**
-     * 菜单的中心child的默认尺寸
-     */
-    private float RADIO_DEFAULT_CENTERITEM_DIMENSION = 1 / 3f;
-    /**
      * 当每秒移动角度达到该值时，认为是快速移动
      */
     private int mFlingableValue = FLINGABLE_VALUE;
-    /**
-     * 该容器的内边距,无视padding属性，如需边距请用该变量
-     */
-    private float mPadding;
     /**
      * 布局时的开始角度
      */
@@ -146,33 +136,16 @@ public class CircleMenuLayout<T> extends ViewGroup {
         int childSize = (int) (mRadius * RADIO_DEFAULT_CHILD_DIMENSION);
         // menu item测量模式
         int childMode = MeasureSpec.EXACTLY;
-
+        int makeMeasureSpec = MeasureSpec.makeMeasureSpec(childSize, childMode);
         // 迭代测量
         for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
-
             if (child.getVisibility() == GONE) {
                 continue;
             }
-
             // 计算menu item的尺寸；以及和设置好的模式，去对item进行测量
-            int makeMeasureSpec;
-
-           /* if (child.getId() == R.id.id_circle_menu_item_center) {
-                makeMeasureSpec = MeasureSpec.makeMeasureSpec(
-                        (int) (mRadius * RADIO_DEFAULT_CENTERITEM_DIMENSION),
-                        childMode);
-            } else {
-                makeMeasureSpec = MeasureSpec.makeMeasureSpec(childSize,
-                        childMode);
-            }*/
-            makeMeasureSpec = MeasureSpec.makeMeasureSpec(childSize,
-                    childMode);
             child.measure(makeMeasureSpec, makeMeasureSpec);
         }
-
-        //mPadding = RADIO_PADDING_LAYOUT * mRadius;
-        mPadding = 0;
     }
 
     /**
@@ -196,10 +169,14 @@ public class CircleMenuLayout<T> extends ViewGroup {
 
         int left, top;
         // menu item 的尺寸
-        int cWidth = (int) (layoutRadius * RADIO_DEFAULT_CHILD_DIMENSION);
+        int cWidth = DensityUtils.dp2px(getContext(), 50);
+        int cHeight = (int) (layoutRadius * RADIO_DEFAULT_CHILD_DIMENSION);
 
         // 根据menu item的个数，计算角度
         float angleDelay = 360 / ((childCount == 1) ? 1f : (childCount - 1f));
+
+        // 计算，中心点到menu item中心的距离
+        float tmp = layoutRadius / 2f - cWidth / 2f;
 
         // 遍历去设置menuitem的位置
         for (int i = 0; i < childCount; i++) {
@@ -210,46 +187,23 @@ public class CircleMenuLayout<T> extends ViewGroup {
 
             mStartAngle %= 360;
 
-            // 计算，中心点到menu item中心的距离
-            float tmp = layoutRadius / 2f - cWidth / 2f - mPadding;
-
             // tmp cosa 即menu item中心点的横坐标
             //left = layoutRadius / 2 + (int) Math.round(tmp * Math.cos(Math.toRadians(mStartAngle))  - cWidth / 2f);
             // tmp sina 即menu item的纵坐标
-            //top = layoutRadius / 2 + (int) Math.round(tmp * Math.sin(Math.toRadians(mStartAngle)) - cWidth / 2f);
+            //top = layoutRadius / 2 + (int) Math.round(tmp * Math.sin(Math.toRadians(mStartAngle)) /3f - cWidth / 2f);
 
-            left = layoutRadius / 2 - cWidth / 2 + (int) Math.round(tmp * Math.cos(Math.toRadians(mStartAngle)));
-            top = layoutRadius / 2 - cWidth / 2 + (int) Math.round(tmp * Math.sin(Math.toRadians(mStartAngle)) / 3);
+            left = layoutRadius / 2 - cWidth / 2 + (int)(tmp * Math.cos(Math.toRadians(mStartAngle)));
 
+            //控制y方向的大小，值=1时为圆；否则为椭圆；值大于1且越大，竖直方向椭圆（短）轴越短；
+            int yFactor = 3;
+            top = layoutRadius / 2 - cHeight / 2 +  (int) (tmp * Math.sin(Math.toRadians(mStartAngle)) / yFactor);
 
-           /* double xFactor = tmp * 1f / Math.sqrt( 1f + Math.tan(Math.toRadians(mStartAngle)) * Math.tan(Math.toRadians(mStartAngle)));;
-            double yFactor = tmp * Math.tan(Math.toRadians(mStartAngle))  / Math.sqrt( 1f + Math.tan(Math.toRadians(mStartAngle)) * Math.tan(Math.toRadians(mStartAngle)));
+            Log.e("twj124", "i: " + i + "   " + "  mStartAngle:" +   mStartAngle + "    "  + left);
 
-            if ((mStartAngle >=0 && mStartAngle < 90) || mStartAngle >270 && mStartAngle <= 360) {
-                left = layoutRadius / 2 + (int)xFactor;
-
-                top =  layoutRadius / 4 +(int) yFactor;
-            }else if (mStartAngle > 90 && mStartAngle < 270) {
-                left = layoutRadius / 2 - (int)xFactor;
-
-                top =  layoutRadius / 4 - (int) yFactor;
-            }else if (mStartAngle == 90) {
-                left = layoutRadius / 2;
-                top = layoutRadius / 2 + (int)tmp;
-            }else {
-                left = layoutRadius / 2;
-                top = layoutRadius / 2 - (int)tmp;
-            }
-*/
-
-            child.layout(left, top, left + cWidth, top + cWidth);
+            child.layout(left, top, left + cWidth, top + cHeight);
             // 叠加尺寸
             mStartAngle += angleDelay;
-
             applyToView(child);
-
-            // Log.e("twj124", "mStartAngle:  " + mStartAngle);
-
         }
 
     }
@@ -284,12 +238,14 @@ public class CircleMenuLayout<T> extends ViewGroup {
                 if (getQuadrant(x, y) == 1 || getQuadrant(x, y) == 4) {
                     mStartAngle += end - start;
                     mTmpAngle += end - start;
-                } else {// 二、三象限，色角度值是付值
+                } else {
+                    // 二、三象限，色角度值是负值
                     mStartAngle += start - end;
                     mTmpAngle += start - end;
                 }
                 // 重新布局
                 requestLayout();
+                Log.e("twj124","-----------------");
 
                 mLastX = x;
                 mLastY = y;
@@ -311,7 +267,6 @@ public class CircleMenuLayout<T> extends ViewGroup {
                 if (Math.abs(mTmpAngle) > NOCLICK_VALUE) {
                     return true;
                 }
-
                 break;
         }
         return super.dispatchTouchEvent(event);
@@ -345,7 +300,7 @@ public class CircleMenuLayout<T> extends ViewGroup {
      * @param v
      */
     public void applyToView(View v) {
-        float mScalingRatio = 0.001f;
+        float mScalingRatio = 0.0015f;
         float halfWidth = v.getWidth() * 0.5f;
         float parentHalfWidth = getMeasuredWidth() * 0.5f;
         float y = v.getY() / 2;
@@ -386,7 +341,6 @@ public class CircleMenuLayout<T> extends ViewGroup {
         } else {
             return tmpY >= 0 ? 3 : 2;
         }
-
     }
 
     /**
@@ -411,7 +365,6 @@ public class CircleMenuLayout<T> extends ViewGroup {
         }
 
         addMenuItems();
-
     }
 
     /**
@@ -450,8 +403,8 @@ public class CircleMenuLayout<T> extends ViewGroup {
         for (int i = 0; i < mMenuItemCount; i++) {
             final int j = i;
             View view = mInflater.inflate(mMenuItemLayoutId, this, false);
-            ImageView iv = (ImageView) view.findViewById(R.id.id_circle_menu_item_image);
-            TextView tv = (TextView) view.findViewById(R.id.id_circle_menu_item_text);
+            ImageView iv = view.findViewById(R.id.id_circle_menu_item_image);
+            TextView tv = view.findViewById(R.id.id_circle_menu_item_text);
 
             if (iv != null) {
                 iv.setVisibility(View.VISIBLE);
@@ -512,15 +465,6 @@ public class CircleMenuLayout<T> extends ViewGroup {
      */
     public void setFlingableValue(int mFlingableValue) {
         this.mFlingableValue = mFlingableValue;
-    }
-
-    /**
-     * 设置内边距的比例
-     *
-     * @param mPadding
-     */
-    public void setPadding(float mPadding) {
-        this.mPadding = mPadding;
     }
 
     /**

@@ -50,7 +50,11 @@ public class UIWidgetActivity extends Activity {
         startActivity(new Intent(this, ArcRecycleViewActivity.class));
     }
 
-    public void goCircleMenu(View view) {
+    public void goEllipseMenu(View view) {
         startActivity(new Intent(this, EllipseMenuActivity.class));
+    }
+
+    public void goCircleMenu(View view) {
+        startActivity(new Intent(this, CircleMenuActivity.class));
     }
 }

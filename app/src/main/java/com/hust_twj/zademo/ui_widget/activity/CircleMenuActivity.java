@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * description ：椭圆环形菜单
+ * description ：圆环形菜单
  * Created by Wenjing.Tang on 2019-05-28.
  */
-public class EllipseMenuActivity extends Activity {
+public class CircleMenuActivity extends Activity {
 
 
     EllipseMenuLayout circleMenu;
@@ -36,7 +36,7 @@ public class EllipseMenuActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_ellipse_menu);
+        setContentView(R.layout.activity_circle_menu);
 
 
         circleMenu = findViewById(R.id.id_menu_layout);
@@ -53,7 +53,6 @@ public class EllipseMenuActivity extends Activity {
             public void showItem(Object o, ImageView img, TextView txt) {
                 Menu m = (Menu) o;
                 img.setBackground(getResources().getDrawable(m.imgId));
-                //Glide.with(mContext).load(m.imgId).into(img);
                 txt.setText(m.label);
             }
         });
@@ -63,7 +62,7 @@ public class EllipseMenuActivity extends Activity {
 
             @Override
             public void itemClick(View view, int pos){
-                Toast.makeText(EllipseMenuActivity.this, mItemTexts[pos],
+                Toast.makeText(CircleMenuActivity.this, mItemTexts[pos],
                         Toast.LENGTH_SHORT).show();
 
             }

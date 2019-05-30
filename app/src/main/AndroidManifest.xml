@@ -84,6 +84,7 @@
         <activity android:name=".ui_widget.activity.ListCountDownActivity"/>
         <activity android:name=".ui_widget.activity.EllipseMenuActivity"/>
         <activity android:name=".ui_widget.activity.ArcRecycleViewActivity"/>
+        <activity android:name=".ui_widget.activity.CircleMenuActivity"/>
 
         <activity android:name=".aidl.AidlActivity"/>
 
