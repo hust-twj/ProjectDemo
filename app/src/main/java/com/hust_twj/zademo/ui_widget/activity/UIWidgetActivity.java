@@ -51,6 +51,6 @@ public class UIWidgetActivity extends Activity {
     }
 
     public void goCircleMenu(View view) {
-        startActivity(new Intent(this, CircleMenuActivity.class));
+        startActivity(new Intent(this, EllipseMenuActivity.class));
     }
 }

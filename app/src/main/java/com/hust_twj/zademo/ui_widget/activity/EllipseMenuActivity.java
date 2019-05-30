@@ -18,7 +18,7 @@ import java.util.List;
  * description ：椭圆环形菜单
  * Created by Wenjing.Tang on 2019-05-28.
  */
-public class CircleMenuActivity extends Activity {
+public class EllipseMenuActivity extends Activity {
 
 
     EllipseMenuLayout circleMenu;
@@ -63,7 +63,7 @@ public class CircleMenuActivity extends Activity {
 
             @Override
             public void itemClick(View view, int pos){
-                Toast.makeText(CircleMenuActivity.this, mItemTexts[pos],
+                Toast.makeText(EllipseMenuActivity.this, mItemTexts[pos],
                         Toast.LENGTH_SHORT).show();
 
             }
