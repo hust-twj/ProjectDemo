@@ -112,14 +112,14 @@
         android:id="@+id/tv_circle_rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="圆环RV"
+        android:text="椭圆环菜单"
         android:background="@drawable/bg_moment_hot_topic_publish"
         android:textSize="17sp"
         android:textColor="#ffffff"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginStart="100dp"
-        android:onClick="goCircleRv"
+        android:onClick="goCircleMenu"
         android:layout_below="@+id/tv_arc_rv"
         android:layout_marginTop="40dp"/>
 
