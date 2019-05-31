@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.ui_widget.widget.CircleMenuLayout;
 import com.hust_twj.zademo.ui_widget.widget.EllipseMenuLayout;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.List;
 public class CircleMenuActivity extends Activity {
 
 
-    EllipseMenuLayout circleMenu;
+    CircleMenuLayout circleMenu;
     private List<Menu> menuList = new ArrayList<>();
 
     private String[] mItemTexts = new String[]{"朋友圈 ", "腾讯QQ", "QQ空间",
@@ -47,7 +48,7 @@ public class CircleMenuActivity extends Activity {
             m.label = mItemTexts[i];
             menuList.add(m);
         }
-        circleMenu.setMenus(menuList, new EllipseMenuLayout.OnLoadResCallback() {
+        circleMenu.setMenus(menuList, new CircleMenuLayout.OnLoadResCallback() {
 
             @Override
             public void showItem(Object o, ImageView img, TextView txt) {
@@ -58,7 +59,7 @@ public class CircleMenuActivity extends Activity {
         });
 
 
-        circleMenu.setOnMenuItemClickListener(new EllipseMenuLayout.OnMenuItemClickListener(){
+        circleMenu.setOnMenuItemClickListener(new CircleMenuLayout.OnMenuItemClickListener(){
 
             @Override
             public void itemClick(View view, int pos){

@@ -85,6 +85,7 @@
         <activity android:name=".ui_widget.activity.EllipseMenuActivity"/>
         <activity android:name=".ui_widget.activity.ArcRecycleViewActivity"/>
         <activity android:name=".ui_widget.activity.CircleMenuActivity"/>
+        <activity android:name=".ui_widget.activity.GridRvActivity"/>
 
         <activity android:name=".aidl.AidlActivity"/>
 

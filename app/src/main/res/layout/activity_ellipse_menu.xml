@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-  <com.hust_twj.zademo.ui_widget.widget.CircleMenuLayout
+  <com.hust_twj.zademo.ui_widget.widget.EllipseMenuLayout
       android:id="@+id/id_menu_layout"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
@@ -16,6 +16,6 @@
 
     </FrameLayout>
 
-  </com.hust_twj.zademo.ui_widget.widget.CircleMenuLayout>
+  </com.hust_twj.zademo.ui_widget.widget.EllipseMenuLayout>
 
 </FrameLayout>

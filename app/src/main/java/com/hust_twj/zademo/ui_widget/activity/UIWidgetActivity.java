@@ -57,4 +57,9 @@ public class UIWidgetActivity extends Activity {
     public void goCircleMenu(View view) {
         startActivity(new Intent(this, CircleMenuActivity.class));
     }
+
+    public void goGridRv(View view) {
+        startActivity(new Intent(this, GridRvActivity.class));
+    }
+
 }

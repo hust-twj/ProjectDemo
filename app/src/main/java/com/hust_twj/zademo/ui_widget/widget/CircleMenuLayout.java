@@ -44,7 +44,7 @@ public class CircleMenuLayout<T> extends ViewGroup {
     /**
      * 布局时的开始角度
      */
-    private double mStartAngle = 90;
+    private double mStartAngle = 225;
     /**
      * 菜单项的文本
      */
@@ -166,6 +166,7 @@ public class CircleMenuLayout<T> extends ViewGroup {
 
         // Laying out the child views
         final int childCount = getChildCount();
+        int halfCount = childCount / 2;
 
         int left, top;
         // menu item 的尺寸
@@ -173,7 +174,9 @@ public class CircleMenuLayout<T> extends ViewGroup {
         int cHeight = (int) (layoutRadius * RADIO_DEFAULT_CHILD_DIMENSION);
 
         // 根据menu item的个数，计算角度
-        float angleDelay = 360 / ((childCount == 1) ? 1f : (childCount - 1f));
+      //  float angleDelay = 360 / ((childCount == 1) ? 1f : (childCount - 1f));
+
+        float angleDelay = 10f;
 
         // 计算，中心点到menu item中心的距离
         float tmp = layoutRadius / 2f - cWidth / 2f;
@@ -194,15 +197,18 @@ public class CircleMenuLayout<T> extends ViewGroup {
 
             left = layoutRadius / 2 - cWidth / 2 + (int)(tmp * Math.cos(Math.toRadians(mStartAngle)));
 
-            //控制y方向的大小，值=1时为圆；否则为椭圆；值大于1且越大，竖直方向椭圆（短）轴越短；
-            int yFactor = 3;
-            top = layoutRadius / 2 - cHeight / 2 +  (int) (tmp * Math.sin(Math.toRadians(mStartAngle)) / yFactor);
+            top = layoutRadius / 2 - cHeight / 2 +  (int) (tmp * Math.sin(Math.toRadians(mStartAngle)));
 
             Log.e("twj124", "i: " + i + "   " + "  mStartAngle:" +   mStartAngle + "    "  + left);
 
             child.layout(left, top, left + cWidth, top + cHeight);
             // 叠加尺寸
             mStartAngle += angleDelay;
+            if (mStartAngle >= 315) {
+                mStartAngle = 315;
+            }else if (mStartAngle <= 225) {
+                mStartAngle = 225;
+            }
             applyToView(child);
         }
 
@@ -239,9 +245,20 @@ public class CircleMenuLayout<T> extends ViewGroup {
                     mStartAngle += end - start;
                     mTmpAngle += end - start;
                 } else {
-                    // 二、三象限，色角度值是负值
+                    // 二、三象限，角度值是负值
                     mStartAngle += start - end;
                     mTmpAngle += start - end;
+                }
+                if (mStartAngle >= 315) {
+                    mStartAngle = 315;
+                }else if (mStartAngle <= 225) {
+                    mStartAngle = 225;
+                }
+
+                if (mTmpAngle >= 315) {
+                    mTmpAngle = 315;
+                }else if (mTmpAngle <= 225) {
+                    mTmpAngle = 225;
                 }
                 // 重新布局
                 requestLayout();

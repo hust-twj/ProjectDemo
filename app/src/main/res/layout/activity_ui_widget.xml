@@ -15,8 +15,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="10dp"
-        android:onClick="switchOrSeekBar"/>
+        android:onClick="switchOrSeekBar"
+        android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/tv_ProgressBar"
@@ -31,7 +31,7 @@
         android:layout_marginStart="100dp"
         android:onClick="goProgressBar"
         android:layout_below="@+id/tv_switch"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_gradient_ring"
@@ -46,7 +46,7 @@
         android:layout_marginStart="100dp"
         android:onClick="goGradientRing"
         android:layout_below="@+id/tv_ProgressBar"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_constraint_group"
@@ -61,7 +61,7 @@
         android:layout_marginStart="100dp"
         android:onClick="goConstraintGroup"
         android:layout_below="@+id/tv_gradient_ring"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_fragment"
@@ -76,7 +76,7 @@
         android:layout_marginStart="100dp"
         android:onClick="goFragment"
         android:layout_below="@+id/tv_constraint_group"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_list_count_down"
@@ -90,8 +90,8 @@
         android:gravity="center"
         android:layout_marginStart="100dp"
         android:onClick="goListCountDown"
-        android:layout_below="@+id/tv_constraint_group"
-        android:layout_marginTop="40dp"/>
+        android:layout_below="@+id/tv_fragment"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_arc_rv"
@@ -106,7 +106,7 @@
         android:layout_marginStart="100dp"
         android:onClick="goArcRv"
         android:layout_below="@+id/tv_list_count_down"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_ellipse_rv"
@@ -121,7 +121,7 @@
         android:layout_marginStart="100dp"
         android:onClick="goEllipseMenu"
         android:layout_below="@+id/tv_arc_rv"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:id="@+id/tv_circle_menu"
@@ -136,6 +136,21 @@
         android:layout_marginStart="100dp"
         android:onClick="goCircleMenu"
         android:layout_below="@+id/tv_ellipse_rv"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_grid_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="双层RV"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginStart="100dp"
+        android:onClick="goGridRv"
+        android:layout_below="@+id/tv_circle_menu"
+        android:layout_marginTop="20dp"/>
 
 </RelativeLayout>
