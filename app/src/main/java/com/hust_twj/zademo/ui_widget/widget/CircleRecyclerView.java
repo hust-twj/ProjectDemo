@@ -1,45 +1,35 @@
 package com.hust_twj.zademo.ui_widget.widget;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Message;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 
-import java.lang.ref.WeakReference;
+import com.hust_twj.zademo.utils.DensityUtils;
 
 
 /**
- * usage:
- * author: kHRYSTAL
- * create time: 16/9/14
- * update time:
- * email: 723526676@qq.com
+ * description ：圆形列表
+ * Created by Wenjing.Tang on 2019-06-02.
  */
 public class CircleRecyclerView extends RecyclerView {
 
-    private static final int DEFAULT_SELECTION = Integer.MAX_VALUE >> 1;
-
-    private boolean mIsForceCentering;
-    private final CenterRunnable mCenterRunnable = new CenterRunnable();
     private ItemViewMode mViewMode;
-    private boolean mNeedCenterForce;
     private boolean mNeedLoop = true;
-    private View mCurrentCenterChildView;
     private boolean mFirstOnLayout;
-    private boolean mFirstSetAdapter = true;
 
-    private Handler mPostHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            scrollToPosition(DEFAULT_SELECTION);
-        }
-    };
+    private boolean mDrawBg = false;
+    private Paint mPaint;
+    private RectF topArc, bottomArc;
+    //白色背景圆的半径
+    private int BG_RADIUS = DensityUtils.dp2px(getContext(), 500);
 
     public CircleRecyclerView(Context context) {
         this(context, null);
@@ -52,6 +42,12 @@ public class CircleRecyclerView extends RecyclerView {
     public CircleRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setOverScrollMode(OVER_SCROLL_NEVER);
+
+        mPaint = new Paint();
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(DensityUtils.dp2px(context, 2));
+        mPaint.setAntiAlias(true);
+        mPaint.setColor(Color.WHITE);
     }
 
     @Override
@@ -60,21 +56,7 @@ public class CircleRecyclerView extends RecyclerView {
         if (mNeedLoop) {
             if (!mFirstOnLayout) {
                 mFirstOnLayout = true;
-                mPostHandler.sendEmptyMessage(0);
             }
-            mCurrentCenterChildView = findViewAtCenter();
-            smoothScrollToView(mCurrentCenterChildView);
-        } else if (mNeedCenterForce) {
-            LinearLayoutManager layoutManager = (LinearLayoutManager) getLayoutManager();
-            if (layoutManager.canScrollHorizontally()) {
-                setPadding(getWidth() / 2, 0, getWidth() / 2, 0);
-            } else if (layoutManager.canScrollVertically()) {
-                setPadding(0, getHeight() / 2, 0, getHeight() / 2);
-            }
-            setClipToPadding(false);
-            setClipChildren(false);
-            mCurrentCenterChildView = findViewAtCenter();
-            smoothScrollToView(mCurrentCenterChildView);
         } else {
             setClipToPadding(false);
             setClipChildren(false);
@@ -88,9 +70,45 @@ public class CircleRecyclerView extends RecyclerView {
             final int count = getChildCount();
             for (int i = 0; i < count; ++i) {
                 View v = getChildAt(i);
-                mViewMode.applyToView(v, this);
+                mViewMode.applyToView(i, v, this);
             }
         }
+    }
+
+    @Override
+    public void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (!mDrawBg) {
+            return;
+        }
+
+        //绘制白色背景
+        ViewGroup centerView = null;
+        int imageHeight = 0;
+        if (topArc == null) {
+            centerView = (ViewGroup) findViewAtCenter();
+            if (centerView == null) {
+                return;
+            }
+            View imageView = centerView.getChildAt(0);
+            if (imageView == null) {
+                return;
+            }
+            imageHeight = imageView.getHeight();
+            //图片中心点的坐标
+            int top = (centerView.getTop() + imageHeight) / 2;
+            topArc = new RectF(getWidth() / 2f - BG_RADIUS, top,
+                    getWidth() / 2f + BG_RADIUS, top + BG_RADIUS);
+        }
+
+        if (bottomArc == null && centerView != null) {
+            int top = centerView.getBottom() + imageHeight / 2 + DensityUtils.dp2px(getContext(), 20);
+            bottomArc = new RectF(getWidth() / 2f - BG_RADIUS, top,
+                    getWidth() / 2f + BG_RADIUS, top + BG_RADIUS);
+        }
+        canvas.drawArc(topArc, -180, 180, false, mPaint);
+        canvas.drawArc(bottomArc, -180, 180, false, mPaint);
+
     }
 
     @Override
@@ -102,44 +120,27 @@ public class CircleRecyclerView extends RecyclerView {
         int count = getLayoutManager().getChildCount();
         for (int i = 0; i < count; ++i) {
             View v = getChildAt(i);
-            mViewMode.applyToView(v, this);
-        }
-    }
-
-    public void smoothScrollToView(View v) {
-        int distance = 0;
-        if (getLayoutManager() instanceof LinearLayoutManager) {
-            if (getLayoutManager().canScrollVertically()) {
-                final float y = v.getY() + v.getHeight() * 0.5f;
-                final float halfHeight = getHeight() * 0.5f;
-                distance = (int) (y - halfHeight);
-            } else if (getLayoutManager().canScrollHorizontally()) {
-                final float x = v.getX() + v.getWidth() * 0.5f;
-                final float halfWidth = getWidth() * 0.5f;
-                distance = (int) (x - halfWidth);
-            }
-        } else
-            throw new IllegalArgumentException("CircleRecyclerView just support T extend LinearLayoutManager!");
-        smoothScrollBy(distance, distance);
-    }
-
-    @Override
-    public void onScrollStateChanged(int state) {
-        if (state == SCROLL_STATE_IDLE) {
-            if (mNeedCenterForce && !mIsForceCentering) {
-                mIsForceCentering = true;
-                mCurrentCenterChildView = findViewAtCenter();
-                mCenterRunnable.setView(mCurrentCenterChildView);
-                ViewCompat.postOnAnimation(this, mCenterRunnable);
-            }
+            mViewMode.applyToView(i, v, this);
         }
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        removeCallbacks(mCenterRunnable);
-        mIsForceCentering = false;
+        switch (e.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                performClick();
+                break;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+            default:
+                break;
+        }
         return super.onTouchEvent(e);
+    }
+
+    @Override
+    public boolean performClick() {
+        return super.performClick();
     }
 
     public View findViewAt(int x, int y) {
@@ -158,32 +159,28 @@ public class CircleRecyclerView extends RecyclerView {
     }
 
     public View findViewAtCenter() {
+        View view = null;
         if (getLayoutManager().canScrollVertically()) {
-            return findViewAt(0, getHeight() / 2);
+            view = findViewAt(0, getHeight() / 2);
         } else if (getLayoutManager().canScrollHorizontally()) {
-            return findViewAt(getWidth() / 2, 0);
+            view = findViewAt(getWidth() / 2, 0);
+        }
+        if (view != null) {
+            return view;
+        }
+
+        //可能找不到中心，容错处理，最多尝试五次
+        for (int i = 1; i <= 5; i++) {
+            if (getLayoutManager().canScrollVertically()) {
+                view = findViewAt(0, getHeight() / getChildCount() * i + getHeight() / 2);
+            } else if (getLayoutManager().canScrollHorizontally()) {
+                view = findViewAt(getWidth() / getChildCount() * i + getWidth() / 2, 0);
+            }
+            if (view != null) {
+                return view;
+            }
         }
         return null;
-    }
-
-    public class CenterRunnable implements Runnable {
-
-        private WeakReference<View> mView;
-
-        public void setView(View v) {
-            mView = new WeakReference<>(v);
-        }
-
-        @Override
-        public void run() {
-            smoothScrollToView(mView.get());
-            if (mNeedCenterForce)
-                mIsForceCentering = true;
-        }
-    }
-
-    public void setNeedCenterForce(boolean needCenterForce) {
-        mNeedCenterForce = needCenterForce;
     }
 
     /**
@@ -199,14 +196,13 @@ public class CircleRecyclerView extends RecyclerView {
         mViewMode = mode;
     }
 
-    @Override
-    public void setAdapter(Adapter adapter) {
-        super.setAdapter(adapter);
-        if (mFirstSetAdapter) {
-            mFirstSetAdapter = false;
-        } else {
-            if (adapter != null && mNeedCenterForce)
-                mPostHandler.sendEmptyMessage(0);
-        }
+    /**
+     * 是否需要绘制背景
+     *
+     * @param drawBg true：需要绘制背景
+     */
+    public void setDrawBg(boolean drawBg) {
+        mDrawBg = drawBg;
     }
+
 }

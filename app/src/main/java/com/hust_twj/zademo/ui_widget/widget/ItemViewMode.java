@@ -11,5 +11,5 @@ import android.view.View;
  * email: 723526676@qq.com
  */
 public interface ItemViewMode {
-    void applyToView(View v, RecyclerView parent);
+    void applyToView(int i, View v, RecyclerView parent);
 }

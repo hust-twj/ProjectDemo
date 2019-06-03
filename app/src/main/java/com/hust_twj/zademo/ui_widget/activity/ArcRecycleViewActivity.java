@@ -51,7 +51,6 @@ public class ArcRecycleViewActivity extends Activity {
 
         mCircleRecyclerView.setLayoutManager(mLayoutManager);
         mCircleRecyclerView.setViewMode(mItemViewMode);
-        mCircleRecyclerView.setNeedCenterForce(true);
         mCircleRecyclerView.setNeedLoop(true);
 
         mImgList = Arrays.asList(mImgs);

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/red">
+    <com.hust_twj.zademo.ui_widget.widget.CircleRecyclerView
+        android:id="@+id/rv_acr"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:background="#65CFFF"
+        android:layout_centerHorizontal="true">
 
-    </android.support.v7.widget.RecyclerView>
+    </com.hust_twj.zademo.ui_widget.widget.CircleRecyclerView>
 
-</FrameLayout>
+</RelativeLayout>
