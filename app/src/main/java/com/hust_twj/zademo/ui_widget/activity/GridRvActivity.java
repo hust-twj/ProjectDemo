@@ -15,8 +15,6 @@ import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.ui_widget.widget.CircleRecyclerView;
-import com.hust_twj.zademo.ui_widget.widget.CircularHorizontalMode;
-import com.hust_twj.zademo.ui_widget.widget.ItemViewMode;
 import com.hust_twj.zademo.utils.DensityUtils;
 import com.hust_twj.zademo.utils.LogUtils;
 
@@ -28,7 +26,6 @@ public class GridRvActivity extends Activity {
 
     private CircleRecyclerView mCircleRecyclerView;
 
-    private ItemViewMode mItemViewMode;
     private LinearLayoutManager mLayoutManager;
     private static final int SPAN_COUNT = 2;
 
@@ -43,13 +40,11 @@ public class GridRvActivity extends Activity {
 
         mCircleRecyclerView = findViewById(R.id.rv_acr);
 
-        mItemViewMode = new CircularHorizontalMode();
         mLayoutManager = new GridLayoutManager(this, SPAN_COUNT, LinearLayoutManager.HORIZONTAL, false);
 
         mCircleRecyclerView.addItemDecoration(new ItemDecoration());
 
         mCircleRecyclerView.setLayoutManager(mLayoutManager);
-        mCircleRecyclerView.setViewMode(mItemViewMode);
         mCircleRecyclerView.setNeedLoop(true);
         mCircleRecyclerView.setDrawBg(true);
         mCircleRecyclerView.setAdapter(new A());

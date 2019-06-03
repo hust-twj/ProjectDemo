@@ -21,10 +21,12 @@ import com.hust_twj.zademo.utils.DensityUtils;
  */
 public class CircleRecyclerView extends RecyclerView {
 
-    private ItemViewMode mViewMode;
     private boolean mNeedLoop = true;
     private boolean mFirstOnLayout;
 
+    /**
+     * 背景相关
+     */
     private boolean mDrawBg = false;
     private Paint mPaint;
     private RectF topArc, bottomArc;
@@ -66,61 +68,57 @@ public class CircleRecyclerView extends RecyclerView {
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-        if (mViewMode != null) {
-            final int count = getChildCount();
-            for (int i = 0; i < count; ++i) {
-                View v = getChildAt(i);
-                mViewMode.applyToView(i, v, this);
-            }
+        final int count = getChildCount();
+        for (int i = 0; i < count; ++i) {
+            View v = getChildAt(i);
+            applyToView(v, this);
         }
     }
 
     @Override
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (!mDrawBg) {
-            return;
-        }
-
         //绘制白色背景
-        ViewGroup centerView = null;
-        int imageHeight = 0;
-        if (topArc == null) {
-            centerView = (ViewGroup) findViewAtCenter();
-            if (centerView == null) {
-                return;
+        if (mDrawBg) {
+            ViewGroup centerView = null;
+            int imageHeight = 0;
+            if (topArc == null) {
+                centerView = (ViewGroup) findViewAtCenter();
+                if (centerView == null) {
+                    return;
+                }
+                View imageView = centerView.getChildAt(0);
+                if (imageView == null) {
+                    return;
+                }
+                imageHeight = imageView.getHeight();
+                //图片中心点的坐标
+                int top = (centerView.getTop() + imageHeight) / 2;
+                topArc = new RectF(getWidth() / 2f - BG_RADIUS, top,
+                        getWidth() / 2f + BG_RADIUS, top + BG_RADIUS);
             }
-            View imageView = centerView.getChildAt(0);
-            if (imageView == null) {
-                return;
-            }
-            imageHeight = imageView.getHeight();
-            //图片中心点的坐标
-            int top = (centerView.getTop() + imageHeight) / 2;
-            topArc = new RectF(getWidth() / 2f - BG_RADIUS, top,
-                    getWidth() / 2f + BG_RADIUS, top + BG_RADIUS);
-        }
 
-        if (bottomArc == null && centerView != null) {
-            int top = centerView.getBottom() + imageHeight / 2 + DensityUtils.dp2px(getContext(), 20);
-            bottomArc = new RectF(getWidth() / 2f - BG_RADIUS, top,
-                    getWidth() / 2f + BG_RADIUS, top + BG_RADIUS);
+            if (bottomArc == null && centerView != null) {
+                int top = centerView.getBottom() + imageHeight / 2 + DensityUtils.dp2px(getContext(), 20);
+                bottomArc = new RectF(getWidth() / 2f - BG_RADIUS, top,
+                        getWidth() / 2f + BG_RADIUS, top + BG_RADIUS);
+            }
+            canvas.drawArc(topArc, -180, 180, false, mPaint);
+            canvas.drawArc(bottomArc, -180, 180, false, mPaint);
         }
-        canvas.drawArc(topArc, -180, 180, false, mPaint);
-        canvas.drawArc(bottomArc, -180, 180, false, mPaint);
 
     }
 
     @Override
     public void requestLayout() {
         super.requestLayout();
-        if (mViewMode == null && getLayoutManager() == null) {
+        if (getLayoutManager() == null) {
             return;
         }
         int count = getLayoutManager().getChildCount();
         for (int i = 0; i < count; ++i) {
             View v = getChildAt(i);
-            mViewMode.applyToView(i, v, this);
+            applyToView(v, this);
         }
     }
 
@@ -192,10 +190,6 @@ public class CircleRecyclerView extends RecyclerView {
         mNeedLoop = needLoop;
     }
 
-    public void setViewMode(ItemViewMode mode) {
-        mViewMode = mode;
-    }
-
     /**
      * 是否需要绘制背景
      *
@@ -203,6 +197,23 @@ public class CircleRecyclerView extends RecyclerView {
      */
     public void setDrawBg(boolean drawBg) {
         mDrawBg = drawBg;
+    }
+
+    public void applyToView(View v, RecyclerView parent) {
+
+        int mCircleOffset = 500;
+        float mDegToRad = 1.0f / 180.0f * (float) Math.PI;
+        float mTranslationRatio = 0.15f;
+
+        float halfWidth = v.getWidth() * 0.5f;
+        float parentHalfWidth = parent.getWidth() * 0.5f;
+        float x = v.getX();
+        float rot = parentHalfWidth - halfWidth - x;
+
+        v.setPivotX(halfWidth);
+        v.setPivotY(0.0f);
+        //v.setRotation(-rot * 0.05f);
+        v.setTranslationY((float) (-Math.cos(rot * mTranslationRatio * mDegToRad) + 1) * mCircleOffset * 0.15f);
     }
 
 }

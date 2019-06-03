@@ -13,8 +13,6 @@ import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.ui_widget.widget.CircleRecyclerView;
-import com.hust_twj.zademo.ui_widget.widget.CircularHorizontalMode;
-import com.hust_twj.zademo.ui_widget.widget.ItemViewMode;
 import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.Arrays;
@@ -29,7 +27,6 @@ public class ArcRecycleViewActivity extends Activity {
 
     private CircleRecyclerView mCircleRecyclerView;
 
-    private ItemViewMode mItemViewMode;
     private LinearLayoutManager mLayoutManager;
     private List<Integer> mImgList;
 
@@ -46,11 +43,9 @@ public class ArcRecycleViewActivity extends Activity {
 
         mCircleRecyclerView = findViewById(R.id.rv_acr);
 
-        mItemViewMode = new CircularHorizontalMode();
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
         mCircleRecyclerView.setLayoutManager(mLayoutManager);
-        mCircleRecyclerView.setViewMode(mItemViewMode);
         mCircleRecyclerView.setNeedLoop(true);
 
         mImgList = Arrays.asList(mImgs);
