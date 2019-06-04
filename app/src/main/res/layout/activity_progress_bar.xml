@@ -1,21 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
 
     <ProgressBar
         android:id="@+id/pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="100dp"
+        android:gravity="center"
         android:onClick="switchOrSeekBar"
-        android:progressDrawable="@drawable/bg_progress"
-        android:progress="50"/>
+        android:progress="50"
+        android:progressDrawable="@drawable/bg_progress" />
 
+    <com.hust_twj.zademo.utils.RoundImageView
+        android:id="@+id/iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/img_10"
+        app:borderRadius="10dp"
+        app:roundImageType="circle" />
 
-</RelativeLayout>
+</LinearLayout>

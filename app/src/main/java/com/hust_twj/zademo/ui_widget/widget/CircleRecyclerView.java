@@ -22,7 +22,6 @@ import com.hust_twj.zademo.utils.DensityUtils;
 public class CircleRecyclerView extends RecyclerView {
 
     private boolean mNeedLoop = true;
-    private boolean mFirstOnLayout;
 
     /**
      * 背景相关
@@ -55,11 +54,7 @@ public class CircleRecyclerView extends RecyclerView {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        if (mNeedLoop) {
-            if (!mFirstOnLayout) {
-                mFirstOnLayout = true;
-            }
-        } else {
+        if (!mNeedLoop) {
             setClipToPadding(false);
             setClipChildren(false);
         }
@@ -167,7 +162,7 @@ public class CircleRecyclerView extends RecyclerView {
             return view;
         }
 
-        //可能找不到中心，容错处理，最多尝试五次
+        //可能找不到中心，容错处理，最多迭代尝试五次
         for (int i = 1; i <= 5; i++) {
             if (getLayoutManager().canScrollVertically()) {
                 view = findViewAt(0, getHeight() / getChildCount() * i + getHeight() / 2);
@@ -200,7 +195,6 @@ public class CircleRecyclerView extends RecyclerView {
     }
 
     public void applyToView(View v, RecyclerView parent) {
-
         int mCircleOffset = 500;
         float mDegToRad = 1.0f / 180.0f * (float) Math.PI;
         float mTranslationRatio = 0.15f;
@@ -212,7 +206,6 @@ public class CircleRecyclerView extends RecyclerView {
 
         v.setPivotX(halfWidth);
         v.setPivotY(0.0f);
-        //v.setRotation(-rot * 0.05f);
         v.setTranslationY((float) (-Math.cos(rot * mTranslationRatio * mDegToRad) + 1) * mCircleOffset * 0.15f);
     }
 

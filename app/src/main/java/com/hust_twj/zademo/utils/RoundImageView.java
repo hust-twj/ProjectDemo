@@ -160,8 +160,8 @@ public class RoundImageView extends AppCompatImageView {
         }
         // shader的变换矩阵，我们这里主要用于放大或者缩小
         mMatrix.setScale(scale, scale);
-        mMatrix.postTranslate(-(bmp.getWidth() * scale / 2 - getMeasuredWidth() / 2),
-                -(bmp.getHeight() * scale / 2 - getMeasuredHeight() / 2));
+        mMatrix.postTranslate(-(bmp.getWidth() * scale / 2 - getMeasuredWidth() / 2f),
+                -(bmp.getHeight() * scale / 2 - getMeasuredHeight() / 2f));
 
         // 设置变换矩阵
         mBitmapShader.setLocalMatrix(mMatrix);

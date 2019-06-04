@@ -14,14 +14,14 @@ import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.DensityUtils;
+import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.List;
 
 /**
- * 椭圆菜单控件
- * Created by sunhuahui on 2017/3/8.
+ * description ：椭圆菜单控件
+ * Created by Wenjing.Tang on 2019-06-02.
  */
-
 public class EllipseMenuLayout<T> extends ViewGroup {
     /**
      * 该容器内child item的默认尺寸
@@ -73,7 +73,6 @@ public class EllipseMenuLayout<T> extends ViewGroup {
      */
     private boolean isFling;
 
-    private int mMenuItemLayoutId = R.layout.circle_menu_item;
     /**
      * MenuItem的点击事件接口
      */
@@ -127,11 +126,9 @@ public class EllipseMenuLayout<T> extends ViewGroup {
 
         setMeasuredDimension(resWidth, resHeight);
 
-        // 获得半径
         mRadius = Math.max(getMeasuredWidth(), getMeasuredHeight());
 
-        // menu item数量
-        final int count = getChildCount();
+         int count = getChildCount();
         // menu item尺寸
         int childSize = (int) (mRadius * RADIO_DEFAULT_CHILD_DIMENSION);
         // menu item测量模式
@@ -149,36 +146,34 @@ public class EllipseMenuLayout<T> extends ViewGroup {
     }
 
     /**
-     * 设置MenuItem的点击事件接口
+     * 设置item的点击事件接口
      *
-     * @param mOnMenuItemClickListener
      */
     public void setOnMenuItemClickListener(OnMenuItemClickListener mOnMenuItemClickListener) {
         this.mOnMenuItemClickListener = mOnMenuItemClickListener;
     }
 
     /**
-     * 设置menu item的位置
+     * 设置item的位置
      */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         int layoutRadius = mRadius;
 
-        // Laying out the child views
-        final int childCount = getChildCount();
+        int childCount = getChildCount();
 
         int left, top;
-        // menu item 的尺寸
-        int cWidth = DensityUtils.dp2px(getContext(), 50);
-        int cHeight = (int) (layoutRadius * RADIO_DEFAULT_CHILD_DIMENSION);
+        //item 的尺寸
+        int itemWidth = DensityUtils.dp2px(getContext(), 50);
+        int itemHeight = (int) (layoutRadius * RADIO_DEFAULT_CHILD_DIMENSION);
 
         // 根据menu item的个数，计算角度
         float angleDelay = 360 / ((childCount == 1) ? 1f : (childCount - 1f));
 
-        // 计算，中心点到menu item中心的距离
-        float tmp = layoutRadius / 2f - cWidth / 2f;
+        // 计算，中心点到item中心的距离
+        float tmp = layoutRadius / 2f - itemWidth / 2f;
 
-        // 遍历去设置menuitem的位置
+        // 遍历去设置item的位置
         for (int i = 0; i < childCount; i++) {
             final View child = getChildAt(i);
             if (child.getId() == R.id.id_circle_menu_item_center || child.getVisibility() == GONE) {
@@ -188,22 +183,19 @@ public class EllipseMenuLayout<T> extends ViewGroup {
             mStartAngle %= 360;
 
             // tmp cosa 即menu item中心点的横坐标
-            //left = layoutRadius / 2 + (int) Math.round(tmp * Math.cos(Math.toRadians(mStartAngle))  - cWidth / 2f);
-            // tmp sina 即menu item的纵坐标
-            //top = layoutRadius / 2 + (int) Math.round(tmp * Math.sin(Math.toRadians(mStartAngle)) /3f - cWidth / 2f);
-
-            left = layoutRadius / 2 - cWidth / 2 + (int)(tmp * Math.cos(Math.toRadians(mStartAngle)));
+            left = layoutRadius / 2 - itemWidth / 2 + (int) (tmp * Math.cos(Math.toRadians(mStartAngle)));
 
             //控制y方向的大小，值=1时为圆；否则为椭圆；值大于1且越大，竖直方向椭圆（短）轴越短；
-            int yFactor = 3;
-            top = layoutRadius / 2 - cHeight / 2 +  (int) (tmp * Math.sin(Math.toRadians(mStartAngle)) / yFactor);
+            float yFactor = 2f;
+            // tmp sina 即menu item的纵坐标
+            top = layoutRadius / 2 - itemHeight / 2 + (int) (tmp * Math.sin(Math.toRadians(mStartAngle)) / yFactor);
 
-            Log.e("twj124", "i: " + i + "   " + "  mStartAngle:" +   mStartAngle + "    "  + left);
+            Log.e("twj124", "i: " + i + "   " + "  mStartAngle:" + mStartAngle + "    " + left);
 
-            child.layout(left, top, left + cWidth, top + cHeight);
+            child.layout(left, top, left + itemWidth, top + itemHeight);
             // 叠加尺寸
             mStartAngle += angleDelay;
-            applyToView(child);
+            applyToView(i,child);
         }
 
     }
@@ -245,8 +237,7 @@ public class EllipseMenuLayout<T> extends ViewGroup {
                 }
                 // 重新布局
                 requestLayout();
-                Log.e("twj124","-----------------");
-
+                Log.e("twj124", "-----------------");
                 mLastX = x;
                 mLastY = y;
                 break;
@@ -281,6 +272,11 @@ public class EllipseMenuLayout<T> extends ViewGroup {
     }
 
     @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    @Override
     public void requestLayout() {
         super.requestLayout();
         int count = getChildCount();
@@ -290,25 +286,26 @@ public class EllipseMenuLayout<T> extends ViewGroup {
             if (v.getId() == R.id.id_circle_menu_item_center || v.getVisibility() == GONE) {
                 continue;
             }
-            applyToView(v);
+            applyToView(i, v);
         }
     }
 
     /**
      * item的缩放
      *
-     * @param v
+     * @param v View
      */
-    public void applyToView(View v) {
-        float mScalingRatio = 0.0015f;
+    public void applyToView(int i, View v) {
+        float mScalingRatio = 0.001f;
         float halfWidth = v.getWidth() * 0.5f;
         float parentHalfWidth = getMeasuredWidth() * 0.5f;
         float y = v.getY() / 2;
 
         v.setPivotX(halfWidth);
         v.setPivotY(0.0f);
-        float scale = 1.0f - Math.abs(parentHalfWidth - halfWidth - y) * mScalingRatio;
+        float scale = 1.0f - Math.abs(parentHalfWidth - halfWidth - 1.3f*y) * mScalingRatio;
 
+        Log.e("twj124", "i  " + i + "  "  + scale +"   " + y + "   "+(parentHalfWidth - halfWidth - 1.3f*y) );
         v.setScaleX(scale);
         v.setScaleY(scale);
     }
@@ -383,26 +380,15 @@ public class EllipseMenuLayout<T> extends ViewGroup {
     }
 
     /**
-     * 设置MenuItem的布局文件，必须在setMenuItemIconsAndTexts之前调用
-     *
-     * @param mMenuItemLayoutId
-     */
-    public void setMenuItemLayoutId(int mMenuItemLayoutId) {
-        this.mMenuItemLayoutId = mMenuItemLayoutId;
-    }
-
-    /**
      * 添加菜单项
      */
     private void addMenuItems() {
         LayoutInflater mInflater = LayoutInflater.from(getContext());
 
-        /**
-         * 根据用户设置的参数，初始化view
-         */
+        //根据用户设置的参数，初始化view
         for (int i = 0; i < mMenuItemCount; i++) {
             final int j = i;
-            View view = mInflater.inflate(mMenuItemLayoutId, this, false);
+            View view = mInflater.inflate(R.layout.circle_menu_item, this, false);
             ImageView iv = view.findViewById(R.id.id_circle_menu_item_image);
             TextView tv = view.findViewById(R.id.id_circle_menu_item_text);
 
@@ -434,14 +420,12 @@ public class EllipseMenuLayout<T> extends ViewGroup {
     private void addMenus() {
         LayoutInflater mInflater = LayoutInflater.from(getContext());
 
-        /**
-         * 根据用户设置的参数，初始化view
-         */
+        //根据用户设置的参数，初始化view
         for (int i = 0; i < mMenuItemCount; i++) {
             final int j = i;
-            View view = mInflater.inflate(mMenuItemLayoutId, this, false);
-            ImageView iv = (ImageView) view.findViewById(R.id.id_circle_menu_item_image);
-            TextView tv = (TextView) view.findViewById(R.id.id_circle_menu_item_text);
+            View view = mInflater.inflate(R.layout.circle_menu_item, this, false);
+            ImageView iv = view.findViewById(R.id.id_circle_menu_item_image);
+            TextView tv =  view.findViewById(R.id.id_circle_menu_item_text);
             iv.setVisibility(VISIBLE);
             tv.setVisibility(VISIBLE);
             mLoadCallback.showItem(mItems.get(i), iv, tv);
@@ -461,7 +445,7 @@ public class EllipseMenuLayout<T> extends ViewGroup {
     /**
      * 如果每秒旋转角度到达该值，则认为是自动滚动
      *
-     * @param mFlingableValue
+     * @param mFlingableValue 旋转角
      */
     public void setFlingableValue(int mFlingableValue) {
         this.mFlingableValue = mFlingableValue;
@@ -470,19 +454,20 @@ public class EllipseMenuLayout<T> extends ViewGroup {
     /**
      * 获得默认该layout的尺寸
      *
-     * @return
+     * @return layout的尺寸
      */
     private int getDefaultWidth() {
         WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
-        wm.getDefaultDisplay().getMetrics(outMetrics);
+        if (wm != null) {
+            wm.getDefaultDisplay().getMetrics(outMetrics);
+        }
         return Math.min(outMetrics.widthPixels, outMetrics.heightPixels);
     }
 
     /**
      * MenuItem的点击事件接口
      *
-     * @author zhy
      */
     public interface OnMenuItemClickListener {
         void itemClick(View view, int pos);

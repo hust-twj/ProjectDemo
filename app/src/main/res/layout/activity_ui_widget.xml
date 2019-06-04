@@ -1,156 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_switch"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="Switch/SeekBar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="switchOrSeekBar"
-        android:layout_marginTop="5dp"/>
+        android:text="Switch/SeekBar"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_ProgressBar"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="ProgressBar"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goProgressBar"
-        android:layout_below="@+id/tv_switch"
-        android:layout_marginTop="20dp"/>
+        android:text="ProgressBar"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_gradient_ring"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="渐变圆环"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goGradientRing"
-        android:layout_below="@+id/tv_ProgressBar"
-        android:layout_marginTop="20dp"/>
+        android:text="渐变圆环"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_constraint_group"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="ConstraintGroup"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goConstraintGroup"
-        android:layout_below="@+id/tv_gradient_ring"
-        android:layout_marginTop="20dp"/>
+        android:text="ConstraintGroup"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_fragment"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="fragment"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goFragment"
-        android:layout_below="@+id/tv_constraint_group"
-        android:layout_marginTop="20dp"/>
+        android:text="fragment"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_list_count_down"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="列表倒计时"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goListCountDown"
-        android:layout_below="@+id/tv_fragment"
-        android:layout_marginTop="20dp"/>
+        android:text="列表倒计时"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_arc_rv"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="圆弧RV"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goArcRv"
-        android:layout_below="@+id/tv_list_count_down"
-        android:layout_marginTop="20dp"/>
+        android:text="圆弧RV"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
     <TextView
         android:id="@+id/tv_ellipse_rv"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="椭圆环菜单"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goEllipseMenu"
-        android:layout_below="@+id/tv_arc_rv"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:id="@+id/tv_circle_menu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="圆环菜单"
-        android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
+        android:text="椭圆环菜单"
         android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:layout_marginStart="100dp"
-        android:onClick="goCircleMenu"
-        android:layout_below="@+id/tv_ellipse_rv"
-        android:layout_marginTop="20dp"/>
+        android:textSize="17sp" />
+
+    <!--  <TextView
+          android:id="@+id/tv_circle_menu"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="圆环菜单"
+          android:background="@drawable/bg_moment_hot_topic_publish"
+          android:textSize="17sp"
+          android:textColor="#ffffff"
+          android:layout_centerHorizontal="true"
+          android:gravity="center"
+          android:layout_marginStart="100dp"
+          android:onClick="goCircleMenu"
+          android:layout_below="@+id/tv_ellipse_rv"
+          android:layout_marginTop="20dp"/>-->
 
     <TextView
         android:id="@+id/tv_grid_rv"
-        android:layout_width="match_parent"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
-        android:text="双层RV"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_moment_hot_topic_publish"
-        android:textSize="17sp"
-        android:textColor="#ffffff"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginStart="100dp"
         android:onClick="goGridRv"
-        android:layout_below="@+id/tv_circle_menu"
-        android:layout_marginTop="20dp"/>
+        android:text="双层RV"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
 
-</RelativeLayout>
+</LinearLayout>
