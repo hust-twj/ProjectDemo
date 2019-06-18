@@ -9,7 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.ui_widget.bean.Members;
 import com.hust_twj.zademo.ui_widget.widget.EllipseMenuLayout;
+import com.hust_twj.zademo.ui_widget.widget.GreatHallMenuLayout;
+import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +24,9 @@ import java.util.List;
 public class EllipseMenuActivity extends Activity {
 
 
-    EllipseMenuLayout circleMenu;
+    //EllipseMenuLayout circleMenu;
+    GreatHallMenuLayout circleMenu;
+    List<Members> list = new ArrayList<>();
     private List<Menu> menuList = new ArrayList<>();
 
     private String[] mItemTexts = new String[]{"朋友圈 ", "腾讯QQ", "QQ空间",
@@ -30,7 +35,7 @@ public class EllipseMenuActivity extends Activity {
     private int[] mItemImgs = new int[]{R.mipmap.ic_launcher,
             R.mipmap.ic_launcher, R.mipmap.ic_launcher,
             R.mipmap.ic_launcher, R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+            R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,7 +46,17 @@ public class EllipseMenuActivity extends Activity {
 
         circleMenu = findViewById(R.id.id_menu_layout);
 
-        for (int i = 0; i < mItemTexts.length; i++) {
+        for (int i = 0; i < 8; i++) {
+            Members member = new Members();
+            member.heartValue = String.valueOf(1000 * i);
+            member.gender = i % 2;
+            member.nickname = "haha " + i;
+            member.objectID = 1000 + i;
+            list.add(member);
+        }
+        circleMenu.setMenus(list);
+
+        /*for (int i = 0; i < mItemTexts.length; i++) {
             Menu m = new Menu();
             m.imgId = mItemImgs[i];
             m.label = mItemTexts[i];
@@ -67,12 +82,12 @@ public class EllipseMenuActivity extends Activity {
                         Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
 
     }
 
 
-    private static class Menu{
+    private static class Menu {
         public int imgId;
         public String label;
     }
