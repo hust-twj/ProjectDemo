@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.event_bus.event;
+package com.hust_twj.zademo.third_part.event_bus.event;
 
 /**
  * Created by Wenjing.Tang

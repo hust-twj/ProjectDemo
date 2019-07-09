@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.leak_canary;
+package com.hust_twj.zademo.third_part.leak_canary;
 
 import android.content.Context;
 

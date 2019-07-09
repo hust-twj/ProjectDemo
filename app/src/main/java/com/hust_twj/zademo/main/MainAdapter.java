@@ -91,8 +91,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         mDataList.add(entity11);
 
         MainEntity entity12 = new MainEntity();
-        entity12.index = MainEntity.INDEX_EVENT_BUS;
-        entity12.title = "Event Bus";
+        entity12.index = MainEntity.INDEX_THIRD_PART;
+        entity12.title = "第三方开源框架";
         mDataList.add(entity12);
 
         MainEntity entity13 = new MainEntity();
@@ -161,24 +161,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         mDataList.add(entity25);
 
         MainEntity entity26 = new MainEntity();
-        entity26.index = MainEntity.INDEX_BUTTER_KNIFE;
-        entity26.title = "ButterKnife";
+        entity26.index = MainEntity.INDEX_THREAD;
+        entity26.title = "多线程 并发";
         mDataList.add(entity26);
 
         MainEntity entity27 = new MainEntity();
         entity27.index = MainEntity.INDEX_JVM;
         entity27.title = "JVM";
         mDataList.add(entity27);
-
-        MainEntity entity28 = new MainEntity();
-        entity28.index = MainEntity.INDEX_LEAK_CANARY;
-        entity28.title = "LeakCanary";
-        mDataList.add(entity28);
-
-        MainEntity entity29 = new MainEntity();
-        entity29.index = MainEntity.INDEX_THREAD;
-        entity29.title = "多线程 并发";
-        mDataList.add(entity29);
 
         setDataList(mDataList);
     }

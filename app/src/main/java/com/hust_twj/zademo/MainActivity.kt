@@ -10,11 +10,11 @@ import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
 import com.hust_twj.zademo.download.DownloadActivity
-import com.hust_twj.zademo.event_bus.EventBusDemoActivity
+import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.HandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
-import com.hust_twj.zademo.leak_canary.LeakCanaryActivity
+import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
@@ -30,6 +30,7 @@ import com.hust_twj.zademo.remote_view.RemoteViewActivity
 import com.hust_twj.zademo.round_img_view.RoundImgActivity
 import com.hust_twj.zademo.share.ShareActivity
 import com.hust_twj.zademo.span.SpanActivity
+import com.hust_twj.zademo.third_part.ThirdPartActivity
 import com.hust_twj.zademo.thread.ThreadActivity
 import com.hust_twj.zademo.toast.ToastActivity
 import com.hust_twj.zademo.ui_params.UIParamsActivity
@@ -77,8 +78,6 @@ class MainActivity : AppCompatActivity() {
 
                     MainEntity.INDEX_ROUND_IMAGE -> startActivity(Intent(this@MainActivity, RoundImgActivity::class.java))
 
-                    MainEntity.INDEX_EVENT_BUS -> startActivity(Intent(this@MainActivity, EventBusDemoActivity::class.java))
-
                     MainEntity.INDEX_HANDLER -> startActivity(Intent(this@MainActivity, HandlerActivity::class.java))
 
                     MainEntity.INDEX_BOTTOM_SHEET -> startActivity(Intent(this@MainActivity, BottomSheetActivity::class.java))
@@ -105,13 +104,11 @@ class MainActivity : AppCompatActivity() {
 
                     MainEntity.INDEX_BLOCK_QUEUE -> startActivity(Intent(this@MainActivity, BlockQueueActivity::class.java))
 
-                    MainEntity.INDEX_BUTTER_KNIFE -> startActivity(Intent(this@MainActivity, ButterKnifeActivity::class.java))
-
                     MainEntity.INDEX_JVM -> startActivity(Intent(this@MainActivity, JVMActivity::class.java))
 
-                    MainEntity.INDEX_LEAK_CANARY -> startActivity(Intent(this@MainActivity, LeakCanaryActivity::class.java))
-
                     MainEntity.INDEX_THREAD -> startActivity(Intent(this@MainActivity, ThreadActivity::class.java))
+
+                    MainEntity.INDEX_THIRD_PART -> startActivity(Intent(this@MainActivity, ThirdPartActivity::class.java))
 
                 }
 

@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.event_bus;
+package com.hust_twj.zademo.third_part.event_bus;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,10 +7,10 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.event_bus.event.ChildEvent;
-import com.hust_twj.zademo.event_bus.event.FatherEvent;
-import com.hust_twj.zademo.event_bus.event.MyEvent;
-import com.hust_twj.zademo.event_bus.event.StickyEvent;
+import com.hust_twj.zademo.third_part.event_bus.event.ChildEvent;
+import com.hust_twj.zademo.third_part.event_bus.event.FatherEvent;
+import com.hust_twj.zademo.third_part.event_bus.event.MyEvent;
+import com.hust_twj.zademo.third_part.event_bus.event.StickyEvent;
 import com.hust_twj.zademo.utils.LogUtils;
 import com.hust_twj.zademo.utils.ToastUtils;
 

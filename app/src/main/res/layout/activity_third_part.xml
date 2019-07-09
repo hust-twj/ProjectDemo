@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_event_bus"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="EventBus"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+
+    <TextView
+        android:id="@+id/tv_butter_knife"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="ButterKnife"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/tv_leak_canary"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="LeakCanary"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/tv_rx_java"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="RxJava"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+
+</LinearLayout>

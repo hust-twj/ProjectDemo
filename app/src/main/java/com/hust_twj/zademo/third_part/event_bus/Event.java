@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.event_bus;
+package com.hust_twj.zademo.third_part.event_bus;
 
 import org.greenrobot.eventbus.EventBus;
 

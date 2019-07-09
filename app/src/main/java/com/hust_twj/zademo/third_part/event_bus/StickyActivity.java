@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.event_bus;
+package com.hust_twj.zademo.third_part.event_bus;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.event_bus.event.StickyEvent;
+import com.hust_twj.zademo.third_part.event_bus.event.StickyEvent;
 import com.hust_twj.zademo.utils.LogUtils;
 import com.hust_twj.zademo.utils.ToastUtils;
 

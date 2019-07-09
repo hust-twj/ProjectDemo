@@ -53,8 +53,8 @@
 
         <activity android:name=".round_img_view.RoundImgActivity"/>
 
-        <activity android:name=".event_bus.EventBusDemoActivity"/>
-        <activity android:name=".event_bus.StickyActivity"/>
+        <activity android:name=".third_part.event_bus.EventBusDemoActivity"/>
+        <activity android:name=".third_part.event_bus.StickyActivity"/>
 
         <activity android:name=".handler.HandlerActivity"/>
 
@@ -89,11 +89,11 @@
 
         <activity android:name=".aidl.AidlActivity"/>
 
-        <activity android:name=".leak_canary.LeakCanaryActivity"/>
-        <activity android:name=".leak_canary.HandlerLeakActivity"/>
-        <activity android:name=".leak_canary.SingletonLeakActivity"/>
-        <activity android:name=".leak_canary.NonStaticLeakActivity"/>
-        <activity android:name=".leak_canary.ThreadLeakActivity"/>
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity"/>
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.HandlerLeakActivity"/>
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.SingletonLeakActivity"/>
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.NonStaticLeakActivity"/>
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.ThreadLeakActivity"/>
 
         <activity android:name=".view.ViewActivity"/>
 
@@ -109,6 +109,8 @@
         <activity android:name=".jvm.ReferenceQueueActivity"/>
 
         <activity android:name=".thread.ThreadActivity"/>
+        <activity android:name=".third_part.ThirdPartActivity"/>
+        <activity android:name=".third_part.rx_java.RxJavaActivity"/>
 
     </application>
 
