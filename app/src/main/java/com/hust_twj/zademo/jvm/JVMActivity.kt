@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 
 import com.hust_twj.zademo.R
-import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
+import com.hust_twj.zademo.jvm.invoke.InvokeActivity
 import kotlinx.android.synthetic.main.activity_jvm.*
 
 /**
@@ -21,6 +21,10 @@ class JVMActivity : Activity() {
 
         tv_activity_rq.setOnClickListener {
             startActivity(Intent(this@JVMActivity, ReferenceQueueActivity::class.java))
+        }
+
+        tv_invoke.setOnClickListener {
+            startActivity(Intent(this@JVMActivity, InvokeActivity::class.java))
         }
 
     }

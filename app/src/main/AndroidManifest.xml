@@ -112,6 +112,8 @@
         <activity android:name=".third_part.ThirdPartActivity"/>
         <activity android:name=".third_part.rx_java.RxJavaActivity"/>
 
+        <activity android:name=".jvm.invoke.InvokeActivity"/>
+
     </application>
 
 </manifest>
