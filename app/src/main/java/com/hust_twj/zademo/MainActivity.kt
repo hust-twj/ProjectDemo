@@ -8,13 +8,10 @@ import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
-import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
 import com.hust_twj.zademo.download.DownloadActivity
-import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.HandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
-import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
