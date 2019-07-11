@@ -7,16 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.hust_twj.zademo.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Wenjing.Tang
  * on 2019/1/8
  */
-public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
+public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> implements IItemHelper {
 
     private Context mContext;
     private ArrayList<MainEntity> mDataList;
@@ -200,7 +200,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         return mDataList == null ? 0 : mDataList.size();
     }
 
-
     public void setDataList(ArrayList<MainEntity> dataList) {
         mDataList = dataList;
         notifyDataSetChanged();
@@ -211,9 +210,24 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
         notifyDataSetChanged();
     }
 
+    @Override
+    public void itemMoved(int fromPosition, int toPosition) {
+        //在这里进行给原数组数据的移动
+        Collections.swap(mDataList, fromPosition, toPosition);
+        //通知数据移动
+        notifyItemMoved(fromPosition, toPosition);
+    }
+
+    @Override
+    public void itemDismiss(int position) {
+        //原数据移除数据
+        mDataList.remove(position);
+        //通知移除
+        notifyItemRemoved(position);
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView mTvTitle;
-
 
         public ViewHolder(final View itemView) {
             super(itemView);

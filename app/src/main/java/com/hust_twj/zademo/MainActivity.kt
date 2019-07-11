@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.helper.ItemTouchHelper
 import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.block_queue.BlockQueueActivity
@@ -17,6 +18,7 @@ import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
 import com.hust_twj.zademo.main.MainAdapter
 import com.hust_twj.zademo.main.MainEntity
+import com.hust_twj.zademo.main.TouchCallback
 import com.hust_twj.zademo.moment_2_0_optima.SpannableActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.MomentTopicDetailActivity
 import com.hust_twj.zademo.moments_2_0.hot_topic.PublishActivity
@@ -38,6 +40,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    //val touchHelper? : ItemTouchHelper = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -111,6 +114,10 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
+
+        //创建ItemTouchHelper
+        val touchHelper = ItemTouchHelper(TouchCallback(mAdapter))
+        touchHelper.attachToRecyclerView(rv_main)
 
     }
 }
