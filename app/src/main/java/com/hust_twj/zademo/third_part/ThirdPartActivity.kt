@@ -8,6 +8,7 @@ import com.hust_twj.zademo.R
 import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
 import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
+import com.hust_twj.zademo.third_part.retrofit.RetrofitActivity
 import com.hust_twj.zademo.third_part.rx_java.RxJavaActivity
 import kotlinx.android.synthetic.main.activity_third_part.*
 
@@ -37,6 +38,10 @@ class ThirdPartActivity : AppCompatActivity() {
 
         tv_rx_java.setOnClickListener {
             startActivity(Intent(this@ThirdPartActivity, RxJavaActivity::class.java))
+        }
+
+        tv_retrofit.setOnClickListener {
+            startActivity(Intent(this@ThirdPartActivity, RetrofitActivity::class.java))
         }
     }
 

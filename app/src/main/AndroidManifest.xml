@@ -111,6 +111,7 @@
         <activity android:name=".thread.ThreadActivity"/>
         <activity android:name=".third_part.ThirdPartActivity"/>
         <activity android:name=".third_part.rx_java.RxJavaActivity"/>
+        <activity android:name=".third_part.retrofit.RetrofitActivity"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 
