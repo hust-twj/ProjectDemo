@@ -53,9 +53,14 @@ public class RxJavaActivity extends AppCompatActivity {
             // 1. 创建被观察者 & 生产事件
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                Log.d("rx_1", "2  subscribe");
+                Log.d("rx_1", "3  发送事件1");
                 emitter.onNext(1);
+                Log.d("rx_1", "发送事件2");
                 emitter.onNext(2);
+                Log.d("rx_1", "发送事件3");
                 emitter.onNext(3);
+                Log.d("rx_1", "发送事件 结束");
                 emitter.onComplete();
             }
         }).subscribe(new Observer<Integer>() {
@@ -63,22 +68,22 @@ public class RxJavaActivity extends AppCompatActivity {
             // 3. 创建观察者 & 定义响应事件的行为
             @Override
             public void onSubscribe(Disposable d) {
-                LogUtils.d("twj124", "开始采用subscribe连接");
+                Log.d("rx_1", "1  subscribe已经连接");
             }
 
             @Override
             public void onNext(Integer integer) {
-                LogUtils.d("twj124", "对Next事件" + integer + "作出响应");
+                Log.d("rx_1", "对Next事件 " + integer + "作出响应");
             }
 
             @Override
             public void onError(Throwable e) {
-                LogUtils.d("twj124", "Error");
+                Log.d("rx_1", "Error");
             }
 
             @Override
             public void onComplete() {
-                LogUtils.d("twj124", "onComplete");
+                Log.d("rx_1", "onComplete");
             }
         });
 
