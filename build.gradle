@@ -31,3 +31,31 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task find {
+    println "start"
+
+    String path = projectDir.absolutePath + File.separator + "app/src/main/res/drawable-xxhdpi"
+    if (!file(path).exists()) {
+        println "不存在"
+    }else {
+        File[] dir = file(path).listFiles(new FilenameFilter() {
+            @Override
+            boolean accept(File file, String s) {
+                File f = new File(file.getPath() + File.separator + s)
+
+                //打印出大小大于20k的图片
+                if ((s.endsWith(".png") || s.endsWith(".jpg")) && f.length() > 20 * 1024) {
+                    println f.length() + "  " + s
+                }
+
+                if (s.endsWith(".png") || s.endsWith(".jpg") || f.isDirectory()) {
+                    return true
+                }
+                return false
+            }
+        })
+    }
+
+
+}

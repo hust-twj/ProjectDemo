@@ -24,15 +24,6 @@ task hello {
     println("222 hello")
 }
 
-
-task goForit<< {
-    println "go for it"
-}
-
-task go(dependsOn:hello) << {
-    println("go")
-}
-
 def Task nihao = task("nihao")
 nihao.doLast {
     println("nihao --- haha")
