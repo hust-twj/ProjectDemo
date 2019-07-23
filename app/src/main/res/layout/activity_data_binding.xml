@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="user"  type="com.hust_twj.zademo.third_part.data_binding.User"/>
+    </data>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+       <TextView
+           android:id="@+id/tv_name"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:text="@{user.name}"
+           android:gravity="center"
+           android:background="@color/red"
+           tools:text="tv_name"/>
+
+       <TextView
+           android:id="@+id/tv_age"
+           android:layout_width="match_parent"
+           android:layout_height="100dp"
+           android:text="@{String.valueOf(user.age)}"
+           tools:text="tv_age"
+           android:gravity="center"
+           android:background="@color/red"/>
+   </LinearLayout>
+
+</layout >

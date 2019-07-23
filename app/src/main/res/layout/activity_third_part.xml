@@ -7,7 +7,7 @@
     <TextView
         android:id="@+id/tv_event_bus"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/third_part_activity_item_height"
         android:text="EventBus"
         android:gravity="center"/>
     <View
@@ -15,11 +15,10 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent"/>
 
-
     <TextView
         android:id="@+id/tv_butter_knife"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/third_part_activity_item_height"
         android:text="ButterKnife"
         android:gravity="center"/>
     <View
@@ -30,7 +29,7 @@
     <TextView
         android:id="@+id/tv_leak_canary"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/third_part_activity_item_height"
         android:text="LeakCanary"
         android:gravity="center"/>
     <View
@@ -41,7 +40,7 @@
     <TextView
         android:id="@+id/tv_rx_java"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/third_part_activity_item_height"
         android:text="RxJava"
         android:gravity="center"/>
     <View
@@ -52,7 +51,7 @@
     <TextView
         android:id="@+id/tv_retrofit"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/third_part_activity_item_height"
         android:text="Retrofit"
         android:gravity="center"/>
     <View
@@ -60,5 +59,14 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent"/>
 
-
+    <TextView
+        android:id="@+id/tv_data_binding"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/third_part_activity_item_height"
+        android:text="DataBinding"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
+import com.hust_twj.zademo.third_part.data_binding.DataBindingActivity
 import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.third_part.retrofit.RetrofitActivity
@@ -42,6 +43,10 @@ class ThirdPartActivity : AppCompatActivity() {
 
         tv_retrofit.setOnClickListener {
             startActivity(Intent(this@ThirdPartActivity, RetrofitActivity::class.java))
+        }
+
+        tv_data_binding.setOnClickListener {
+            startActivity(Intent(this@ThirdPartActivity, DataBindingActivity::class.java))
         }
     }
 

@@ -112,6 +112,7 @@
         <activity android:name=".third_part.ThirdPartActivity"/>
         <activity android:name=".third_part.rx_java.RxJavaActivity"/>
         <activity android:name=".third_part.retrofit.RetrofitActivity"/>
+        <activity android:name=".third_part.data_binding.DataBindingActivity"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 
