@@ -8,25 +8,37 @@ apply plugin: 'com.mob.sdk'
 
 task helloWorld {
     group = "Hello World"
-    println("111 Hello World")
+    //println("111 Hello World")
+    // 执行  gradle -q helloWorld ， 所有的配置都执行完毕后，会打印出下面
     doLast {
-        println("Hello World!")
+        println("doLast Hello World!")
     }
-    println("222 Hello World")
+    doFirst {
+        println("doFirst Hello World!")
+    }
+    //println("222 Hello World")
 }
 
 task hello {
     group = "hello"
     println("111 hello")
     doLast {
-        println("Hello!")
+        println("doLast Hello")
+    }
+    doFirst {
+        println("doFirst Hello")
     }
     println("222 hello")
 }
 
-def Task nihao = task("nihao")
-nihao.doLast {
-    println("nihao --- haha")
+ task nihao {
+     println("nihao")
+ }
+ nihao.doLast {
+    println("doLast  nihao")
+}
+nihao.doFirst {
+    println("doFirst  nihao")
 }
 
 MobSDK {
