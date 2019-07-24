@@ -115,4 +115,8 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.gyf.barlibrary:barlibrary:2.3.0'
+
+    //滴滴doraemonkit，性能检测
+    debugImplementation 'com.didichuxing.doraemonkit:doraemonkit:1.1.8'
+    releaseImplementation 'com.didichuxing.doraemonkit:doraemonkit-no-op:1.1.8'
 }

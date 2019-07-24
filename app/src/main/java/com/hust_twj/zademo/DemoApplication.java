@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.didichuxing.doraemonkit.DoraemonKit;
+import com.didichuxing.doraemonkit.kit.webdoor.WebDoorManager;
 import com.hust_twj.zademo.utils.CrashHandler;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -29,6 +31,16 @@ public class DemoApplication extends Application {
         LeakCanary.install(this);
 
         registerLifeCallback();
+
+        //集成滴滴的哆啦A梦
+        DoraemonKit.install(this);
+        // H5任意门功能需要，非必须
+        DoraemonKit.setWebDoorCallback(new WebDoorManager.WebDoorCallback() {
+            @Override
+            public void overrideUrlLoading(Context context, String s) {
+                // 使用自己的H5容器打开这个链接
+            }
+      });
     }
 
     public static DemoApplication getApp() {
