@@ -34,6 +34,7 @@ public class DemoApplication extends Application {
 
         //集成滴滴的哆啦A梦
         DoraemonKit.install(this);
+        DoraemonKit.disableUpload();
         // H5任意门功能需要，非必须
         DoraemonKit.setWebDoorCallback(new WebDoorManager.WebDoorCallback() {
             @Override
