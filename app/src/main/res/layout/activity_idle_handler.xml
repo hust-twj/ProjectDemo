@@ -15,5 +15,16 @@
         android:textColor="#ffffff"
         android:gravity="center"/>
 
+    <TextView
+        android:id="@+id/tv_click"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="点击"
+        android:background="@drawable/bg_common_item"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:onClick="click"/>
 
 </LinearLayout>
