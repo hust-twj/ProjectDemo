@@ -30,7 +30,7 @@ public class IdlerHandlerActivity extends Activity {
     public void click(View view) {
         Log.e("twj125", "click start：" + System.currentTimeMillis());
         try {
-            Thread.sleep(5000);
+            Thread.sleep(4000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -41,9 +41,7 @@ public class IdlerHandlerActivity extends Activity {
 
         @Override
         public boolean queueIdle() {
-            Log.e("twj125", "queueIdle start：" + System.currentTimeMillis());
             new MyThread().start();
-            Log.e("twj125", "queueIdle   end：" + System.currentTimeMillis());
             return true;
         }
     }
@@ -51,11 +49,13 @@ public class IdlerHandlerActivity extends Activity {
     class MyThread extends Thread {
         @Override
         public void run() {
+            Log.e("twj125", "queueIdle start：" + System.currentTimeMillis());
             try {
-                Thread.sleep(5000);
+                Thread.sleep(4000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            Log.e("twj125", "queueIdle   end：" + System.currentTimeMillis());
             super.run();
         }
     }
