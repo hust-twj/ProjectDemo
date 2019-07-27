@@ -11,7 +11,7 @@ import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.download.DownloadActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
-import com.hust_twj.zademo.handler.HandlerActivity
+import com.hust_twj.zademo.handler.MainHandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
 
                     MainEntity.INDEX_ROUND_IMAGE -> startActivity(Intent(this@MainActivity, RoundImgActivity::class.java))
 
-                    MainEntity.INDEX_HANDLER -> startActivity(Intent(this@MainActivity, HandlerActivity::class.java))
+                    MainEntity.INDEX_HANDLER -> startActivity(Intent(this@MainActivity, MainHandlerActivity::class.java))
 
                     MainEntity.INDEX_BOTTOM_SHEET -> startActivity(Intent(this@MainActivity, BottomSheetActivity::class.java))
 

@@ -57,6 +57,9 @@
         <activity android:name=".third_part.event_bus.StickyActivity"/>
 
         <activity android:name=".handler.HandlerActivity"/>
+        <activity android:name=".handler.MainHandlerActivity"/>
+        <activity android:name=".handler.HandlerThreadActivity"/>
+        <activity android:name=".handler.IdlerHandlerActivity"/>
 
         <activity android:name=".bottom_sheet.BottomSheetActivity"/>
         <activity android:name=".bottom_sheet.BottomSheetBehaviorActivity"/>
@@ -68,7 +71,6 @@
         <activity android:name=".remote_view.RemoteViewActivity1"/>
         <activity android:name=".remote_view.RemoteViewActivity2"/>
 
-        <activity android:name=".handler.HandlerThreadActivity"/>
         <activity android:name=".xfermode.XfermodeActivity"/>
         <activity android:name=".xfermode.ScratchCardActivity"/>
 

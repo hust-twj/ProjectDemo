@@ -41,15 +41,6 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/tv_handler_thread"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="HandlerThread 通信"
-        android:background="@color/colorAccent"
-        android:gravity="center"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
         android:id="@+id/thread_local"
         android:layout_width="match_parent"
         android:layout_height="60dp"
