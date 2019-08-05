@@ -62,4 +62,8 @@ public class UIWidgetActivity extends Activity {
         startActivity(new Intent(this, GridRvActivity.class));
     }
 
+    public void goConstraintLayout(View view) {
+        startActivity(new Intent(this, GridRvActivity.class));
+    }
+
 }
