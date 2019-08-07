@@ -121,6 +121,10 @@
 
         <activity android:name=".kotlin.KotlinActivity"/>
 
+        <activity android:name=".arch.ArchActivity"/>
+        <activity android:name=".arch.live_data.LiveDataActivity"/>
+        <activity android:name=".arch.life_cycle.LifeCycleActivity"/>
+
     </application>
 
 </manifest>

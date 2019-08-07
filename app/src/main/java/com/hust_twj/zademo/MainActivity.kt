@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.helper.ItemTouchHelper
 import com.hust_twj.zademo.aidl.AidlActivity
+import com.hust_twj.zademo.arch.ArchActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
@@ -112,6 +113,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_THIRD_PART -> startActivity(Intent(this@MainActivity, ThirdPartActivity::class.java))
 
                     MainEntity.INDEX_KOTLIN -> startActivity(Intent(this@MainActivity, KotlinActivity::class.java))
+
+                    MainEntity.INDEX_ARCH -> startActivity(Intent(this@MainActivity, ArchActivity::class.java))
 
                 }
 

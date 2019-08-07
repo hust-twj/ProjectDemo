@@ -175,6 +175,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
         entity28.title = "Kotin";
         mDataList.add(entity28);
 
+        MainEntity entity29 = new MainEntity();
+        entity29.index = MainEntity.INDEX_ARCH;
+        entity29.title = "Arch";
+        mDataList.add(entity29);
+
         setDataList(mDataList);
     }
 
