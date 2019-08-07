@@ -13,6 +13,7 @@ import com.hust_twj.zademo.download.DownloadActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.MainHandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
+import com.hust_twj.zademo.kotlin.KotlinActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
@@ -109,6 +110,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_THREAD -> startActivity(Intent(this@MainActivity, ThreadActivity::class.java))
 
                     MainEntity.INDEX_THIRD_PART -> startActivity(Intent(this@MainActivity, ThirdPartActivity::class.java))
+
+                    MainEntity.INDEX_KOTLIN -> startActivity(Intent(this@MainActivity, KotlinActivity::class.java))
 
                 }
 

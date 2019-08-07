@@ -37,8 +37,9 @@ public class MainEntity implements Serializable {
     public static final int INDEX_UI_PARAMS = 23;
     public static final int INDEX_DOWNLOAD = 24;
     public static final int INDEX_BLOCK_QUEUE = 25;
+    public static final int INDEX_THREAD = 26;
     public static final int INDEX_JVM = 27;
-    public static final int INDEX_THREAD = 29;
+    public static final int INDEX_KOTLIN = 28;
 
     public static final int INDEX_THIRD_PART = 30;
 

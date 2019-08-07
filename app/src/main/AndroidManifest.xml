@@ -119,6 +119,8 @@
 
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 
+        <activity android:name=".kotlin.KotlinActivity"/>
+
     </application>
 
 </manifest>
