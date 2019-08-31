@@ -34,4 +34,13 @@
         android:background="@color/red"
         android:layout_marginTop="30dp"/>
 
+    <TextView
+        android:id="@+id/tv_thread_leak"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="线程 泄露"
+        android:gravity="center"
+        android:background="@color/red"
+        android:layout_marginTop="30dp"/>
+
 </LinearLayout>

@@ -30,6 +30,10 @@ class LeakCanaryActivity : Activity() {
             startActivity(Intent(this@LeakCanaryActivity, NonStaticLeakActivity::class.java))
         }
 
+        tv_thread_leak.setOnClickListener {
+            startActivity(Intent(this@LeakCanaryActivity, ThreadLeakActivity::class.java))
+        }
+
     }
 
 }

@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.utils.LogUtils;
 
 /**
  * handler 内存泄露
@@ -20,14 +20,13 @@ public class HandlerLeakActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_handler_leak);
 
         //模拟内存泄露
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                LogUtils.e("twj","haha");
+                Log.i("twj", "执行handler");
             }
         }, 10 * 1000);
 

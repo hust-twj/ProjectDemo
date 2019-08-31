@@ -17,19 +17,17 @@ public class ThreadLeakActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_leak_canary);
+        setContentView(R.layout.activity_thread_leak);
 
         new MyThread().start();
-
     }
 
     public class MyThread extends Thread  {
         @Override
         public void run() {
             try {
-                Thread.sleep(5000);
-                Log.d("twj", "执行了多线程");
+                Thread.sleep(10 * 1000);
+                Log.i("twj", "执行了子线程");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
