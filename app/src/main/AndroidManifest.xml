@@ -97,6 +97,7 @@
         <activity android:name="com.hust_twj.zademo.third_part.leak_canary.SingletonLeakActivity"/>
         <activity android:name="com.hust_twj.zademo.third_part.leak_canary.NonStaticLeakActivity"/>
         <activity android:name="com.hust_twj.zademo.third_part.leak_canary.ThreadLeakActivity"/>
+        <activity android:name=".third_part.leak_canary.HandlerNoLeakActivity"/>
 
         <activity android:name=".view.ViewActivity"/>
 

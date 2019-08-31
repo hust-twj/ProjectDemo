@@ -4,7 +4,7 @@ import android.content.Context;
 
 /**
  * description ：
- * Created by Wenjing.Tang on 2019-05-22.
+ * Created by Wenjing.Tang on 2019-8-5.
  */
 public class CommonUtils {
 

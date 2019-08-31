@@ -11,7 +11,7 @@ import com.hust_twj.zademo.utils.LogUtils;
 /**
  * handler 内存泄露
  * Created by Wenjing.Tang
- * on 2019/5/5
+ * on 2019/8/5
  */
 public class HandlerLeakActivity extends Activity {
 
@@ -30,8 +30,6 @@ public class HandlerLeakActivity extends Activity {
                 LogUtils.e("twj","haha");
             }
         }, 10 * 1000);
-
-        finish();
 
     }
 

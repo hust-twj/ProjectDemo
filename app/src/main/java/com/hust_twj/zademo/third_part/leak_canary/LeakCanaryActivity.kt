@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_leak_canary.*
 
 /**
  * Created by Wenjing.Tang
- * on 2019/5/1
+ * on 2019/8/1
  */
 class LeakCanaryActivity : Activity() {
 

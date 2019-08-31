@@ -9,7 +9,7 @@ import com.hust_twj.zademo.R;
 /**
  * 非静态内部类 内存泄露
  * Created by Wenjing.Tang
- * on 2019/5/5
+ * on 2019/8/5
  */
 public class NonStaticLeakActivity extends Activity {
 

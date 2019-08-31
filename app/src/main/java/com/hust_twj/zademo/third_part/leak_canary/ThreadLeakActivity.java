@@ -7,6 +7,11 @@ import android.util.Log;
 
 import com.hust_twj.zademo.R;
 
+/**
+ * 线程引起的内存泄露
+ * Created by Wenjing.Tang
+ * on 2019/8/5
+ */
 public class ThreadLeakActivity extends Activity {
 
     @Override
