@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hust_twj.zademo.MainActivity">
+
+    <TextView
+        android:id="@+id/tvLifeCycle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_common_item"
+        android:gravity="center"
+        android:text="LifeCycle"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvLiveData"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/bg_common_item"
+        android:gravity="center"
+        android:text="LiveData"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="原始信息"
+        android:gravity="center"/>
+
+   <!-- <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_common_item"
+        android:gravity="center"
+        android:text="ViewModel"
+        android:textColor="@color/white"
+        android:textSize="14sp" />-->
+
+</LinearLayout>

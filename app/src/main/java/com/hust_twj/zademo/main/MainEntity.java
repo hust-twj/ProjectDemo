@@ -24,6 +24,7 @@ public class MainEntity implements Serializable {
     public static final int INDEX_FRAME = 9;
     public static final int INDEX_LINE_SPACE = 10;
     public static final int INDEX_ROUND_IMAGE = 11;
+    public static final int INDEX_THIRD_PART = 12;
     public static final int INDEX_HANDLER = 13;
     public static final int INDEX_BOTTOM_SHEET = 14;
     public static final int INDEX_SHARE = 15;
@@ -37,9 +38,9 @@ public class MainEntity implements Serializable {
     public static final int INDEX_UI_PARAMS = 23;
     public static final int INDEX_DOWNLOAD = 24;
     public static final int INDEX_BLOCK_QUEUE = 25;
+    public static final int INDEX_THREAD = 26;
     public static final int INDEX_JVM = 27;
-    public static final int INDEX_THREAD = 29;
-
-    public static final int INDEX_THIRD_PART = 30;
+    public static final int INDEX_KOTLIN = 28;
+    public static final int INDEX_ARCH = 29;
 
 }

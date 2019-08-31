@@ -3,9 +3,11 @@ package com.hust_twj.zademo.list;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.ClickUtils;
 import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.ArrayList;
@@ -80,6 +82,11 @@ public class ListActivity extends Activity {
         Bean bean = new Bean(1,"name is 1","address is 1");
         //不hashcode（），map.get(bean) 返回null；重写后返回1
         LogUtils.e("twj123", " allStudents.get(bean)----------------------->"+ map.get(bean));
+
+    }
+
+    public void test(View view) {
+        LogUtils.e("twj125", ClickUtils.isFastClick());
 
     }
 
