@@ -17,7 +17,7 @@ import java.lang.ref.WeakReference;
 
 /**
  * Created by Wenjing.Tang
- * on 2019/3/30
+ * on 2019/9/1
  */
 public class ReferenceQueueActivity extends Activity {
 
@@ -59,24 +59,25 @@ public class ReferenceQueueActivity extends Activity {
     private void referenceQueueTest() {
         ReferenceQueue mReferenceQueue = new ReferenceQueue<>();
 
-        Person wuji = new Person("张无忌", 20);
-        Person zhaoming = new Person("赵敏", 18);
+        Activity activity1 = new Activity();
+        Activity activity2 = new Activity();
 
         // 定义一个弱引用对象引用, 并指定引用队列为 mReferenceQueue
-        KeyedWeakReference weakReference = new KeyedWeakReference(wuji, "1", "wuji", mReferenceQueue);
-        KeyedWeakReference weakReference2 = new KeyedWeakReference(zhaoming, "2", "zhaoming", mReferenceQueue);
+        KeyedWeakReference weakReference1 = new KeyedWeakReference(activity1, "1", "activity1", mReferenceQueue);
+        KeyedWeakReference weakReference2 = new KeyedWeakReference(activity2, "2", "activity2", mReferenceQueue);
 
-        wuji = null;
-        zhaoming = null;
+        //去除强引用
+        activity1 = null;
+        activity2 = null;
 
-        // 触发应用进行垃圾回收
+        // 触发GC
         runGc();
 
         KeyedWeakReference reference;
 
         // 遍历 mReferenceQueue，取出所有弱引用
         while ((reference = (KeyedWeakReference) mReferenceQueue.poll()) != null) {
-            Log.e("twj124", "key: " + reference.key + " | name: " + reference.name);
+            Log.e("twj", "key: " + reference.key + " | name: " + reference.name);
         }
     }
 
