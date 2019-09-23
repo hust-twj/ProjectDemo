@@ -42,6 +42,18 @@ class MotionLayoutActivity_3 : Activity() {
 
         })
 
+        //Java代码触发MotionLayout动画
+        start_anim.setOnClickListener {
+
+            motion_layout.setTransitionDuration(2000)
+            if (motion_layout.progress == 0f) {
+                motion_layout.transitionToEnd()
+            }else if (motion_layout.progress == 1f) {
+                motion_layout.transitionToStart()
+            }
+
+        }
+
     }
 
 }

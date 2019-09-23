@@ -7,6 +7,14 @@
     app:motionDebug="SHOW_ALL"
     app:layoutDescription="@xml/motion_3">
 
+    <Button
+        android:id="@+id/start_anim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手动触发动画"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <ImageView
         android:id="@+id/iv_icon"
         android:layout_width="40dp"

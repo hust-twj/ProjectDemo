@@ -46,7 +46,8 @@
 
     <Transition
         app:constraintSetStart="@+id/start"
-        app:constraintSetEnd="@+id/end">
+        app:constraintSetEnd="@+id/end"
+        app:motionInterpolator="easeInOut">
 
         <KeyFrameSet>
 
@@ -58,6 +59,20 @@
                 app:keyPositionType="parentRelative"
                 app:percentX="0.5"
                 app:percentY="0.5"/>
+
+            <!--<KeyPosition
+                app:framePosition="25"
+                app:motionTarget="@+id/iv_icon"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.2"
+                app:percentY="0.7"/>
+
+            <KeyPosition
+                app:framePosition="75"
+                app:motionTarget="@+id/iv_icon"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.8"
+                app:percentY="0.7"/>-->
 
             <!--相对于路径的定位-->
            <!-- <KeyPosition
