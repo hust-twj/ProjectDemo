@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@+id/iv_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Constraint
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_icon"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/iv_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <Constraint
+            android:id="@+id/tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            android:layout_marginEnd="72dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_icon"
+            app:layout_constraintTop_toTopOf="@+id/iv_icon"/>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end">
+
+        <KeyFrameSet>
+
+            <!--关键帧位置-->
+            <!--相对于父控件的定位-->
+            <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@+id/iv_icon"
+                app:keyPositionType="parentRelative"
+                app:percentX="0.5"
+                app:percentY="0.5"/>
+
+            <!--相对于路径的定位-->
+           <!-- <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@+id/iv_icon"
+                app:keyPositionType="pathRelative"
+                app:percentX="0.5"
+                app:percentY="-0.5"/>-->
+
+          <!--  <KeyPosition
+                app:framePosition="50"
+                app:motionTarget="@+id/tv_text"
+                app:keyPositionType="parentRelative"
+                app:percentY="0.5"/>-->
+
+            <!--关键帧的属性-->
+            <!--前半段的动画效果：逆时针旋转一圈，同时放大一倍-->
+            <KeyAttribute
+                app:motionTarget="@+id/iv_icon"
+                android:rotation="360"
+                android:scaleX="2.0"
+                android:scaleY="2.0"
+                app:framePosition="50"/>
+            <!--后半段的动画效果：逆时针旋转一圈，同时变回原样-->
+            <KeyAttribute
+                app:motionTarget="@+id/iv_icon"
+                android:rotation="720"
+                app:framePosition="100"/>
+
+            <!--文字动画-->
+            <KeyAttribute
+                app:motionTarget="@+id/tv_text"
+                app:framePosition="5"
+                android:alpha="0.0"/>
+
+        </KeyFrameSet>
+
+        <OnSwipe
+            app:touchAnchorId="@+id/iv_icon"
+            app:touchAnchorSide="bottom"
+            app:dragDirection="dragRight"/>
+    </Transition>
+
+</MotionScene>

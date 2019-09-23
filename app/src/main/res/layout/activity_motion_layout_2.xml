@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.motion.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:motionDebug="SHOW_ALL"
+    app:layoutDescription="@xml/motion_2">
+
+   <ImageView
+       android:id="@+id/iv_left"
+       android:layout_width="42dp"
+       android:layout_height="42dp"
+       android:src="@mipmap/ic_launcher"/>
+
+   <ImageView
+       android:id="@+id/iv_center"
+       android:layout_width="42dp"
+       android:layout_height="42dp"
+       android:src="@mipmap/ic_launcher"/>
+
+   <ImageView
+       android:id="@+id/iv_right"
+       android:layout_width="42dp"
+       android:layout_height="42dp"
+       android:src="@mipmap/ic_launcher"/>
+
+</android.support.constraint.motion.MotionLayout>

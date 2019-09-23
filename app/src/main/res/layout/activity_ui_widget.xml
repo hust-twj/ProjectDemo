@@ -43,19 +43,6 @@
         android:textSize="17sp" />
 
     <TextView
-        android:id="@+id/tv_constraint_group"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goConstraintGroup"
-        android:text="ConstraintGroup"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
-
-    <TextView
         android:id="@+id/tv_fragment"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
@@ -145,6 +132,32 @@
         android:gravity="center"
         android:onClick="goConstraintLayout"
         android:text="ConstraintLayout"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_constraint_group"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_common_item"
+        android:gravity="center"
+        android:onClick="goConstraintGroup"
+        android:text="ConstraintLayout--Group"
+        android:textColor="#ffffff"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/tv_motion_layout"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_common_item"
+        android:gravity="center"
+        android:onClick="goMotionLayout"
+        android:text="MotionLayout"
         android:textColor="#ffffff"
         android:textSize="17sp" />
 

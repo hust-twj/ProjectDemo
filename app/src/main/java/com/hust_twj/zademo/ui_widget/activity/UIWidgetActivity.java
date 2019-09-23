@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity;
 import com.hust_twj.zademo.ui_widget.widget.FuParamsAdjustPanel;
 
 /**
@@ -64,6 +65,10 @@ public class UIWidgetActivity extends Activity {
 
     public void goConstraintLayout(View view) {
         startActivity(new Intent(this, ConstraintLayoutActivity.class));
+    }
+
+    public void goMotionLayout(View view) {
+        startActivity(new Intent(this, MotionLayoutActivity.class));
     }
 
 }

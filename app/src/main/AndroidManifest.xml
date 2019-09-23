@@ -89,6 +89,11 @@
         <activity android:name=".ui_widget.activity.CircleMenuActivity"/>
         <activity android:name=".ui_widget.activity.GridRvActivity"/>
         <activity android:name=".ui_widget.activity.ConstraintLayoutActivity"/>
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity"/>
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_1"/>
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_2"/>
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_3"/>
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_4"/>
 
         <activity android:name=".aidl.AidlActivity"/>
 

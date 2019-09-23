@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.motion.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/motion_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:motionDebug="SHOW_ALL"
+    app:layoutDescription="@xml/motion_1">
+
+   <View
+       android:id="@+id/icon"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:background="@color/colorAccent"/>
+
+</android.support.constraint.motion.MotionLayout>
