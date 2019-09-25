@@ -10,9 +10,9 @@
             android:layout_height="40dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="0.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="0.0"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Constraint
             android:id="@id/iv_icon_2"
@@ -20,9 +20,9 @@
             android:layout_height="40dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="0.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="0.0"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Constraint
             android:id="@id/iv_icon_3"
@@ -30,10 +30,9 @@
             android:layout_height="40dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="0.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="0.0"/>
-
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </ConstraintSet>
 
@@ -45,9 +44,9 @@
             android:layout_height="40dp"
             android:layout_marginEnd="100dp"
             android:layout_marginBottom="15dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="1.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="1.0"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Constraint
             android:id="@id/iv_icon_2"
@@ -55,9 +54,9 @@
             android:layout_height="40dp"
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="70dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="1.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="1.0"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Constraint
             android:id="@id/iv_icon_3"
@@ -65,19 +64,19 @@
             android:layout_height="40dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha="1.0"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:alpha="1.0"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </ConstraintSet>
 
     <Transition
-        app:constraintSetStart="@id/start"
-        app:constraintSetEnd="@id/end">
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start">
 
         <OnClick
-            app:touchAnchorId="@id/iv_icon_main"
-            app:clickAction="toggle"/>
+            app:clickAction="toggle"
+            app:touchAnchorId="@id/iv_icon_main" />
 
     </Transition>
 
