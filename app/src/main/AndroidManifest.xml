@@ -94,6 +94,7 @@
         <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_2"/>
         <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_3"/>
         <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_4"/>
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_5"/>
 
         <activity android:name=".aidl.AidlActivity"/>
 

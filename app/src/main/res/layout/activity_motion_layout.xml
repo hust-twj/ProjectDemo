@@ -7,7 +7,7 @@
 
    <TextView
        android:id="@+id/tv_motion_layout_1"
-       android:layout_width="260dp"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_gravity="center_horizontal"
        android:layout_marginTop="20dp"
@@ -20,7 +20,7 @@
 
    <TextView
        android:id="@+id/tv_motion_layout_2"
-       android:layout_width="260dp"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_gravity="center_horizontal"
        android:layout_marginTop="20dp"
@@ -32,7 +32,7 @@
 
    <TextView
        android:id="@+id/tv_motion_layout_3"
-       android:layout_width="260dp"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_gravity="center_horizontal"
        android:layout_marginTop="20dp"
@@ -44,13 +44,25 @@
 
    <TextView
        android:id="@+id/tv_motion_layout_4"
-       android:layout_width="260dp"
+       android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_gravity="center_horizontal"
        android:layout_marginTop="20dp"
        android:background="@drawable/bg_common_item"
        android:gravity="center"
        android:text="MotionLayout_4"
+       android:textColor="#ffffff"
+       android:textSize="17sp" />
+
+   <TextView
+       android:id="@+id/tv_motion_layout_5"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center_horizontal"
+       android:layout_marginTop="20dp"
+       android:background="@drawable/bg_common_item"
+       android:gravity="center"
+       android:text="MotionLayout_5"
        android:textColor="#ffffff"
        android:textSize="17sp" />
 

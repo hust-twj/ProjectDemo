@@ -121,6 +121,10 @@
             app:touchAnchorId="@+id/iv_icon"
             app:touchAnchorSide="bottom" />
 
+       <!-- <OnSwipe
+            app:touchAnchorId="@+id/iv_icon"
+            app:touchAnchorSide="right" />-->
+
     </Transition>
 
 </MotionScene>
