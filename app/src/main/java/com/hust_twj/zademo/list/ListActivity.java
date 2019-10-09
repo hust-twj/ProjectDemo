@@ -97,7 +97,7 @@ public class ListActivity extends Activity {
      * 测试Dequeue 替代 Stack
      * @param view
      */
-    public void dequeue(View view) {
+    public void deque(View view) {
         //模拟栈 push / pop
         Deque<Integer> stack = new LinkedList<>();
         stack.push(1);
