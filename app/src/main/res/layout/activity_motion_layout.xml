@@ -64,6 +64,7 @@
        android:gravity="center"
        android:text="MotionLayout_5"
        android:textColor="#ffffff"
-       android:textSize="17sp" />
+       android:textSize="17sp"
+       android:visibility="visible"/>
 
 </LinearLayout>

@@ -7,13 +7,27 @@
     <TextView
         android:id="@+id/tv_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="发布"
+        android:layout_height="60dp"
+        android:text="List"
         android:background="@drawable/bg_moment_hot_topic_publish"
         android:textSize="17sp"
         android:textColor="#ffffff"
         android:layout_gravity="center"
         android:gravity="center"
         android:onClick="test"/>
+
+    <TextView
+        android:id="@+id/tv_dequeue"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Dequeue"
+        android:background="@drawable/bg_moment_hot_topic_publish"
+        android:textSize="17sp"
+        android:textColor="#ffffff"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="dequeue"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/tv_list"/>
 
 </RelativeLayout>

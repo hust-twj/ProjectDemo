@@ -36,6 +36,10 @@ class MotionLayoutActivity : Activity() {
         tv_motion_layout_4.setOnClickListener {
             startActivity(Intent(this@MotionLayoutActivity, MotionLayoutActivity_4::class.java))
         }
+
+        tv_motion_layout_5.setOnClickListener {
+            startActivity(Intent(this@MotionLayoutActivity, MotionLayoutActivity_5::class.java))
+        }
     }
 
 }

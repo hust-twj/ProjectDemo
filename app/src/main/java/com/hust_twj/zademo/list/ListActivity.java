@@ -3,6 +3,7 @@ package com.hust_twj.zademo.list;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -11,7 +12,9 @@ import com.hust_twj.zademo.utils.ClickUtils;
 import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -89,5 +92,35 @@ public class ListActivity extends Activity {
         LogUtils.e("twj125", ClickUtils.isFastClick());
 
     }
+
+    /**
+     * 测试Dequeue 替代 Stack
+     * @param view
+     */
+    public void dequeue(View view) {
+        //模拟栈 push / pop
+        Deque<Integer> stack = new LinkedList<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+
+        while (!stack.isEmpty()) {
+            int i = stack.pop();
+            Log.e("twj", i + "  ");
+        }
+
+        //模拟队列 add/poll
+        Deque<Integer> queue = new LinkedList<>();
+        queue.add(5);
+        queue.add(6);
+        queue.add(7);
+        queue.add(8);
+        while (!queue.isEmpty()) {
+            int i = queue.poll();
+            Log.e("twj", i + "  ");
+        }
+    }
+
 
 }

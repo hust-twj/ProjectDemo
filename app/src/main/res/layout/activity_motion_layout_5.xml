@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minHeight="80dp"
-            app:layoutDescription="@xml/motion_5"
+            app:layoutDescription="@xml/motion_6"
             app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
             app:motionDebug="SHOW_ALL">
 
@@ -39,7 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="hahaha"
-                android:textSize="20sp"/>
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
 
         </android.support.constraint.motion.MotionLayout>
 
