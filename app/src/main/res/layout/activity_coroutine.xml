@@ -13,10 +13,7 @@
        android:layout_height="60dp"
        android:text="Coroutine协程"
        android:gravity="center"/>
-   <View
-       android:layout_width="match_parent"
-       android:layout_height="1dp"
-       android:background="@color/red"/>
+
 
 
 

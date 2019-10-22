@@ -127,6 +127,7 @@
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 
         <activity android:name=".kotlin.KotlinActivity"/>
+        <activity android:name=".kotlin.CoroutineActivity"/>
 
         <activity android:name=".arch.ArchActivity"/>
         <activity android:name=".arch.live_data.LiveDataActivity"/>
