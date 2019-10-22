@@ -17,16 +17,16 @@
         android:onClick="test"/>
 
     <TextView
-        android:id="@+id/tv_dequeue"
+        android:id="@+id/tv_deque"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Dequeue"
+        android:text="Deque"
         android:background="@drawable/bg_moment_hot_topic_publish"
         android:textSize="17sp"
         android:textColor="#ffffff"
         android:layout_gravity="center"
         android:gravity="center"
-        android:onClick="dequeue"
+        android:onClick="deque"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/tv_list"/>
 
