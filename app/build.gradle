@@ -131,4 +131,10 @@ dependencies {
     //引入arch  ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:1.1.1"
 
+    //okhttp
+    implementation("com.squareup.okhttp3:okhttp:3.7.0")
+    //implementation 'com.squareup.okio:okio:1.7.0'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
 }
