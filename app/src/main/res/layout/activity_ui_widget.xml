@@ -4,161 +4,168 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_switch"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="switchOrSeekBar"
-        android:text="Switch/SeekBar"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_ui_widget"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_ProgressBar"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goProgressBar"
-        android:text="ProgressBar"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+    </android.support.v7.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/tv_gradient_ring"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goGradientRing"
-        android:text="渐变圆环"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_switch"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="switchOrSeekBar"-->
+<!--        android:text="Switch/SeekBar"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_fragment"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goFragment"
-        android:text="fragment"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_ProgressBar"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goProgressBar"-->
+<!--        android:text="ProgressBar"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_list_count_down"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goListCountDown"
-        android:text="列表倒计时"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_gradient_ring"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goGradientRing"-->
+<!--        android:text="渐变圆环"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_arc_rv"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goArcRv"
-        android:text="圆弧RV"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_fragment"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goFragment"-->
+<!--        android:text="fragment"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_ellipse_rv"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goEllipseMenu"
-        android:text="椭圆环菜单"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_list_count_down"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goListCountDown"-->
+<!--        android:text="列表倒计时"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <!--  <TextView
-          android:id="@+id/tv_circle_menu"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="圆环菜单"
-          android:background="@drawable/bg_common_item"
-          android:textSize="17sp"
-          android:textColor="#ffffff"
-          android:layout_centerHorizontal="true"
-          android:gravity="center"
-          android:layout_marginStart="100dp"
-          android:onClick="goCircleMenu"
-          android:layout_below="@+id/tv_ellipse_rv"
-          android:layout_marginTop="20dp"/>-->
+<!--    <TextView-->
+<!--        android:id="@+id/tv_arc_rv"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goArcRv"-->
+<!--        android:text="圆弧RV"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_grid_rv"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goGridRv"
-        android:text="双层RV"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_ellipse_rv"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goEllipseMenu"-->
+<!--        android:text="椭圆环菜单"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_constraint_layout"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goConstraintLayout"
-        android:text="ConstraintLayout"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    &lt;!&ndash;  <TextView-->
+<!--          android:id="@+id/tv_circle_menu"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:text="圆环菜单"-->
+<!--          android:background="@drawable/bg_common_item"-->
+<!--          android:textSize="17sp"-->
+<!--          android:textColor="#ffffff"-->
+<!--          android:layout_centerHorizontal="true"-->
+<!--          android:gravity="center"-->
+<!--          android:layout_marginStart="100dp"-->
+<!--          android:onClick="goCircleMenu"-->
+<!--          android:layout_below="@+id/tv_ellipse_rv"-->
+<!--          android:layout_marginTop="20dp"/>&ndash;&gt;-->
 
-    <TextView
-        android:id="@+id/tv_constraint_group"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goConstraintGroup"
-        android:text="ConstraintLayout--Group"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_grid_rv"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goGridRv"-->
+<!--        android:text="双层RV"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
-    <TextView
-        android:id="@+id/tv_motion_layout"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bg_common_item"
-        android:gravity="center"
-        android:onClick="goMotionLayout"
-        android:text="MotionLayout"
-        android:textColor="#ffffff"
-        android:textSize="17sp" />
+<!--    <TextView-->
+<!--        android:id="@+id/tv_constraint_layout"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goConstraintLayout"-->
+<!--        android:text="ConstraintLayout"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_constraint_group"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goConstraintGroup"-->
+<!--        android:text="ConstraintLayout&#45;&#45;Group"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_motion_layout"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@drawable/bg_common_item"-->
+<!--        android:gravity="center"-->
+<!--        android:onClick="goMotionLayout"-->
+<!--        android:text="MotionLayout"-->
+<!--        android:textColor="#ffffff"-->
+<!--        android:textSize="17sp" />-->
 
 </LinearLayout>
