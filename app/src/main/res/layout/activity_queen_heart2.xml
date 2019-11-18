@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_horizontal"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.5"
+        android:orientation="horizontal"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_vertical"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_begin="100dp"
+        android:orientation="vertical"/>
+
+    <android.support.constraint.Barrier
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="guide_horizontal,guide_vertical"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
