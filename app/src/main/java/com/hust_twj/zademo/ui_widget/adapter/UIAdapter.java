@@ -93,9 +93,14 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         mDataList.add(entity11);
 
         UIEntity entity12 = new UIEntity();
-        entity11.index = UIEntity.INDEX_MOTION_LAYOUT;
-        entity11.title = "TabLayout 与 RV 联动";
-        mDataList.add(entity11);
+        entity12.index = UIEntity.INDEX_TABLAYOUT_RV;
+        entity12.title = "TabLayout 与 RV 联动";
+        mDataList.add(entity12);
+
+        UIEntity entity13 = new UIEntity();
+        entity13.index = UIEntity.INDEX_LIFE_CYCLE_WINDOW;
+        entity13.title = "Lifecycle Window";
+        mDataList.add(entity13);
 
         setDataList(mDataList);
     }

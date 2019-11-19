@@ -56,6 +56,10 @@ class UIWidgetActivity : Activity() {
 
                     UIEntity.INDEX_MOTION_LAYOUT -> startActivity(Intent(this@UIWidgetActivity, MotionLayoutActivity::class.java))
 
+                    UIEntity.INDEX_TABLAYOUT_RV -> startActivity(Intent(this@UIWidgetActivity, TablayoutRvActivity::class.java))
+
+                    UIEntity.INDEX_LIFE_CYCLE_WINDOW -> startActivity(Intent(this@UIWidgetActivity, LifecycleWindowActivity::class.java))
+
                 }
 
             }

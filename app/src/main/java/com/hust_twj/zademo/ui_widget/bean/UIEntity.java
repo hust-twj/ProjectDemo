@@ -24,6 +24,7 @@ public class UIEntity implements Serializable {
     public static final int INDEX_CONSTRAINT_LAYOUT = 9;
     public static final int INDEX_CONSTRAINT_GROUP = 10;
     public static final int INDEX_MOTION_LAYOUT = 11;
-    public static final int INDEX_TABLAYOUT_RV = 11;
+    public static final int INDEX_TABLAYOUT_RV = 12;
+    public static final int INDEX_LIFE_CYCLE_WINDOW = 13;
 
 }

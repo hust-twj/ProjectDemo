@@ -133,6 +133,8 @@
         <activity android:name=".arch.live_data.LiveDataActivity"/>
         <activity android:name=".arch.life_cycle.LifeCycleActivity"/>
 
+        <activity android:name=".ui_widget.activity.LifecycleWindowActivity"/>
+
     </application>
 
 </manifest>
