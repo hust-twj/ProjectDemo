@@ -32,8 +32,6 @@ class UIWidgetActivity : Activity() {
                     UIEntity.INDEX_SEEK_BAR -> {
                         val paramsAdjustPanel = FuParamsAdjustPanel(this@UIWidgetActivity)
                         paramsAdjustPanel.popupFromBottom()
-                        // startActivity(Intent(this@UIWidgetActivity, ProgressBarActivity::class.java))
-
                     }
 
                     UIEntity.INDEX_PROGRESS_BAR -> startActivity(Intent(this@UIWidgetActivity, ProgressBarActivity::class.java))

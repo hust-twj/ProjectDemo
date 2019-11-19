@@ -137,4 +137,8 @@ dependencies {
 
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+
+    //MagicIndicator
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+
 }

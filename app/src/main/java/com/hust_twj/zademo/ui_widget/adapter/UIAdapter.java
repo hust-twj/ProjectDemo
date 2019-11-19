@@ -92,6 +92,11 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         entity11.title = "MotionLayout";
         mDataList.add(entity11);
 
+        UIEntity entity12 = new UIEntity();
+        entity11.index = UIEntity.INDEX_MOTION_LAYOUT;
+        entity11.title = "TabLayout 与 RV 联动";
+        mDataList.add(entity11);
+
         setDataList(mDataList);
     }
 
