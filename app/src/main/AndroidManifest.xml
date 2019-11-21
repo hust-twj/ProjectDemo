@@ -129,9 +129,9 @@
         <activity android:name=".kotlin.KotlinActivity"/>
         <activity android:name=".kotlin.CoroutineActivity"/>
 
-        <activity android:name=".arch.ArchActivity"/>
-        <activity android:name=".arch.live_data.LiveDataActivity"/>
-        <activity android:name=".arch.life_cycle.LifeCycleActivity"/>
+        <activity android:name=".JetPack.JetPackActivity"/>
+        <activity android:name=".JetPack.live_data.LiveDataActivity"/>
+        <activity android:name=".JetPack.life_cycle.LifeCycleActivity"/>
 
         <activity android:name=".ui_widget.activity.LifecycleWindowActivity"/>
 

@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.arch.life_cycle;
+package com.hust_twj.zademo.JetPack.life_cycle;
 
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;

@@ -177,7 +177,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
 
         MainEntity entity29 = new MainEntity();
         entity29.index = MainEntity.INDEX_ARCH;
-        entity29.title = "Arch";
+        entity29.title = "JetPack";
         mDataList.add(entity29);
 
         setDataList(mDataList);

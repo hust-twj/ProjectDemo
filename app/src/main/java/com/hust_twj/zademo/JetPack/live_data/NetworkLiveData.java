@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.arch.live_data;
+package com.hust_twj.zademo.JetPack.live_data;
 
 import android.arch.lifecycle.LiveData;
 import android.content.BroadcastReceiver;
