@@ -20,9 +20,11 @@ import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -31,6 +33,8 @@ import io.reactivex.schedulers.Schedulers;
 public class RxJavaActivity extends AppCompatActivity {
 
     private Subscription mSubscription;
+
+    @SuppressWarnings({"CheckResult"})
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,14 +57,14 @@ public class RxJavaActivity extends AppCompatActivity {
             // 1. 创建被观察者 & 生产事件
             @Override
             public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                Log.d("rx_1", "2  subscribe");
-                Log.d("rx_1", "3  发送事件1");
+                Log.d("create", "2  subscribe");
+                Log.d("create", "3  发送事件1");
                 emitter.onNext(1);
-                Log.d("rx_1", "发送事件2");
+                Log.d("create", "发送事件2");
                 emitter.onNext(2);
-                Log.d("rx_1", "发送事件3");
+                Log.d("create", "发送事件3");
                 emitter.onNext(3);
-                Log.d("rx_1", "发送事件 结束");
+                Log.d("create", "发送事件 结束");
                 emitter.onComplete();
             }
         }).subscribe(new Observer<Integer>() {
@@ -68,22 +72,22 @@ public class RxJavaActivity extends AppCompatActivity {
             // 3. 创建观察者 & 定义响应事件的行为
             @Override
             public void onSubscribe(Disposable d) {
-                Log.d("rx_1", "1  subscribe已经连接");
+                Log.d("create", "1  subscribe已经连接");
             }
 
             @Override
             public void onNext(Integer integer) {
-                Log.d("rx_1", "对Next事件 " + integer + "作出响应");
+                Log.d("create", "对Next事件 " + integer + "作出响应");
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.d("rx_1", "Error");
+                Log.d("create", "Error");
             }
 
             @Override
             public void onComplete() {
-                Log.d("rx_1", "onComplete");
+                Log.d("create", "onComplete");
             }
         });
 
@@ -101,22 +105,22 @@ public class RxJavaActivity extends AppCompatActivity {
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        LogUtils.e("twj124", "onSubscribe");
+                        LogUtils.e("just", "onSubscribe");
                     }
 
                     @Override
                     public void onNext(String s) {
-                        LogUtils.e("twj124", "onNext: " + s);
+                        LogUtils.e("just", "onNext: " + s);
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtils.e("twj124", "onError: ");
+                        LogUtils.e("just", "onError: ");
                     }
 
                     @Override
                     public void onComplete() {
-                        LogUtils.e("twj124", "onComplete: ");
+                        LogUtils.e("just", "onComplete: ");
                     }
                 });
 
@@ -130,7 +134,7 @@ public class RxJavaActivity extends AppCompatActivity {
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) {
-                        LogUtils.e("twj124", "accept: " + s);
+                        LogUtils.e("disposable", "accept: " + s);
                     }
                 });
 
@@ -188,6 +192,104 @@ public class RxJavaActivity extends AppCompatActivity {
                         Log.e("Flowable", "onComplete");
                     }
                 });
+
+        /**
+         * 5、变换操作符：map()
+         */
+        Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                emitter.onNext(1);
+                emitter.onNext(2);
+            }
+        })
+                .map(new Function<Integer, String>() {
+                    @Override
+                    public String apply(Integer integer) throws Exception {
+                        return "使用 Map变换操作符 将事件" + integer + "的参数从 整型" + integer + " 变换成 字符串类型" + integer;
+                    }
+                }).subscribe(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                LogUtils.e("map", s);
+            }
+        });
+
+
+        /**
+         * 6、Subscriber
+         */
+        Subscriber<String> subscriber = new Subscriber<String>() {
+            @Override
+            public void onSubscribe(Subscription s) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+
+        /**
+         * 7、线程切换
+         */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Log.d("thread", "Thread run() 所在线程为 :" + Thread.currentThread().getName());
+
+                Observable.create(new ObservableOnSubscribe<String>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                        Log.d("thread", "Observable subscribe() 所在线程为 :" + Thread.currentThread().getName());
+                        emitter.onNext("文章1");
+                        emitter.onNext("文章2");
+                        emitter.onComplete();
+                    }
+                })
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<String>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                Log.d("thread", "Observer onSubscribe() 所在线程为 :" + Thread.currentThread().getName());
+                            }
+
+                            @Override
+                            public void onNext(String s) {
+                                Log.d("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName());
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                Log.d("thread", "Observer onError() 所在线程为 :" + Thread.currentThread().getName());
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                Log.d("thread", "Observer onComplete() 所在线程为 :" + Thread.currentThread().getName());
+
+
+                            }
+                        });
+
+
+            }
+        }).start();
+
     }
+
 
 }
