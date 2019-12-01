@@ -243,19 +243,26 @@ public class RxJavaActivity extends AppCompatActivity {
 
         /**
          * 7、线程切换
+         *
+         * Thread run() 所在线程为 :Thread-32
+         * Observer onSubscribe() 所在线程为 :Thread-32
+         * Observable subscribe() 所在线程为 :RxCachedThreadScheduler-1
+         * Observer onNext() 所在线程为 :main
+         * Observer onNext() 所在线程为 :main
+         * Observer onComplete() 所在线程为 :main
          */
         new Thread(new Runnable() {
             @Override
             public void run() {
 
-                Log.d("thread", "Thread run() 所在线程为 :" + Thread.currentThread().getName());
+                Log.e("thread", "Thread run() 所在线程为 :" + Thread.currentThread().getName());
 
                 Observable.create(new ObservableOnSubscribe<String>() {
                     @Override
                     public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                        Log.d("thread", "Observable subscribe() 所在线程为 :" + Thread.currentThread().getName());
-                        emitter.onNext("文章1");
-                        emitter.onNext("文章2");
+                        Log.e("thread", "Observable subscribe() 所在线程为 :" + Thread.currentThread().getName());
+                        emitter.onNext("emitter 1");
+                        emitter.onNext("emitter 2");
                         emitter.onComplete();
                     }
                 })
@@ -264,28 +271,24 @@ public class RxJavaActivity extends AppCompatActivity {
                         .subscribe(new Observer<String>() {
                             @Override
                             public void onSubscribe(Disposable d) {
-                                Log.d("thread", "Observer onSubscribe() 所在线程为 :" + Thread.currentThread().getName());
+                                Log.e("thread", "Observer onSubscribe() 所在线程为 :" + Thread.currentThread().getName());
                             }
 
                             @Override
                             public void onNext(String s) {
-                                Log.d("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName());
+                                Log.e("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName());
                             }
 
                             @Override
                             public void onError(Throwable e) {
-                                Log.d("thread", "Observer onError() 所在线程为 :" + Thread.currentThread().getName());
+                                Log.e("thread", "Observer onError() 所在线程为 :" + Thread.currentThread().getName());
                             }
 
                             @Override
                             public void onComplete() {
-                                Log.d("thread", "Observer onComplete() 所在线程为 :" + Thread.currentThread().getName());
-
-
+                                Log.e("thread", "Observer onComplete() 所在线程为 :" + Thread.currentThread().getName());
                             }
                         });
-
-
             }
         }).start();
 
