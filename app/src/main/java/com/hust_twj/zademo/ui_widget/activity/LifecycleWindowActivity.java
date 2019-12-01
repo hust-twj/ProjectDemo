@@ -36,7 +36,7 @@ public class LifecycleWindowActivity extends AppCompatActivity {
             }
         });
 
-       getLifecycle().addObserver(window);
+       getLifecycle().addObserver(new LifecycleWindow(this));
 
     }
 

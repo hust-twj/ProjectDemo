@@ -8,12 +8,11 @@
     tools:context="com.hust_twj.zademo.MainActivity">
 
     <TextView
-        android:id="@+id/tv_lifecycle"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/bg_common_item"
         android:gravity="center"
-        android:text="LifeCycle"
+        android:text="LifeCycle B"
         android:textColor="@color/white"
         android:textSize="14sp" />
 

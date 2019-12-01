@@ -1,6 +1,7 @@
 package com.hust_twj.zademo.JetPack.live_data;
 
 import android.arch.lifecycle.Observer;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
+import com.hust_twj.zademo.utils.LogUtils;
 
 /**
  * Description ：
@@ -53,6 +55,12 @@ public class LiveDataActivity extends AppCompatActivity {
         userInfo.gender = age % 2;
 
         userViewModel.setUser(userInfo);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        LogUtils.e("twj124", "onConfigurationChanged");
     }
 
 }
