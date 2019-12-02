@@ -28,5 +28,9 @@ class MainHandlerActivity : Activity() {
         tv_idle_handler.setOnClickListener {
             startActivity(Intent(this@MainHandlerActivity, IdlerHandlerActivity::class.java))
         }
+
+        handler_runnable.setOnClickListener {
+            startActivity(Intent(this@MainHandlerActivity, HandlerRunnableActivity::class.java))
+        }
     }
 }
