@@ -12,6 +12,9 @@ import com.hust_twj.zademo.utils.LogUtils;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
@@ -19,6 +22,7 @@ import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -266,6 +270,18 @@ public class RxJavaActivity extends AppCompatActivity {
                         emitter.onComplete();
                     }
                 })
+                        .flatMap(new Function<String, ObservableSource<String>>() {
+                            @Override
+                            public ObservableSource<String> apply(String s) throws Exception {
+                                final List<String> list = new ArrayList<>();
+                                for (int i = 0; i < 3; i++) {
+                                    list.add("我是事件 " + s + "拆分后的子事件" + i);
+                                    // 通过flatMap中将被观察者生产的事件序列先进行拆分，再将每个事件转换为一个新的发送三个String事件
+                                    // 最终合并，再发送给被观察者
+                                }
+                                return Observable.fromIterable(list);
+                            }
+                        })
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Observer<String>() {
@@ -276,7 +292,7 @@ public class RxJavaActivity extends AppCompatActivity {
 
                             @Override
                             public void onNext(String s) {
-                                Log.e("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName());
+                                Log.e("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName() + "  " + s);
                             }
 
                             @Override
