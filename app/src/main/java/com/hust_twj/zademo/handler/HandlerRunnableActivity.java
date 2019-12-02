@@ -31,10 +31,11 @@ public class HandlerRunnableActivity extends Activity {
 
                 Message message = Message.obtain(handler, runnable);
                 handler.sendMessage(message);
+
+                //以上等价
+                //handler.post(runnable);
             }
         }).start();
-
-        //handler.post(runnable);
 
         LogUtils.e("twj124", "onCreate  " + Thread.currentThread().getName());
     }
