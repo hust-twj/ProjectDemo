@@ -102,6 +102,11 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         entity13.title = "Lifecycle Window";
         mDataList.add(entity13);
 
+        UIEntity entity14 = new UIEntity();
+        entity14.index = UIEntity.INDEX_GRIDIENT_DRAWABLE;
+        entity14.title = "Gradient Drawable";
+        mDataList.add(entity14);
+
         setDataList(mDataList);
     }
 

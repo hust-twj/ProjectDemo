@@ -60,6 +60,8 @@ class UIWidgetActivity : Activity() {
 
                     UIEntity.INDEX_LIFE_CYCLE_WINDOW -> startActivity(Intent(this@UIWidgetActivity, LifecycleWindowActivity::class.java))
 
+                    UIEntity.INDEX_GRIDIENT_DRAWABLE -> startActivity(Intent(this@UIWidgetActivity, GradientDrawableActivity::class.java))
+
                 }
 
             }
