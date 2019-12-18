@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:id="@+id/tv_bg"
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:background="@drawable/bg_gradient"
