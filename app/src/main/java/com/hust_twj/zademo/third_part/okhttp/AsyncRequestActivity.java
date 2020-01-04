@@ -37,6 +37,7 @@ public class AsyncRequestActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient.Builder().readTimeout(10, TimeUnit.SECONDS).build();
         Request request = new Request.Builder().url("https://www.baidu.com").get().build();
         Call call = client.newCall(request);
+
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {

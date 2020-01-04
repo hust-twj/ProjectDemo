@@ -16,7 +16,7 @@
         android:name=".DemoApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:name">
+        tools:replace="android:appComponentFactory">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -124,11 +124,12 @@
         <activity android:name=".thread.ThreadActivity"/>
         <activity android:name=".third_part.ThirdPartActivity"/>
         <activity android:name=".third_part.rx_java.RxJavaActivity"/>
-        <activity android:name=".third_part.retrofit.RetrofitActivity"/>
+        <activity android:name=".third_part.retrofit.AnnoationTestActivity"/>
         <activity android:name=".third_part.data_binding.DataBindingActivity"/>
         <activity android:name=".third_part.okhttp.OkHttpActivity"/>
         <activity android:name=".third_part.okhttp.SyncRequestActivity"/>
         <activity android:name=".third_part.okhttp.AsyncRequestActivity"/>
+        <activity android:name=".third_part.retrofit.RetrofitActivity"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 

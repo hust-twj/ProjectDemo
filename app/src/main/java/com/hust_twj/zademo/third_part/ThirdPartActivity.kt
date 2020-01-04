@@ -3,7 +3,6 @@ package com.hust_twj.zademo.third_part
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
 import com.hust_twj.zademo.third_part.data_binding.DataBindingActivity
