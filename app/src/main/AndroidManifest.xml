@@ -5,6 +5,7 @@
     
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
@@ -125,6 +126,9 @@
         <activity android:name=".third_part.rx_java.RxJavaActivity"/>
         <activity android:name=".third_part.retrofit.RetrofitActivity"/>
         <activity android:name=".third_part.data_binding.DataBindingActivity"/>
+        <activity android:name=".third_part.okhttp.OkHttpActivity"/>
+        <activity android:name=".third_part.okhttp.SyncRequestActivity"/>
+        <activity android:name=".third_part.okhttp.AsyncRequestActivity"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 

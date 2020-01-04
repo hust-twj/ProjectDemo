@@ -16,6 +16,6 @@
     <dimen name="fu_params_panel_margin_start">25dp</dimen>
     <dimen name="fu_params_panel_margin_end">10dp</dimen>
     
-    <dimen name="third_part_activity_item_height">80dp</dimen>
+    <dimen name="third_part_activity_item_height">60dp</dimen>
 
 </resources>
