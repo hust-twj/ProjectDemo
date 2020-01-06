@@ -8,6 +8,8 @@ import android.widget.TextView;
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.LogUtils;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,19 +46,23 @@ public class RetrofitActivity extends Activity {
         ServiceInterface service = retrofit.create(ServiceInterface.class);
 
         //对 发送请求 进行封装
-        Call<GitUsers> call = service.getCall();
+        Call<List<GitUsers>> call = service.getCall();
 
-        call.enqueue(new Callback<GitUsers>() {
+        call.enqueue(new Callback<List<GitUsers>>() {
             @Override
-            public void onResponse(Call<GitUsers> call, Response<GitUsers> response) {
-                String result = response.toString();
-                LogUtils.e("twj124", result);
+            public void onResponse(Call<List<GitUsers>> call, Response<List<GitUsers>> response) {
+                StringBuilder stringBuilder = new StringBuilder();
+                List<GitUsers> result = response.body();
+                LogUtils.e("twj124", Thread.currentThread().getName() + "  " + result);
+                for (int i = 0; i < result.size(); i++) {
+                    stringBuilder.append(result.get(i).toString());
+                }
+                mTvResult.setText(stringBuilder.toString());
             }
 
             @Override
-            public void onFailure(Call<GitUsers> call, Throwable t) {
+            public void onFailure(Call<List<GitUsers>> call, Throwable t) {
                 LogUtils.e("twj124", "onFailure");
-
             }
         });
     }
