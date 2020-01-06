@@ -38,14 +38,14 @@ public class RetrofitActivity extends Activity {
     private void request() {
         // 在创建Retrofit实例时通过.baseUrl()设置
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.github.com/") // 设置 网络请求 Url
+                .baseUrl("https://api.github.com/") // 设置 网络请求 基Url
                 .addConverterFactory(GsonConverterFactory.create()) //设置数据解析器
                 .build();
 
         // 创建 网络请求接口 的实例
         ServiceInterface service = retrofit.create(ServiceInterface.class);
 
-        //对 发送请求 进行封装
+        //对 发送请求 进行封装，生成最终的网络请求对象
         Call<List<GitUsers>> call = service.getCall();
 
         call.enqueue(new Callback<List<GitUsers>>() {

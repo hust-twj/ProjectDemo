@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.third_part.retrofit;
+package com.hust_twj.zademo.third_part.retrofit.annotation;
 
 /**
  * Description ：

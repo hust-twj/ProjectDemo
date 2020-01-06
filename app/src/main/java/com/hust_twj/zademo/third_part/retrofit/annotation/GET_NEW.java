@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.third_part.retrofit;
+package com.hust_twj.zademo.third_part.retrofit.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

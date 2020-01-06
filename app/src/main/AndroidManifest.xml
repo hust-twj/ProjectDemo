@@ -124,12 +124,14 @@
         <activity android:name=".thread.ThreadActivity"/>
         <activity android:name=".third_part.ThirdPartActivity"/>
         <activity android:name=".third_part.rx_java.RxJavaActivity"/>
-        <activity android:name=".third_part.retrofit.AnnoationTestActivity"/>
+        <activity android:name=".third_part.retrofit.annotation.AnnoationTestActivity"/>
         <activity android:name=".third_part.data_binding.DataBindingActivity"/>
         <activity android:name=".third_part.okhttp.OkHttpActivity"/>
         <activity android:name=".third_part.okhttp.SyncRequestActivity"/>
         <activity android:name=".third_part.okhttp.AsyncRequestActivity"/>
         <activity android:name=".third_part.retrofit.RetrofitActivity"/>
+        <activity android:name=".third_part.retrofit.AboutRetrofitActivity"/>
+        <activity android:name=".third_part.retrofit.proxy.ProxyActivity"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity"/>
 
