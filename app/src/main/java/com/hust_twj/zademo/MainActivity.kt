@@ -2,9 +2,9 @@ package com.hust_twj.zademo
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.helper.ItemTouchHelper
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.JetPack.JetPackActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val mAdapter = MainAdapter(this)
-        rv_main.layoutManager = LinearLayoutManager(this)
+        rv_main.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_main.adapter = mAdapter
 
         mAdapter.setOnlClickListener(object : MainAdapter.OnClickListener{

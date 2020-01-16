@@ -3,9 +3,8 @@ package com.hust_twj.zademo.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
-import android.support.annotation.StringRes;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.annotation.StringRes;
+import androidx.core.app.NotificationManagerCompat;
 import android.view.Gravity;
 import android.widget.Toast;
 

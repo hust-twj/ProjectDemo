@@ -7,14 +7,12 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
-import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.LogUtils;
 
-public class GridentTextView extends android.support.v7.widget.AppCompatTextView {
+public class GridentTextView extends androidx.appcompat.widget.AppCompatTextView {
 
     private LinearGradient mLinearGradient;
     private Paint mPaint;

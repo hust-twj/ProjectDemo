@@ -3,7 +3,7 @@ package com.hust_twj.zademo.toast.toast_type;
 import android.content.Context;
 import android.os.Build;
 import android.os.Handler;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;

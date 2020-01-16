@@ -2,8 +2,8 @@ package com.hust_twj.zademo.ui_widget.activity.motion_layout
 
 import android.app.Activity
 import android.os.Bundle
-import android.support.constraint.motion.MotionLayout
-import android.support.design.widget.AppBarLayout
+import androidx.constraintlayout.motion.widget.MotionLayout
+import com.google.android.material.appbar.AppBarLayout
 
 import com.hust_twj.zademo.R
 import kotlinx.android.synthetic.main.activity_motion_layout_5.*

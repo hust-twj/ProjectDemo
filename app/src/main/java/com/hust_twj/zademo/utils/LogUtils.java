@@ -2,8 +2,8 @@ package com.hust_twj.zademo.utils;
 
 import android.content.Context;
 import android.os.Environment;
-import android.support.annotation.IntDef;
-import android.support.annotation.NonNull;
+import androidx.annotation.IntDef;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 

@@ -1,19 +1,16 @@
 package com.hust_twj.zademo.ui_widget.widget;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.SweepGradient;
-import android.support.annotation.IntRange;
-import android.support.annotation.Nullable;
+import androidx.annotation.IntRange;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.LogUtils;
 
 /**

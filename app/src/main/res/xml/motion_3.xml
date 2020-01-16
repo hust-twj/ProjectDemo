@@ -46,15 +46,15 @@
 
     </ConstraintSet>
 
-    <Transition
+   <!-- <Transition
         app:constraintSetEnd="@+id/end"
         app:constraintSetStart="@+id/start"
         app:motionInterpolator="easeInOut">
 
         <KeyFrameSet>
 
-            <!--关键帧位置-->
-            <!--相对于父控件的定位-->
+            &lt;!&ndash;关键帧位置&ndash;&gt;
+            &lt;!&ndash;相对于父控件的定位&ndash;&gt;
             <KeyAttribute
                 android:rotation="360"
                 android:scaleX="2.0"
@@ -62,7 +62,7 @@
                 app:framePosition="50"
                 app:motionTarget="@+id/iv_icon" />
 
-            <!--<KeyPosition
+            &lt;!&ndash;<KeyPosition
                 app:framePosition="25"
                 app:motionTarget="@+id/iv_icon"
                 app:keyPositionType="parentRelative"
@@ -74,35 +74,35 @@
                 app:motionTarget="@+id/iv_icon"
                 app:keyPositionType="parentRelative"
                 app:percentX="0.8"
-                app:percentY="0.7"/>-->
+                app:percentY="0.7"/>&ndash;&gt;
 
-            <!--相对于路径的定位-->
-            <!-- <KeyPosition
+            &lt;!&ndash;相对于路径的定位&ndash;&gt;
+            &lt;!&ndash; <KeyPosition
                  app:framePosition="50"
                  app:motionTarget="@+id/iv_icon"
                  app:keyPositionType="pathRelative"
                  app:percentX="0.5"
-                 app:percentY="-0.5"/>-->
+                 app:percentY="-0.5"/>&ndash;&gt;
 
-            <!--  <KeyPosition
+            &lt;!&ndash;  <KeyPosition
                   app:framePosition="50"
                   app:motionTarget="@+id/tv_text"
                   app:keyPositionType="parentRelative"
-                  app:percentY="0.5"/>-->
+                  app:percentY="0.5"/>&ndash;&gt;
 
-            <!--关键帧的属性-->
-            <!--前半段的动画效果：逆时针旋转一圈，同时放大一倍-->
+            &lt;!&ndash;关键帧的属性&ndash;&gt;
+            &lt;!&ndash;前半段的动画效果：逆时针旋转一圈，同时放大一倍&ndash;&gt;
             <KeyAttribute
                 android:rotation="720"
                 app:framePosition="100"
                 app:motionTarget="@+id/iv_icon" />
-            <!--后半段的动画效果：逆时针旋转一圈，同时变回原样-->
+            &lt;!&ndash;后半段的动画效果：逆时针旋转一圈，同时变回原样&ndash;&gt;
             <KeyAttribute
                 android:alpha="0.0"
                 app:framePosition="5"
                 app:motionTarget="@+id/tv_text" />
 
-            <!--文字动画-->
+            &lt;!&ndash;文字动画&ndash;&gt;
             <KeyCycle
                 app:framePosition="50"
                 app:waveShape="sin" />
@@ -121,10 +121,10 @@
             app:touchAnchorId="@+id/iv_icon"
             app:touchAnchorSide="bottom" />
 
-       <!-- <OnSwipe
+       &lt;!&ndash; <OnSwipe
             app:touchAnchorId="@+id/iv_icon"
-            app:touchAnchorSide="right" />-->
+            app:touchAnchorSide="right" />&ndash;&gt;
 
-    </Transition>
+    </Transition>-->
 
 </MotionScene>

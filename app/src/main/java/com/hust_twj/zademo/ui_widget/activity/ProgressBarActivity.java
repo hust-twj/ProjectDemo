@@ -2,7 +2,7 @@ package com.hust_twj.zademo.ui_widget.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.ProgressBar;
 
 import com.hust_twj.zademo.R;

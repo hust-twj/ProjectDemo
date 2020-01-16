@@ -1,6 +1,6 @@
 package com.hust_twj.zademo.third_part.retrofit;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * @author hust_twj

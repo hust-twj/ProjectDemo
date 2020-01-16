@@ -2,7 +2,7 @@ package com.hust_twj.zademo.pic_text;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.widget.AutoFitTextView;

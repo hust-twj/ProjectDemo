@@ -2,7 +2,7 @@ package com.hust_twj.zademo.toast.toast_type;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import java.util.LinkedList;
 

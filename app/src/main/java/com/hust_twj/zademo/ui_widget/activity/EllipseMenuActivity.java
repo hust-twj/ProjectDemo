@@ -2,17 +2,11 @@ package com.hust_twj.zademo.ui_widget.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import androidx.annotation.Nullable;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.ui_widget.bean.Members;
-import com.hust_twj.zademo.ui_widget.widget.EllipseMenuLayout;
 import com.hust_twj.zademo.ui_widget.widget.GreatHallMenuLayout;
-import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;

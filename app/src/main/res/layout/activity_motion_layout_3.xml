@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.motion.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/motion_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:motionDebug="SHOW_ALL"
     app:layoutDescription="@xml/motion_3">
 
     <Button
@@ -35,4 +34,4 @@
         app:layout_constraintTop_toTopOf="@id/iv_icon"
         android:text="text"/>
 
-</android.support.constraint.motion.MotionLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

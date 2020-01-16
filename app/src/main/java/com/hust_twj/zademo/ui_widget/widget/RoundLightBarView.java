@@ -12,8 +12,8 @@ import android.graphics.PathMeasure;
 import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 

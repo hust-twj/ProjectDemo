@@ -3,7 +3,7 @@ package com.hust_twj.zademo.utils;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import android.support.annotation.IdRes;
+import androidx.annotation.IdRes;
 import android.view.View;
 
 import com.jakewharton.rxbinding2.view.RxView;

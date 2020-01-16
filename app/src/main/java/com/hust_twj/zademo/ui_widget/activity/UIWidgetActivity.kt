@@ -3,7 +3,7 @@ package com.hust_twj.zademo.ui_widget.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity
 import com.hust_twj.zademo.ui_widget.adapter.UIAdapter
@@ -22,7 +22,7 @@ class UIWidgetActivity : Activity() {
         setContentView(R.layout.activity_ui_widget)
 
         val mAdapter = UIAdapter(this)
-        rv_ui_widget.layoutManager = LinearLayoutManager(this)
+        rv_ui_widget.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_ui_widget.adapter = mAdapter
 
         mAdapter.setOnlClickListener(object : UIAdapter.OnClickListener {

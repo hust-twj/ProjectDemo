@@ -1,6 +1,6 @@
 package com.hust_twj.zademo.line_space_extra;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.hust_twj.zademo.R;

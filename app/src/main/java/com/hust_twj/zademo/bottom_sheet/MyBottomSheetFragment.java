@@ -2,8 +2,8 @@ package com.hust_twj.zademo.bottom_sheet;
 
 import android.app.Dialog;
 import android.os.Bundle;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import android.view.View;
 
 import com.hust_twj.zademo.R;
