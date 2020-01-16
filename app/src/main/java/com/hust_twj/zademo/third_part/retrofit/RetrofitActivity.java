@@ -39,6 +39,7 @@ public class RetrofitActivity extends Activity {
         // 在创建Retrofit实例时通过.baseUrl()设置
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.github.com/") // 设置 网络请求 基Url
+               // .addCallAdapterFactory()
                 .addConverterFactory(GsonConverterFactory.create()) //设置数据解析器
                 .build();
 
@@ -48,6 +49,8 @@ public class RetrofitActivity extends Activity {
         //对 发送请求 进行封装，生成最终的网络请求对象
         Call<List<GitUsers>> call = service.getCall();
 
+        //retrofit2.ExecutorCallAdapterFactory$ExecutorCallbackCall@c572fd3
+        LogUtils.e("twj124", call);
         call.enqueue(new Callback<List<GitUsers>>() {
             @Override
             public void onResponse(Call<List<GitUsers>> call, Response<List<GitUsers>> response) {
