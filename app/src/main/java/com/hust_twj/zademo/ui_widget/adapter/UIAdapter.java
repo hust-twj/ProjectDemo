@@ -93,7 +93,7 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         mDataList.add(entity11);
 
         UIEntity entity12 = new UIEntity();
-        entity12.index = UIEntity.INDEX_TABLAYOUT_RV;
+        entity12.index = UIEntity.INDEX_TAB_LAYOUT_RV;
         entity12.title = "TabLayout 与 RV 联动";
         mDataList.add(entity12);
 
@@ -103,9 +103,14 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         mDataList.add(entity13);
 
         UIEntity entity14 = new UIEntity();
-        entity14.index = UIEntity.INDEX_GRIDIENT_DRAWABLE;
+        entity14.index = UIEntity.INDEX_GRADIENT_DRAWABLE;
         entity14.title = "Gradient Drawable";
         mDataList.add(entity14);
+
+        UIEntity entity15 = new UIEntity();
+        entity15.index = UIEntity.INDEX_VIEW_PAGER_2;
+        entity15.title = "ViewPager2";
+        mDataList.add(entity15);
 
         setDataList(mDataList);
     }

@@ -3,7 +3,6 @@ package com.hust_twj.zademo.ui_widget.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity
 import com.hust_twj.zademo.ui_widget.adapter.UIAdapter
@@ -56,11 +55,13 @@ class UIWidgetActivity : Activity() {
 
                     UIEntity.INDEX_MOTION_LAYOUT -> startActivity(Intent(this@UIWidgetActivity, MotionLayoutActivity::class.java))
 
-                    UIEntity.INDEX_TABLAYOUT_RV -> startActivity(Intent(this@UIWidgetActivity, TablayoutRvActivity::class.java))
+                    UIEntity.INDEX_TAB_LAYOUT_RV -> startActivity(Intent(this@UIWidgetActivity, TablayoutRvActivity::class.java))
 
                     UIEntity.INDEX_LIFE_CYCLE_WINDOW -> startActivity(Intent(this@UIWidgetActivity, LifecycleWindowActivity::class.java))
 
-                    UIEntity.INDEX_GRIDIENT_DRAWABLE -> startActivity(Intent(this@UIWidgetActivity, GradientDrawableActivity::class.java))
+                    UIEntity.INDEX_GRADIENT_DRAWABLE -> startActivity(Intent(this@UIWidgetActivity, GradientDrawableActivity::class.java))
+
+                    UIEntity.INDEX_VIEW_PAGER_2 -> startActivity(Intent(this@UIWidgetActivity, ViewPager2Activity::class.java))
 
                 }
 

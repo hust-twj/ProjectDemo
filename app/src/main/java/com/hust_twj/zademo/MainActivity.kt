@@ -3,10 +3,9 @@ package com.hust_twj.zademo
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
-import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.JetPack.JetPackActivity
+import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
