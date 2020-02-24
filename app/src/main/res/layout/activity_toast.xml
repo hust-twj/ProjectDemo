@@ -16,4 +16,12 @@
         android:gravity="center"
         android:layout_marginStart="100dp"/>
 
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:onClick="showToast"
+        android:text="点击弹出toast"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
 </RelativeLayout>
