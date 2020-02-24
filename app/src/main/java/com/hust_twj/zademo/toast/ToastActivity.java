@@ -57,6 +57,7 @@ public class ToastActivity extends Activity {
     /**
      * 子线程中有弹出过Toast，然后Toast并没有关闭，又在主线程弹出了同一个对象的toast，会造成崩溃。
      * 解决：不在子线程中弹出toast--子线程弹toast时，统一利用handler转移到主线程中处理
+     * https://mp.weixin.qq.com/s/xzeihP6nexNyBLjMuxraJg
      * @param view
      */
     public void showToast(View view) {
