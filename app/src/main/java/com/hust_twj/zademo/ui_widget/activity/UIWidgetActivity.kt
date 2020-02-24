@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.hust_twj.zademo.R
+import com.hust_twj.zademo.ui_widget.activity.layout_manager.LayoutManagerActivity
 import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity
 import com.hust_twj.zademo.ui_widget.adapter.UIAdapter
 import com.hust_twj.zademo.ui_widget.bean.UIEntity
@@ -62,6 +63,8 @@ class UIWidgetActivity : Activity() {
                     UIEntity.INDEX_GRADIENT_DRAWABLE -> startActivity(Intent(this@UIWidgetActivity, GradientDrawableActivity::class.java))
 
                     UIEntity.INDEX_VIEW_PAGER_2 -> startActivity(Intent(this@UIWidgetActivity, ViewPager2Activity::class.java))
+
+                    UIEntity.INDEX_LAYOUT_MANAGER -> startActivity(Intent(this@UIWidgetActivity, LayoutManagerActivity::class.java))
 
                 }
 

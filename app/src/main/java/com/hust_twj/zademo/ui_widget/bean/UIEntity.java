@@ -28,5 +28,6 @@ public class UIEntity implements Serializable {
     public static final int INDEX_LIFE_CYCLE_WINDOW = 13;
     public static final int INDEX_GRADIENT_DRAWABLE = 14;
     public static final int INDEX_VIEW_PAGER_2 = 15;
+    public static final int INDEX_LAYOUT_MANAGER = 16;
 
 }

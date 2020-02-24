@@ -147,6 +147,7 @@
         <activity android:name=".ui_widget.activity.LifecycleWindowActivity"/>
 
         <activity android:name=".ui_widget.activity.ViewPager2Activity"/>
+        <activity android:name=".ui_widget.activity.layout_manager.LayoutManagerActivity"/>
 
     </application>
 

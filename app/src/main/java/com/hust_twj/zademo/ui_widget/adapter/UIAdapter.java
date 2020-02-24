@@ -112,6 +112,11 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         entity15.title = "ViewPager2";
         mDataList.add(entity15);
 
+        UIEntity entity16= new UIEntity();
+        entity16.index = UIEntity.INDEX_LAYOUT_MANAGER;
+        entity16.title = "自定义LayoutManager";
+        mDataList.add(entity16);
+
         setDataList(mDataList);
     }
 
