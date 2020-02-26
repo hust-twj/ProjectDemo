@@ -10,13 +10,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.hust_twj.zademo.DemoApplication;
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.DensityUtils;
-import com.hust_twj.zademo.utils.ToastUtils;
 
 /**
- * Description ：
+ * Description ：TouchDelegate扩大点击区域
+ * https://www.jianshu.com/p/ce14c7d96b0c
+ * https://blog.csdn.net/yxhuang2008/article/details/51126009
  * Created by Wenjing.Tang on 2020-2-26.
  */
 public class TouchDelegateActivity extends AppCompatActivity {
@@ -77,6 +77,5 @@ public class TouchDelegateActivity extends AppCompatActivity {
         });
 
     }
-
 
 }
