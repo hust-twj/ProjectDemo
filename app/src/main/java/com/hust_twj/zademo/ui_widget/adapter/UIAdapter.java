@@ -117,6 +117,11 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         entity16.title = "自定义LayoutManager";
         mDataList.add(entity16);
 
+        UIEntity entity17= new UIEntity();
+        entity17.index = UIEntity.INDEX_TOUCH_DELEGATE;
+        entity17.title = "TouchDelegate";
+        mDataList.add(entity17);
+
         setDataList(mDataList);
     }
 

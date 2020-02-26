@@ -66,6 +66,8 @@ class UIWidgetActivity : Activity() {
 
                     UIEntity.INDEX_LAYOUT_MANAGER -> startActivity(Intent(this@UIWidgetActivity, LayoutManagerActivity::class.java))
 
+                    UIEntity.INDEX_TOUCH_DELEGATE -> startActivity(Intent(this@UIWidgetActivity, TouchDelegateActivity::class.java))
+
                 }
 
             }
