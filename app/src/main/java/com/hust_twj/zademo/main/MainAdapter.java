@@ -180,6 +180,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
         entity29.title = "JetPack";
         mDataList.add(entity29);
 
+        MainEntity entity30 = new MainEntity();
+        entity30.index = MainEntity.INDEX_LIFE_CYCLE;
+        entity30.title = "activity 生命周期";
+        mDataList.add(entity30);
+
         setDataList(mDataList);
     }
 

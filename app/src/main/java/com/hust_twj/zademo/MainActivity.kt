@@ -14,6 +14,7 @@ import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.MainHandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
 import com.hust_twj.zademo.kotlin.KotlinActivity
+import com.hust_twj.zademo.life_cycle.ActivityLifeCycleActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
@@ -114,6 +115,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_KOTLIN -> startActivity(Intent(this@MainActivity, KotlinActivity::class.java))
 
                     MainEntity.INDEX_ARCH -> startActivity(Intent(this@MainActivity, JetPackActivity::class.java))
+
+                    MainEntity.INDEX_LIFE_CYCLE -> startActivity(Intent(this@MainActivity, ActivityLifeCycleActivity::class.java))
 
                 }
 
