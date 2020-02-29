@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.hust_twj.zademo.view.custom_view.ViewGroupA
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#ff0033">
+
+        <com.hust_twj.zademo.view.custom_view.ViewGroupB
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:background="#336699">
+
+            <com.hust_twj.zademo.view.custom_view.MyView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:background="#ffff00" />
+        </com.hust_twj.zademo.view.custom_view.ViewGroupB>
+
+    </com.hust_twj.zademo.view.custom_view.ViewGroupA>
+
+</LinearLayout>

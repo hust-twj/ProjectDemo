@@ -110,6 +110,8 @@
         <activity android:name=".third_part.leak_canary.HandlerNoLeakActivity"/>
 
         <activity android:name=".view.ViewActivity"/>
+        <activity android:name=".view.ViewDispatchActivity"/>
+        <activity android:name=".view.ViewRequestLayoutActivity"/>
 
         <activity android:name=".ui_params.UIParamsActivity"/>
 

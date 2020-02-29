@@ -142,7 +142,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
 
         MainEntity entity22 = new MainEntity();
         entity22.index = MainEntity.INDEX_VIEW;
-        entity22.title = "VIEW事件分发";
+        entity22.title = "VIEW相关（事件分发等）";
         mDataList.add(entity22);
 
         MainEntity entity23 = new MainEntity();
