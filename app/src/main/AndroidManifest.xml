@@ -2,11 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.hust_twj.zademo">
-    
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-    <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,134 +24,148 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".moments_2_0.hot_topic.HotTopicActivity"/>
-        <activity android:name=".moments_2_0.hot_topic.PublishActivity"/>
+        <activity android:name=".moments_2_0.hot_topic.HotTopicActivity" />
+        <activity android:name=".moments_2_0.hot_topic.PublishActivity" />
 
-        <activity android:name=".moment_2_0_optima.SpannableActivity"/>
+        <activity android:name=".moment_2_0_optima.SpannableActivity" />
 
-        <activity android:name=".safety_tips.SafetyDialogActivity"
-            android:theme="@android:style/Theme.Dialog"/>
+        <activity
+            android:name=".safety_tips.SafetyDialogActivity"
+            android:theme="@android:style/Theme.Dialog" />
 
-        <activity android:name=".moments_2_0.hot_topic.MomentTopicDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".moments_2_0.hot_topic.MomentTopicDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".pic_text.PicTextActivity"/>
+        <activity android:name=".pic_text.PicTextActivity" />
 
-        <activity android:name=".list.ListActivity"/>
+        <activity android:name=".list.ListActivity" />
 
-        <activity android:name=".queen_heart.QueenHeartActivity"/>
+        <activity android:name=".queen_heart.QueenHeartActivity" />
 
-        <activity android:name=".live_end.LiveEndActivity"/>
+        <activity android:name=".live_end.LiveEndActivity" />
 
-        <activity android:name=".span.SpanActivity"/>
+        <activity android:name=".span.SpanActivity" />
 
-        <activity android:name=".toast.ToastActivity"/>
+        <activity android:name=".toast.ToastActivity" />
 
-        <activity android:name=".frame_layout.FrameActivity"/>
+        <activity android:name=".frame_layout.FrameActivity" />
 
-        <activity android:name=".line_space_extra.LineSpaceActivity"/>
+        <activity android:name=".line_space_extra.LineSpaceActivity" />
 
-        <activity android:name=".round_img_view.RoundImgActivity"/>
+        <activity android:name=".round_img_view.RoundImgActivity" />
 
-        <activity android:name=".third_part.event_bus.EventBusDemoActivity"/>
-        <activity android:name=".third_part.event_bus.StickyActivity"/>
+        <activity android:name=".third_part.event_bus.EventBusDemoActivity" />
+        <activity android:name=".third_part.event_bus.StickyActivity" />
 
-        <activity android:name=".handler.HandlerActivity"/>
-        <activity android:name=".handler.MainHandlerActivity"/>
-        <activity android:name=".handler.HandlerThreadActivity"/>
-        <activity android:name=".handler.IdlerHandlerActivity"/>
-        <activity android:name=".handler.HandlerRunnableActivity"/>
+        <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".handler.MainHandlerActivity" />
+        <activity android:name=".handler.HandlerThreadActivity" />
+        <activity android:name=".handler.IdlerHandlerActivity" />
+        <activity android:name=".handler.HandlerRunnableActivity" />
 
-        <activity android:name=".bottom_sheet.BottomSheetActivity"/>
-        <activity android:name=".bottom_sheet.BottomSheetBehaviorActivity"/>
+        <activity android:name=".bottom_sheet.BottomSheetActivity" />
+        <activity android:name=".bottom_sheet.BottomSheetBehaviorActivity" />
 
-        <activity android:name=".share.ShareActivity"/>
-        <activity android:name=".pay.PayActivity"/>
+        <activity android:name=".share.ShareActivity" />
+        <activity android:name=".pay.PayActivity" />
 
-        <activity android:name=".remote_view.RemoteViewActivity"/>
-        <activity android:name=".remote_view.RemoteViewActivity1"/>
-        <activity android:name=".remote_view.RemoteViewActivity2"/>
+        <activity android:name=".remote_view.RemoteViewActivity" />
+        <activity android:name=".remote_view.RemoteViewActivity1" />
+        <activity android:name=".remote_view.RemoteViewActivity2" />
 
-        <activity android:name=".xfermode.XfermodeActivity"/>
-        <activity android:name=".xfermode.ScratchCardActivity"/>
+        <activity android:name=".xfermode.XfermodeActivity" />
+        <activity android:name=".xfermode.ScratchCardActivity" />
 
-        <activity android:name=".bitmap_opti.BitmapOptiActivity"/>
-        <activity android:name=".bitmap_opti.BitmapOriginalActivity"/>
-        <activity android:name=".bitmap_opti.BitmapSampleSizeActivity"/>
+        <activity android:name=".bitmap_opti.BitmapOptiActivity" />
+        <activity android:name=".bitmap_opti.BitmapOriginalActivity" />
+        <activity android:name=".bitmap_opti.BitmapSampleSizeActivity" />
 
-        <activity android:name=".ui_widget.activity.UIWidgetActivity"/>
-        <activity android:name=".ui_widget.activity.ProgressBarActivity"/>
-        <activity android:name=".ui_widget.activity.GradientRingActivity"/>
-        <activity android:name=".ui_widget.activity.ConstraintGroupActivity"/>
-        <activity android:name=".ui_widget.activity.FragmentActivity"/>
-        <activity android:name=".ui_widget.activity.ListCountDownActivity"/>
-        <activity android:name=".ui_widget.activity.EllipseMenuActivity"/>
-        <activity android:name=".ui_widget.activity.ArcRecycleViewActivity"/>
-        <activity android:name=".ui_widget.activity.CircleMenuActivity"/>
-        <activity android:name=".ui_widget.activity.GridRvActivity"/>
-        <activity android:name=".ui_widget.activity.ConstraintLayoutActivity"/>
-        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity"/>
-        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_1"/>
-        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_2"/>
-        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_3"/>
-        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_4"/>
-        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_5"/>
-        <activity android:name=".ui_widget.activity.GradientDrawableActivity"/>
-        <activity android:name=".ui_widget.activity.TouchDelegateActivity"/>
+        <activity android:name=".ui_widget.activity.UIWidgetActivity" />
+        <activity android:name=".ui_widget.activity.ProgressBarActivity" />
+        <activity android:name=".ui_widget.activity.GradientRingActivity" />
+        <activity android:name=".ui_widget.activity.ConstraintGroupActivity" />
+        <activity android:name=".ui_widget.activity.FragmentActivity" />
+        <activity android:name=".ui_widget.activity.ListCountDownActivity" />
+        <activity android:name=".ui_widget.activity.EllipseMenuActivity" />
+        <activity android:name=".ui_widget.activity.ArcRecycleViewActivity" />
+        <activity android:name=".ui_widget.activity.CircleMenuActivity" />
+        <activity android:name=".ui_widget.activity.GridRvActivity" />
+        <activity android:name=".ui_widget.activity.ConstraintLayoutActivity" />
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity" />
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_1" />
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_2" />
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_3" />
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_4" />
+        <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_5" />
+        <activity android:name=".ui_widget.activity.GradientDrawableActivity" />
+        <activity android:name=".ui_widget.activity.TouchDelegateActivity" />
 
-        <activity android:name=".aidl.AidlActivity"/>
+        <activity android:name=".aidl.AidlActivity" />
 
-        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity"/>
-        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.HandlerLeakActivity"/>
-        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.SingletonLeakActivity"/>
-        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.NonStaticLeakActivity"/>
-        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.ThreadLeakActivity"/>
-        <activity android:name=".third_part.leak_canary.HandlerNoLeakActivity"/>
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity" />
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.HandlerLeakActivity" />
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.SingletonLeakActivity" />
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.NonStaticLeakActivity" />
+        <activity android:name="com.hust_twj.zademo.third_part.leak_canary.ThreadLeakActivity" />
+        <activity android:name=".third_part.leak_canary.HandlerNoLeakActivity" />
 
-        <activity android:name=".view.ViewActivity"/>
-        <activity android:name=".view.ViewDispatchActivity"/>
-        <activity android:name=".view.ViewRequestLayoutActivity"/>
+        <activity android:name=".view.ViewActivity" />
+        <activity android:name=".view.ViewDispatchActivity" />
+        <activity android:name=".view.ViewRequestLayoutActivity" />
 
-        <activity android:name=".ui_params.UIParamsActivity"/>
+        <activity android:name=".ui_params.UIParamsActivity" />
 
-        <activity android:name=".download.DownloadActivity"/>
+        <activity android:name=".download.DownloadActivity" />
 
-        <activity android:name=".block_queue.BlockQueueActivity"/>
+        <activity android:name=".block_queue.BlockQueueActivity" />
 
-        <activity android:name=".butter_knife.ButterKnifeActivity"/>
+        <activity android:name=".butter_knife.ButterKnifeActivity" />
 
-        <activity android:name=".jvm.JVMActivity"/>
-        <activity android:name=".jvm.ReferenceQueueActivity"/>
+        <activity android:name=".jvm.JVMActivity" />
+        <activity android:name=".jvm.ReferenceQueueActivity" />
 
-        <activity android:name=".thread.ThreadActivity"/>
-        <activity android:name=".third_part.ThirdPartActivity"/>
-        <activity android:name=".third_part.rx_java.RxJavaActivity"/>
-        <activity android:name=".third_part.retrofit.annotation.AnnoationTestActivity"/>
-        <activity android:name=".third_part.data_binding.DataBindingActivity"/>
-        <activity android:name=".third_part.okhttp.OkHttpActivity"/>
-        <activity android:name=".third_part.okhttp.SyncRequestActivity"/>
-        <activity android:name=".third_part.okhttp.AsyncRequestActivity"/>
-        <activity android:name=".third_part.retrofit.RetrofitActivity"/>
-        <activity android:name=".third_part.retrofit.AboutRetrofitActivity"/>
-        <activity android:name=".third_part.retrofit.proxy.ProxyActivity"/>
+        <activity android:name=".thread.ThreadActivity" />
+        <activity android:name=".third_part.ThirdPartActivity" />
+        <activity android:name=".third_part.rx_java.RxJavaActivity" />
+        <activity android:name=".third_part.retrofit.annotation.AnnoationTestActivity" />
+        <activity android:name=".third_part.data_binding.DataBindingActivity" />
+        <activity android:name=".third_part.okhttp.OkHttpActivity" />
+        <activity android:name=".third_part.okhttp.SyncRequestActivity" />
+        <activity android:name=".third_part.okhttp.AsyncRequestActivity" />
+        <activity android:name=".third_part.retrofit.RetrofitActivity" />
+        <activity android:name=".third_part.retrofit.AboutRetrofitActivity" />
+        <activity android:name=".third_part.retrofit.proxy.ProxyActivity" />
 
-        <activity android:name=".jvm.invoke.InvokeActivity"/>
+        <activity android:name=".jvm.invoke.InvokeActivity" />
 
-        <activity android:name=".kotlin.KotlinActivity"/>
-        <activity android:name=".kotlin.CoroutineActivity"/>
+        <activity android:name=".kotlin.KotlinActivity" />
+        <activity android:name=".kotlin.CoroutineActivity" />
 
-        <activity android:name=".JetPack.JetPackActivity"/>
-        <activity android:name=".JetPack.live_data.LiveDataActivity"/>
-        <activity android:name=".JetPack.life_cycle.LifeCycleActivity"/>
-        <activity android:name=".JetPack.life_cycle.LifeCycleActivityB"/>
-        <activity android:name=".JetPack.view_model.ViewModelActivity"/>
+        <activity android:name=".JetPack.JetPackActivity" />
+        <activity android:name=".JetPack.live_data.LiveDataActivity" />
+        <activity android:name=".JetPack.life_cycle.LifeCycleActivity" />
+        <activity android:name=".JetPack.life_cycle.LifeCycleActivityB" />
+        <activity android:name=".JetPack.view_model.ViewModelActivity" />
 
-        <activity android:name=".ui_widget.activity.LifecycleWindowActivity"/>
+        <activity android:name=".ui_widget.activity.LifecycleWindowActivity" />
 
-        <activity android:name=".ui_widget.activity.ViewPager2Activity"/>
-        <activity android:name=".ui_widget.activity.layout_manager.LayoutManagerActivity"/>
+        <activity android:name=".ui_widget.activity.ViewPager2Activity" />
+        <activity android:name=".ui_widget.activity.layout_manager.LayoutManagerActivity" />
 
-        <activity android:name=".life_cycle.ActivityLifeCycleActivity"/>
+        <activity android:name=".life_cycle.ActivityLifeCycleActivity" />
+
+        <!--aidl服务-->
+        <service
+            android:process=":remote"
+            android:name=".aidl.BookService">
+
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.hust_twj.zademo.aidl.BookService" />
+            </intent-filter>
+
+        </service>
 
     </application>
 

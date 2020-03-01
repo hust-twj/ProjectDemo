@@ -3,6 +3,7 @@ package com.hust_twj.zademo;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import com.didichuxing.doraemonkit.DoraemonKit;
@@ -17,6 +18,8 @@ import com.squareup.leakcanary.LeakCanary;
 public class DemoApplication extends Application {
 
     public static DemoApplication app;
+
+    private Resources mResources;
 
     @Override
     public void onCreate() {
@@ -42,6 +45,9 @@ public class DemoApplication extends Application {
                 // 使用自己的H5容器打开这个链接
             }
       });
+
+        // TODO: 2020-02-11 类加载
+        //mResources =
     }
 
     public static DemoApplication getApp() {
@@ -50,6 +56,11 @@ public class DemoApplication extends Application {
 
     public static Context getContext() {
         return app.getApplicationContext();
+    }
+
+    @Override
+    public Resources getResources() {
+        return mResources == null ? super.getResources() : mResources;
     }
 
     private void registerLifeCallback() {
