@@ -6,6 +6,8 @@ import android.os.Bundle
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.ui_widget.activity.layout_manager.LayoutManagerActivity
 import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity
+import com.hust_twj.zademo.ui_widget.activity.view_pager.ViewPager2Activity
+import com.hust_twj.zademo.ui_widget.activity.view_pager.ViewPagerActivity
 import com.hust_twj.zademo.ui_widget.adapter.UIAdapter
 import com.hust_twj.zademo.ui_widget.bean.UIEntity
 import com.hust_twj.zademo.ui_widget.widget.FuParamsAdjustPanel
@@ -67,6 +69,8 @@ class UIWidgetActivity : Activity() {
                     UIEntity.INDEX_LAYOUT_MANAGER -> startActivity(Intent(this@UIWidgetActivity, LayoutManagerActivity::class.java))
 
                     UIEntity.INDEX_TOUCH_DELEGATE -> startActivity(Intent(this@UIWidgetActivity, TouchDelegateActivity::class.java))
+
+                    UIEntity.INDEX_VIEW_PAGER -> startActivity(Intent(this@UIWidgetActivity, ViewPagerActivity::class.java))
 
                 }
 

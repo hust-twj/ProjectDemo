@@ -5,7 +5,7 @@ import androidx.viewpager2.widget.ViewPager2
 import java.lang.Math.abs
 
 /**
- * Description ：
+ * Description ：ViewPager2 的 PageTransformer
  * Created by Wenjing.Tang on 2020-02-16.
  */
 class ScaleInTransformer : ViewPager2.PageTransformer {

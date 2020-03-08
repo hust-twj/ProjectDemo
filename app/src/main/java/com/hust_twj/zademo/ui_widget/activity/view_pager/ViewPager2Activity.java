@@ -1,11 +1,10 @@
-package com.hust_twj.zademo.ui_widget.activity;
+package com.hust_twj.zademo.ui_widget.activity.view_pager;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;

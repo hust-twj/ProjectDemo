@@ -107,6 +107,11 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         entity14.title = "Gradient Drawable";
         mDataList.add(entity14);
 
+        UIEntity entity18= new UIEntity();
+        entity18.index = UIEntity.INDEX_VIEW_PAGER;
+        entity18.title = "ViewPager（PageTransformer）";
+        mDataList.add(entity18);
+
         UIEntity entity15 = new UIEntity();
         entity15.index = UIEntity.INDEX_VIEW_PAGER_2;
         entity15.title = "ViewPager2";
@@ -119,7 +124,7 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
 
         UIEntity entity17= new UIEntity();
         entity17.index = UIEntity.INDEX_TOUCH_DELEGATE;
-        entity17.title = "TouchDelegate";
+        entity17.title = "TouchDelegate(扩大点击区域)";
         mDataList.add(entity17);
 
         setDataList(mDataList);

@@ -150,8 +150,9 @@
 
         <activity android:name=".ui_widget.activity.LifecycleWindowActivity" />
 
-        <activity android:name=".ui_widget.activity.ViewPager2Activity" />
+        <activity android:name=".ui_widget.activity.view_pager.ViewPager2Activity" />
         <activity android:name=".ui_widget.activity.layout_manager.LayoutManagerActivity" />
+        <activity android:name=".ui_widget.activity.view_pager.ViewPagerActivity"/>
 
         <activity android:name=".life_cycle.ActivityLifeCycleActivity" />
 
