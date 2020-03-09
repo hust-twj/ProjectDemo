@@ -1,14 +1,12 @@
 package com.hust_twj.zademo.moments_2_0.hot_topic.widget;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.support.v7.widget.AppCompatTextView;
-import android.text.DynamicLayout;
-import android.text.Spannable;
+
+import androidx.appcompat.widget.AppCompatTextView;
+
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
-import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.ViewTreeObserver;
@@ -17,8 +15,6 @@ import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.CenteredImageSpan;
 import com.hust_twj.zademo.utils.DensityUtils;
 import com.hust_twj.zademo.utils.LogUtils;
-
-import java.lang.reflect.Field;
 
 /**
  * Created by Xingjie

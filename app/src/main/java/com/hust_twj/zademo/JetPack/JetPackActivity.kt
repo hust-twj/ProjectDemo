@@ -1,9 +1,9 @@
 package com.hust_twj.zademo.JetPack
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.JetPack.life_cycle.LifeCycleActivity

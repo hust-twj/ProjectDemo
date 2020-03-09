@@ -1,11 +1,9 @@
 package com.hust_twj.zademo.queen_heart;
 
 import android.app.Activity;
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;

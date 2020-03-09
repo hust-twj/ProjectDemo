@@ -1,12 +1,11 @@
 package com.hust_twj.zademo.third_part.okhttp;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.utils.LogUtils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

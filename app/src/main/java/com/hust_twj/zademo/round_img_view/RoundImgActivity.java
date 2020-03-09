@@ -2,7 +2,7 @@ package com.hust_twj.zademo.round_img_view;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.hust_twj.zademo.R;

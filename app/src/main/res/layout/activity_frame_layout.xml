@@ -6,16 +6,6 @@
     android:layout_marginTop="20dp"
     android:orientation="vertical">
 
-    <com.hust_twj.zademo.frame_layout.FilletFrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/red"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
-
-    </com.hust_twj.zademo.frame_layout.FilletFrameLayout>
-
-
     <com.hust_twj.zademo.frame_layout.RoundLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"

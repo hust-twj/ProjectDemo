@@ -1,7 +1,7 @@
 package com.hust_twj.zademo.ui_widget.util;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.view.View;
 
 import com.hust_twj.zademo.R;

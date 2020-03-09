@@ -1,8 +1,8 @@
 package com.hust_twj.zademo.third_part.okhttp;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;
@@ -37,6 +37,7 @@ public class AsyncRequestActivity extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient.Builder().readTimeout(10, TimeUnit.SECONDS).build();
         Request request = new Request.Builder().url("https://www.baidu.com").get().build();
         Call call = client.newCall(request);
+
         call.enqueue(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {

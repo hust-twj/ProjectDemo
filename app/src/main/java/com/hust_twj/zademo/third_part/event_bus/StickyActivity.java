@@ -2,7 +2,7 @@ package com.hust_twj.zademo.third_part.event_bus;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.TextView;
 
 import com.hust_twj.zademo.R;

@@ -2,11 +2,10 @@ package com.hust_twj.zademo
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.helper.ItemTouchHelper
-import com.hust_twj.zademo.aidl.AidlActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.hust_twj.zademo.JetPack.JetPackActivity
+import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.block_queue.BlockQueueActivity
 import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
@@ -15,6 +14,7 @@ import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.MainHandlerActivity
 import com.hust_twj.zademo.jvm.JVMActivity
 import com.hust_twj.zademo.kotlin.KotlinActivity
+import com.hust_twj.zademo.life_cycle.ActivityLifeCycleActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity
 import com.hust_twj.zademo.live_end.LiveEndActivity
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val mAdapter = MainAdapter(this)
-        rv_main.layoutManager = LinearLayoutManager(this)
+        rv_main.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_main.adapter = mAdapter
 
         mAdapter.setOnlClickListener(object : MainAdapter.OnClickListener{
@@ -115,6 +115,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_KOTLIN -> startActivity(Intent(this@MainActivity, KotlinActivity::class.java))
 
                     MainEntity.INDEX_ARCH -> startActivity(Intent(this@MainActivity, JetPackActivity::class.java))
+
+                    MainEntity.INDEX_LIFE_CYCLE -> startActivity(Intent(this@MainActivity, ActivityLifeCycleActivity::class.java))
 
                 }
 

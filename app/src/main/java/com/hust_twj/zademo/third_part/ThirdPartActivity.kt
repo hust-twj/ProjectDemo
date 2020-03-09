@@ -2,14 +2,14 @@ package com.hust_twj.zademo.third_part
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-
+import androidx.appcompat.app.AppCompatActivity
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
 import com.hust_twj.zademo.third_part.data_binding.DataBindingActivity
 import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.third_part.okhttp.OkHttpActivity
+import com.hust_twj.zademo.third_part.retrofit.AboutRetrofitActivity
 import com.hust_twj.zademo.third_part.retrofit.RetrofitActivity
 import com.hust_twj.zademo.third_part.rx_java.RxJavaActivity
 import kotlinx.android.synthetic.main.activity_third_part.*
@@ -43,7 +43,7 @@ class ThirdPartActivity : AppCompatActivity() {
         }
 
         tv_retrofit.setOnClickListener {
-            startActivity(Intent(this@ThirdPartActivity, RetrofitActivity::class.java))
+            startActivity(Intent(this@ThirdPartActivity, AboutRetrofitActivity::class.java))
         }
 
         tv_data_binding.setOnClickListener {

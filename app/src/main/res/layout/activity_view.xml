@@ -1,46 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/layout"
+    <TextView
+        android:id="@+id/tv_requestLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp">
-
-        <TextView
-            android:id="@+id/tv_invalidate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bg_moment_hot_topic_publish"
-            android:gravity="center"
-            android:onClick="invalidate"
-            android:text="invalidate"
-            android:textColor="#ffffff"
-            android:textSize="17sp" />
-
-        <TextView
-            android:id="@+id/tv_requestLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bg_moment_hot_topic_publish"
-            android:gravity="center"
-            android:onClick="requestLayout"
-            android:text="requestLayout"
-            android:textColor="#ffffff"
-            android:textSize="17sp" />
-    </LinearLayout>
-
-    <com.hust_twj.zademo.view.CustomView
-        android:id="@+id/custom_view"
-        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary" />
+        android:text="requestLayout()"
+        android:textSize="19sp"
+        android:gravity="center" />
 
-</RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/view_dispatch"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="View事件分发"
+        android:textSize="19sp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+</LinearLayout>

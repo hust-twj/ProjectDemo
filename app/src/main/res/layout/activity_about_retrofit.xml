@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_annotation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/third_part_activity_item_height"
+        android:text="Annotation 注解"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/tv_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/third_part_activity_item_height"
+        android:text="Retrofit 网络请求"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/tv_proxy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/third_part_activity_item_height"
+        android:text="动态代理"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
+</LinearLayout>

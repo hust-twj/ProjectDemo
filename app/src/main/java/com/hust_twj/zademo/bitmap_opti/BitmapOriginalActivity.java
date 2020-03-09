@@ -1,16 +1,14 @@
 package com.hust_twj.zademo.bitmap_opti;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.hust_twj.zademo.R;
-import com.hust_twj.zademo.xfermode.ScratchCardActivity;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -3,9 +3,11 @@ package com.hust_twj.zademo.ui_widget.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import com.hust_twj.zademo.R
+import com.hust_twj.zademo.ui_widget.activity.layout_manager.LayoutManagerActivity
 import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity
+import com.hust_twj.zademo.ui_widget.activity.view_pager.ViewPager2Activity
+import com.hust_twj.zademo.ui_widget.activity.view_pager.ViewPagerActivity
 import com.hust_twj.zademo.ui_widget.adapter.UIAdapter
 import com.hust_twj.zademo.ui_widget.bean.UIEntity
 import com.hust_twj.zademo.ui_widget.widget.FuParamsAdjustPanel
@@ -22,7 +24,7 @@ class UIWidgetActivity : Activity() {
         setContentView(R.layout.activity_ui_widget)
 
         val mAdapter = UIAdapter(this)
-        rv_ui_widget.layoutManager = LinearLayoutManager(this)
+        rv_ui_widget.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_ui_widget.adapter = mAdapter
 
         mAdapter.setOnlClickListener(object : UIAdapter.OnClickListener {
@@ -56,11 +58,19 @@ class UIWidgetActivity : Activity() {
 
                     UIEntity.INDEX_MOTION_LAYOUT -> startActivity(Intent(this@UIWidgetActivity, MotionLayoutActivity::class.java))
 
-                    UIEntity.INDEX_TABLAYOUT_RV -> startActivity(Intent(this@UIWidgetActivity, TablayoutRvActivity::class.java))
+                    UIEntity.INDEX_TAB_LAYOUT_RV -> startActivity(Intent(this@UIWidgetActivity, TablayoutRvActivity::class.java))
 
                     UIEntity.INDEX_LIFE_CYCLE_WINDOW -> startActivity(Intent(this@UIWidgetActivity, LifecycleWindowActivity::class.java))
 
-                    UIEntity.INDEX_GRIDIENT_DRAWABLE -> startActivity(Intent(this@UIWidgetActivity, GradientDrawableActivity::class.java))
+                    UIEntity.INDEX_GRADIENT_DRAWABLE -> startActivity(Intent(this@UIWidgetActivity, GradientDrawableActivity::class.java))
+
+                    UIEntity.INDEX_VIEW_PAGER_2 -> startActivity(Intent(this@UIWidgetActivity, ViewPager2Activity::class.java))
+
+                    UIEntity.INDEX_LAYOUT_MANAGER -> startActivity(Intent(this@UIWidgetActivity, LayoutManagerActivity::class.java))
+
+                    UIEntity.INDEX_TOUCH_DELEGATE -> startActivity(Intent(this@UIWidgetActivity, TouchDelegateActivity::class.java))
+
+                    UIEntity.INDEX_VIEW_PAGER -> startActivity(Intent(this@UIWidgetActivity, ViewPagerActivity::class.java))
 
                 }
 

@@ -3,7 +3,7 @@ package com.hust_twj.zademo.third_part.leak_canary;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.hust_twj.zademo.R;

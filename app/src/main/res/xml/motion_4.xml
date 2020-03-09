@@ -74,9 +74,9 @@
         app:constraintSetEnd="@id/end"
         app:constraintSetStart="@id/start">
 
-        <OnClick
+    <!--    <OnClick
             app:clickAction="toggle"
-            app:touchAnchorId="@id/iv_icon_main" />
+            app:touchAnchorId="@id/iv_icon_main" />-->
 
     </Transition>
 

@@ -2,7 +2,7 @@ package com.hust_twj.zademo.third_part.okhttp
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.utils.LogUtils
 import kotlinx.android.synthetic.main.activity_okhttp.*

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.View;

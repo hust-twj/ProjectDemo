@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.third_part.retrofit;
+package com.hust_twj.zademo.third_part.retrofit.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Target(METHOD)
 @Retention(RUNTIME)
-public @interface GET {
+public @interface GET_NEW {
 
     String value() default "";
 

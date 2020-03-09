@@ -2,8 +2,8 @@ package com.hust_twj.zademo.toast;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.IntDef;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.annotation.IntDef;
+import androidx.core.app.NotificationManagerCompat;
 
 import com.hust_twj.zademo.toast.toast_type.CustomToast;
 import com.hust_twj.zademo.toast.toast_type.IToast;

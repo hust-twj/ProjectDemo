@@ -1,7 +1,7 @@
 package com.hust_twj.zademo.main;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -142,7 +142,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
 
         MainEntity entity22 = new MainEntity();
         entity22.index = MainEntity.INDEX_VIEW;
-        entity22.title = "VIEW事件分发";
+        entity22.title = "VIEW相关（事件分发等）";
         mDataList.add(entity22);
 
         MainEntity entity23 = new MainEntity();
@@ -179,6 +179,11 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
         entity29.index = MainEntity.INDEX_ARCH;
         entity29.title = "JetPack";
         mDataList.add(entity29);
+
+        MainEntity entity30 = new MainEntity();
+        entity30.index = MainEntity.INDEX_LIFE_CYCLE;
+        entity30.title = "activity 生命周期";
+        mDataList.add(entity30);
 
         setDataList(mDataList);
     }

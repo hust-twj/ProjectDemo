@@ -1,7 +1,7 @@
 package com.hust_twj.zademo.ui_widget.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +93,7 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         mDataList.add(entity11);
 
         UIEntity entity12 = new UIEntity();
-        entity12.index = UIEntity.INDEX_TABLAYOUT_RV;
+        entity12.index = UIEntity.INDEX_TAB_LAYOUT_RV;
         entity12.title = "TabLayout 与 RV 联动";
         mDataList.add(entity12);
 
@@ -103,9 +103,29 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         mDataList.add(entity13);
 
         UIEntity entity14 = new UIEntity();
-        entity14.index = UIEntity.INDEX_GRIDIENT_DRAWABLE;
+        entity14.index = UIEntity.INDEX_GRADIENT_DRAWABLE;
         entity14.title = "Gradient Drawable";
         mDataList.add(entity14);
+
+        UIEntity entity18= new UIEntity();
+        entity18.index = UIEntity.INDEX_VIEW_PAGER;
+        entity18.title = "ViewPager（PageTransformer）";
+        mDataList.add(entity18);
+
+        UIEntity entity15 = new UIEntity();
+        entity15.index = UIEntity.INDEX_VIEW_PAGER_2;
+        entity15.title = "ViewPager2";
+        mDataList.add(entity15);
+
+        UIEntity entity16= new UIEntity();
+        entity16.index = UIEntity.INDEX_LAYOUT_MANAGER;
+        entity16.title = "自定义LayoutManager";
+        mDataList.add(entity16);
+
+        UIEntity entity17= new UIEntity();
+        entity17.index = UIEntity.INDEX_TOUCH_DELEGATE;
+        entity17.title = "TouchDelegate(扩大点击区域)";
+        mDataList.add(entity17);
 
         setDataList(mDataList);
     }

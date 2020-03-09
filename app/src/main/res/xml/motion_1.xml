@@ -45,9 +45,9 @@
         app:constraintSetStart="@id/start"
         app:duration="2000">
 
-        <OnClick
+       <!-- <OnClick
             app:clickAction="toggle"
-            app:targetId="@+id/icon" />
+            app:targetId="@+id/icon" />-->
 
     </Transition>
 

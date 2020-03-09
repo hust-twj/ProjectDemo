@@ -2,9 +2,7 @@ package com.hust_twj.zademo.safety_tips;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.widget.Button;
-import android.widget.TextView;
+import androidx.annotation.Nullable;
 
 import com.hust_twj.zademo.R;
 

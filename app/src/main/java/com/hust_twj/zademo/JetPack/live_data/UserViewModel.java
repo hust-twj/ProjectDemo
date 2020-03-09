@@ -1,6 +1,6 @@
 package com.hust_twj.zademo.JetPack.live_data;
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 /**
  * Description ：

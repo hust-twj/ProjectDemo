@@ -22,7 +22,7 @@
         app:constraintSetStart="@+id/start"
         app:constraintSetEnd="@+id/end">
 
-        <KeyFrameSet>
+      <!--  <KeyFrameSet>
             <KeyPosition
                 app:framePosition="25"
                 app:motionTarget="@id/moon"
@@ -41,14 +41,14 @@
                 app:keyPositionType="parentRelative"
                 app:percentY="0.6"
                 />
-           <!-- <KeyAttribute
+           &lt;!&ndash; <KeyAttribute
                 app:framePosition="50"
                 app:motionTarget="@id/moon"
                 />
             <KeyAttribute
                 app:framePosition="100"
                 app:motionTarget="@id/moon"
-                />-->
+                />&ndash;&gt;
             <KeyAttribute
                 app:framePosition="85"
                 app:motionTarget="@id/credits"
@@ -58,7 +58,7 @@
                 app:framePosition="100"
                 app:motionTarget="@id/background"
                 android:translationY="500dp" />
-        </KeyFrameSet>
+        </KeyFrameSet>-->
     </Transition>
 
     <!-- Constraints to apply at the start of the animation -->
