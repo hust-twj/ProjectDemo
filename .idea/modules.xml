@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ZADemo.iml" filepath="$PROJECT_DIR$/ZADemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZademoNew.iml" filepath="$PROJECT_DIR$/ZademoNew.iml" group="ZademoNew" />
+      <module fileurl="file://$PROJECT_DIR$/app/ZademoNew-app.iml" filepath="$PROJECT_DIR$/app/ZademoNew-app.iml" group="ZademoNew/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
