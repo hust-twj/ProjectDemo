@@ -6,6 +6,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.hust_twj.zademo.utils.DensityUtils;
+import com.hust_twj.zademo.utils.LogUtils;
 
 import java.util.List;
 
@@ -36,7 +40,7 @@ public class MyViewPagerAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView iv = new ImageView(context);
         iv.setImageResource(list.get(position));
-       // iv.setScaleType(ImageView.ScaleType.FIT_XY);
+        iv.setScaleType(ImageView.ScaleType.FIT_XY);
         container.addView(iv);
         return iv;
     }

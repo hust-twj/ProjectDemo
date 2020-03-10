@@ -32,17 +32,17 @@ public class ViewPagerActivity extends AppCompatActivity {
 
         viewPager.setOffscreenPageLimit(3);
         List<Integer> list = new ArrayList<>();
-        list.add(R.drawable.img_1);
-        list.add(R.drawable.img_2);
-        list.add(R.drawable.img_3);
-        list.add(R.drawable.img_4);
+        list.add(R.drawable.bg_2);
+        list.add(R.drawable.bg_2);
+//        list.add(R.drawable.bg_2);
+//        list.add(R.drawable.bg_2);
         MyViewPagerAdapter adapter = new MyViewPagerAdapter(this, list);
         viewPager.setAdapter(adapter);
 
         viewPager.setClipToPadding(false);
-        viewPager.setPadding(DensityUtils.dp2px(this, 40), 0,
-                DensityUtils.dp2px(this, 40), 0);
-        //viewPager.setPageMargin(DensityUtils.dp2px(this, 20));
+        viewPager.setPadding(DensityUtils.dp2px(this, 60), 0,
+                DensityUtils.dp2px(this, 60), 0);
+        viewPager.setPageMargin(DensityUtils.dp2px(this, 0));
 
         viewPager.setPageTransformer(false, new ScaleTransformer());
     }
