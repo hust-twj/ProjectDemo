@@ -100,6 +100,7 @@
         <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_5" />
         <activity android:name=".ui_widget.activity.GradientDrawableActivity" />
         <activity android:name=".ui_widget.activity.TouchDelegateActivity" />
+        <activity android:name=".ui_widget.activity.RvScrollerActivity"/>
 
         <activity android:name=".aidl.AidlActivity" />
 

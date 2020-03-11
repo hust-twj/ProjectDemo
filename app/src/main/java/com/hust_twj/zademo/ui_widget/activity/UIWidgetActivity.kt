@@ -72,6 +72,8 @@ class UIWidgetActivity : Activity() {
 
                     UIEntity.INDEX_VIEW_PAGER -> startActivity(Intent(this@UIWidgetActivity, ViewPagerActivity::class.java))
 
+                    UIEntity.INDEX_RECYCLE_VIEW_SCROLLER-> startActivity(Intent(this@UIWidgetActivity, RvScrollerActivity::class.java))
+
                 }
 
             }
