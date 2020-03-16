@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.mob.sdk'
 
+apply plugin: 'apk_change_name'
+
 task helloWorld {
     group = "Hello World"
     //println("111 Hello World")
