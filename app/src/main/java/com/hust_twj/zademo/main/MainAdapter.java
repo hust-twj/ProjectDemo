@@ -185,6 +185,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
         entity30.title = "activity 生命周期";
         mDataList.add(entity30);
 
+
+        MainEntity entity31 = new MainEntity();
+        entity31.index = MainEntity.INDEX_HOOK;
+        entity31.title = "hook";
+        mDataList.add(entity31);
+
         setDataList(mDataList);
     }
 

@@ -43,6 +43,6 @@ public class MainEntity implements Serializable {
     public static final int INDEX_KOTLIN = 28;
     public static final int INDEX_ARCH = 29;
     public static final int INDEX_LIFE_CYCLE = 30;
-
+    public static final int INDEX_HOOK = 31;
 
 }

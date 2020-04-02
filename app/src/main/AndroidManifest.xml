@@ -157,6 +157,8 @@
 
         <activity android:name=".life_cycle.ActivityLifeCycleActivity" />
 
+        <activity android:name=".hook.HookActivity"/>
+
         <!--aidl服务-->
         <service
             android:process=":remote"

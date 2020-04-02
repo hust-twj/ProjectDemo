@@ -12,6 +12,7 @@ import com.hust_twj.zademo.bottom_sheet.BottomSheetActivity
 import com.hust_twj.zademo.download.DownloadActivity
 import com.hust_twj.zademo.frame_layout.FrameActivity
 import com.hust_twj.zademo.handler.MainHandlerActivity
+import com.hust_twj.zademo.hook.HookActivity
 import com.hust_twj.zademo.jvm.JVMActivity
 import com.hust_twj.zademo.kotlin.KotlinActivity
 import com.hust_twj.zademo.life_cycle.ActivityLifeCycleActivity
@@ -117,6 +118,8 @@ class MainActivity : AppCompatActivity() {
                     MainEntity.INDEX_ARCH -> startActivity(Intent(this@MainActivity, JetPackActivity::class.java))
 
                     MainEntity.INDEX_LIFE_CYCLE -> startActivity(Intent(this@MainActivity, ActivityLifeCycleActivity::class.java))
+
+                    MainEntity.INDEX_HOOK -> startActivity(Intent(this@MainActivity, HookActivity::class.java))
 
                 }
 
