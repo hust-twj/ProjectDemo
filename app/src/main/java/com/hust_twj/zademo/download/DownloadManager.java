@@ -98,7 +98,7 @@ public class DownloadManager {
     private String getDefaultDirectory() {
         if (TextUtils.isEmpty(DEFAULT_FILE_DIR)) {
             DEFAULT_FILE_DIR = Environment.getExternalStorageDirectory().getAbsolutePath()
-                    + File.separator + "icheny" + File.separator;
+                    + File.separator + "download" + File.separator;
         }
         return DEFAULT_FILE_DIR;
     }

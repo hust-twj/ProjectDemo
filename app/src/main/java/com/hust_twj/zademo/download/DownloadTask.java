@@ -118,10 +118,14 @@ public class DownloadTask extends Handler {
                     }
                     // 获取资源大小
                     mFileLength = response.body().contentLength();
+
+                    LogUtils.e(TAG, "mFileLength: " + mFileLength);
                     close(response.body());
                     // 在本地创建一个与资源同样大小的文件来占位
                     mTmpFile = new File(mPoint.getFilePath(), mPoint.getFileName() + ".tmp");
-                    if (!mTmpFile.getParentFile().exists()) mTmpFile.getParentFile().mkdirs();
+                    if (!mTmpFile.getParentFile().exists()) {
+                        mTmpFile.getParentFile().mkdirs();
+                    }
                     RandomAccessFile tmpAccessFile = new RandomAccessFile(mTmpFile, "rw");
                     tmpAccessFile.setLength(mFileLength);
                     /*将下载任务分配给每个线程*/
@@ -145,6 +149,8 @@ public class DownloadTask extends Handler {
                 }
             });
         } catch (IOException e) {
+            LogUtils.e(TAG, "IOException: " );
+
             e.printStackTrace();
             resetStatus();
         }

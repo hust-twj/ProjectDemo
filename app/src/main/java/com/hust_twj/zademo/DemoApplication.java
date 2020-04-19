@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 import com.didichuxing.doraemonkit.DoraemonKit;
 import com.didichuxing.doraemonkit.kit.webdoor.WebDoorManager;
+import com.github.moduth.blockcanary.BlockCanary;
+import com.hust_twj.zademo.third_part.block_canary.AppBlockCanaryContext;
 import com.hust_twj.zademo.utils.CrashHandler;
 import com.squareup.leakcanary.LeakCanary;
 
@@ -48,6 +50,9 @@ public class DemoApplication extends Application {
 
         // TODO: 2020-02-11 类加载
         //mResources =
+
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+
     }
 
     public static DemoApplication getApp() {
