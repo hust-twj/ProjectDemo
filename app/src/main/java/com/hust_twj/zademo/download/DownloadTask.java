@@ -2,7 +2,6 @@ package com.hust_twj.zademo.download;
 
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
 import com.hust_twj.zademo.download.entity.FilePoint;
 import com.hust_twj.zademo.utils.LogUtils;
@@ -149,7 +148,7 @@ public class DownloadTask extends Handler {
                 }
             });
         } catch (IOException e) {
-            LogUtils.e(TAG, "IOException: " );
+            LogUtils.e(TAG, "IOException: ");
 
             e.printStackTrace();
             resetStatus();
@@ -183,11 +182,13 @@ public class DownloadTask extends Handler {
                 InputStream is = response.body().byteStream();// 获取流
                 RandomAccessFile tmpAccessFile = new RandomAccessFile(mTmpFile, "rw");// 获取前面已创建的文件.
                 tmpAccessFile.seek(finalStartIndex);// 文件写入的开始位置.
-                /*  将网络流中的文件写入本地*/
+                // 将网络流中的文件写入本地
+                //4096字节，每4k写一次？
                 byte[] buffer = new byte[1024 << 2];
-                int length = -1;
+                int length;
                 int total = 0;// 记录本次下载文件的大小
-                long progress = 0;
+                long progress;
+                //读取数据流字节，存储到缓冲区数组
                 while ((length = is.read(buffer)) > 0) {
                     if (cancel) {
                         //关闭资源

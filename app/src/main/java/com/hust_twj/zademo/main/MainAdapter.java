@@ -182,9 +182,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> im
 
         MainEntity entity30 = new MainEntity();
         entity30.index = MainEntity.INDEX_LIFE_CYCLE;
-        entity30.title = "activity 生命周期";
+        entity30.title = "四大组件（生命周期）";
         mDataList.add(entity30);
-
 
         MainEntity entity31 = new MainEntity();
         entity31.index = MainEntity.INDEX_HOOK;

@@ -8,7 +8,7 @@
       android:id="@+id/layout_manager_1"
       android:layout_width="match_parent"
       android:layout_height="100dp"
-      android:text="应用生命周期"
+      android:text="activity 生命周期"
       android:gravity="center" />
 
 

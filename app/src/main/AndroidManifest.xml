@@ -101,7 +101,7 @@
         <activity android:name=".ui_widget.activity.motion_layout.MotionLayoutActivity_5" />
         <activity android:name=".ui_widget.activity.GradientDrawableActivity" />
         <activity android:name=".ui_widget.activity.TouchDelegateActivity" />
-        <activity android:name=".ui_widget.activity.RvScrollerActivity"/>
+        <activity android:name=".ui_widget.activity.RvScrollerActivity" />
 
         <activity android:name=".aidl.AidlActivity" />
 
@@ -154,11 +154,18 @@
 
         <activity android:name=".ui_widget.activity.view_pager.ViewPager2Activity" />
         <activity android:name=".ui_widget.activity.layout_manager.LayoutManagerActivity" />
-        <activity android:name=".ui_widget.activity.view_pager.ViewPagerActivity"/>
+        <activity android:name=".ui_widget.activity.view_pager.ViewPagerActivity" />
 
         <activity android:name=".life_cycle.ActivityLifeCycleActivity" />
+        <activity android:name=".life_cycle.LifeCycleActivity" />
+        <activity android:name=".life_cycle.ServiceLifeCycleActivity" />
 
-        <activity android:name=".hook.HookActivity"/>
+        <service
+            android:name=".life_cycle.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".hook.HookActivity" />
 
         <!--aidl服务-->
         <service
