@@ -15,7 +15,8 @@
         android:name=".DemoApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:name">
+        tools:replace="android:name"
+        android:usesCleartextTraffic="true">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
