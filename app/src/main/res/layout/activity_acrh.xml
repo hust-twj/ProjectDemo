@@ -35,7 +35,8 @@
         android:text="原始信息"
         android:gravity="center"/>
 
-   <!-- <TextView
+    <TextView
+        android:id="@+id/tv_view_model"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -43,6 +44,6 @@
         android:gravity="center"
         android:text="ViewModel"
         android:textColor="@color/white"
-        android:textSize="14sp" />-->
+        android:textSize="14sp" />
 
 </LinearLayout>

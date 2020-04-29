@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
-import com.hust_twj.zademo.JetPack.JetPackActivity
+import com.hust_twj.zademo.jet_pack.JetPackActivity
 import com.hust_twj.zademo.aidl.AidlActivity
 import com.hust_twj.zademo.bitmap_opti.BitmapOptiActivity
 import com.hust_twj.zademo.block_queue.BlockQueueActivity
@@ -15,7 +15,6 @@ import com.hust_twj.zademo.handler.MainHandlerActivity
 import com.hust_twj.zademo.hook.HookActivity
 import com.hust_twj.zademo.jvm.JVMActivity
 import com.hust_twj.zademo.kotlin.KotlinActivity
-import com.hust_twj.zademo.life_cycle.ActivityLifeCycleActivity
 import com.hust_twj.zademo.life_cycle.LifeCycleActivity
 import com.hust_twj.zademo.line_space_extra.LineSpaceActivity
 import com.hust_twj.zademo.list.ListActivity

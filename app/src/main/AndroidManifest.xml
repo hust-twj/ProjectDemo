@@ -144,11 +144,11 @@
         <activity android:name=".kotlin.KotlinActivity" />
         <activity android:name=".kotlin.CoroutineActivity" />
 
-        <activity android:name=".JetPack.JetPackActivity" />
-        <activity android:name=".JetPack.live_data.LiveDataActivity" />
-        <activity android:name=".JetPack.life_cycle.LifeCycleActivity" />
-        <activity android:name=".JetPack.life_cycle.LifeCycleActivityB" />
-        <activity android:name=".JetPack.view_model.ViewModelActivity" />
+        <activity android:name=".jet_pack.JetPackActivity" />
+        <activity android:name=".jet_pack.live_data.LiveDataActivity" />
+        <activity android:name=".jet_pack.life_cycle.LifeCycleActivity" />
+        <activity android:name=".jet_pack.life_cycle.LifeCycleActivityB" />
+        <activity android:name=".jet_pack.view_model.ViewModelActivity" />
 
         <activity android:name=".ui_widget.activity.LifecycleWindowActivity" />
 

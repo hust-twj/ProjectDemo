@@ -1,4 +1,4 @@
-package com.hust_twj.zademo.JetPack.live_data;
+package com.hust_twj.zademo.jet_pack.live_data;
 
 import androidx.lifecycle.Observer;
 import android.content.res.Configuration;
