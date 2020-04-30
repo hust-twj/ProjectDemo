@@ -96,3 +96,57 @@ class GreatPlugin implements Plugin<Project> {
 greatPlugin {
     message = "dynamic message"
 }
+
+//gradle.taskGraph.whenReady { taskGraph ->
+//    taskGraph.afterTask { task ->
+//        println "=========whenReady : taskGraph : afterTask : ${task.getName()}=========="
+//    }
+//}
+
+gradle.taskGraph.addTaskExecutionGraphListener(new TaskExecutionGraphListener() {
+    @Override
+    void graphPopulated(TaskExecutionGraph graph) {
+        println "111=========  "  +graph.allTasks.size() + "   " + graph.allTasks.toString()
+    }
+})
+
+gradle.addListener(new TaskExecutionListener(){
+    @Override
+    void beforeExecute(Task task) {
+        println("==============" + task.name)
+
+    }
+
+    @Override
+    void afterExecute(Task task, TaskState taskState) {
+
+    }
+})
+
+gradle.addBuildListener(new BuildListener() {
+    @Override
+    void buildStarted(Gradle gradle) {
+        println("222==============" + gradle.taskGraph.allTasks.size())
+
+    }
+
+    @Override
+    void settingsEvaluated(Settings settings) {
+
+    }
+
+    @Override
+    void projectsLoaded(Gradle gradle) {
+
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+
+    }
+
+    @Override
+    void buildFinished(BuildResult result) {
+
+    }
+})
