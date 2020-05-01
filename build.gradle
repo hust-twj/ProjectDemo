@@ -25,6 +25,7 @@ buildscript {
         classpath 'com.mob.sdk:MobSDK:+'
         classpath "com.twj.gradle_plugin:gradle_plugin:1.0.0"
 
+        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.10'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -103,6 +104,8 @@ greatPlugin {
 //    }
 //}
 
+println("-------: " + gradle.startParameter.toString())
+
 gradle.taskGraph.addTaskExecutionGraphListener(new TaskExecutionGraphListener() {
     @Override
     void graphPopulated(TaskExecutionGraph graph) {
@@ -113,7 +116,7 @@ gradle.taskGraph.addTaskExecutionGraphListener(new TaskExecutionGraphListener() 
 gradle.addListener(new TaskExecutionListener(){
     @Override
     void beforeExecute(Task task) {
-        println("==============" + task.name)
+      //  println("==============" + task.name)
 
     }
 
