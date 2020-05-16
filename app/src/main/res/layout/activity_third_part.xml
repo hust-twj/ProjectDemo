@@ -80,4 +80,16 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/tv_glide"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/third_part_activity_item_height"
+        android:text="Glide"
+        android:gravity="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"/>
+
 </LinearLayout>

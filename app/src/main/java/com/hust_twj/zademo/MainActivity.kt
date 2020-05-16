@@ -37,6 +37,7 @@ import com.hust_twj.zademo.thread.ThreadActivity
 import com.hust_twj.zademo.toast.ToastActivity
 import com.hust_twj.zademo.ui_params.UIParamsActivity
 import com.hust_twj.zademo.ui_widget.activity.UIWidgetActivity
+import com.hust_twj.zademo.utils.LogUtils
 import com.hust_twj.zademo.view.ViewActivity
 import com.hust_twj.zademo.xfermode.XfermodeActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -53,9 +54,9 @@ class MainActivity : AppCompatActivity() {
         rv_main.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         rv_main.adapter = mAdapter
 
-        mAdapter.setOnlClickListener(object : MainAdapter.OnClickListener{
+        mAdapter.setOnlClickListener(object : MainAdapter.OnClickListener {
             override fun onClick(index: Int) {
-                when(index){
+                when (index) {
                     //动态2.0
                     MainEntity.INDEX_PUBLISH -> startActivity(Intent(this@MainActivity, PublishActivity::class.java))
 
@@ -131,5 +132,10 @@ class MainActivity : AppCompatActivity() {
         val touchHelper = ItemTouchHelper(TouchCallback(mAdapter))
         touchHelper.attachToRecyclerView(rv_main)
 
+        //   dalvik.system.PathClassLoader[DexPathList[[zip file "/data/app/com.hust_twj.zademo-TtCwVsUhjZqiU70nj9yFGQ==/base.apk"],
+        //    nativeLibraryDirectories=[/data/app/com.hust_twj.zademo-TtCwVsUhjZqiU70nj9yFGQ==/lib/arm64,
+        //    /data/app/com.hust_twj.zademo-TtCwVsUhjZqiU70nj9yFGQ==/base.apk!/lib/arm64-v8a,
+        //    /system/lib64, /system/product/lib64, /hw_product/lib64, /system/product/lib64]]]
+        LogUtils.e("twj124", classLoader.toString())
     }
 }

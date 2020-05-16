@@ -7,6 +7,7 @@ import com.hust_twj.zademo.R
 import com.hust_twj.zademo.butter_knife.ButterKnifeActivity
 import com.hust_twj.zademo.third_part.data_binding.DataBindingActivity
 import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
+import com.hust_twj.zademo.third_part.glide.GlideActivity
 import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.third_part.okhttp.OkHttpActivity
 import com.hust_twj.zademo.third_part.retrofit.AboutRetrofitActivity
@@ -51,6 +52,10 @@ class ThirdPartActivity : AppCompatActivity() {
         }
         tv_okhttp.setOnClickListener {
             startActivity(Intent(this@ThirdPartActivity, OkHttpActivity::class.java))
+        }
+
+        tv_glide.setOnClickListener {
+            startActivity(Intent(this@ThirdPartActivity, GlideActivity::class.java))
         }
     }
 
