@@ -31,6 +31,13 @@ public class LiveDataActivity extends AppCompatActivity {
 
         userViewModel = UserViewModel.getInstance();
 
+        userViewModel.observe(this, new Observer() {
+            @Override
+            public void onChanged(Object o) {
+
+            }
+        });
+
         userViewModel.getUser().observe(this, new Observer<UserInfo>() {
             @Override
             public void onChanged(@Nullable UserInfo userInfo) {
