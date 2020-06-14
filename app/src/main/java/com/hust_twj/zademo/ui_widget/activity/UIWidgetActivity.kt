@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.hust_twj.zademo.R
+import com.hust_twj.zademo.ui_widget.activity.anim.SharedAnimActivity
+import com.hust_twj.zademo.ui_widget.activity.anim.SharedAnimDetailActivity
 import com.hust_twj.zademo.ui_widget.activity.layout_manager.LayoutManagerActivity
 import com.hust_twj.zademo.ui_widget.activity.motion_layout.MotionLayoutActivity
 import com.hust_twj.zademo.ui_widget.activity.view_pager.ViewPager2Activity
@@ -73,6 +75,10 @@ class UIWidgetActivity : Activity() {
                     UIEntity.INDEX_VIEW_PAGER -> startActivity(Intent(this@UIWidgetActivity, ViewPagerActivity::class.java))
 
                     UIEntity.INDEX_RECYCLE_VIEW_SCROLLER-> startActivity(Intent(this@UIWidgetActivity, RvScrollerActivity::class.java))
+
+                    UIEntity.INDEX_SHARED_ANIM-> startActivity(Intent(this@UIWidgetActivity, SharedAnimActivity::class.java))
+
+                    UIEntity.INDEX_SHARED_ANIM_DETAIL-> startActivity(Intent(this@UIWidgetActivity, SharedAnimDetailActivity::class.java))
 
                 }
 

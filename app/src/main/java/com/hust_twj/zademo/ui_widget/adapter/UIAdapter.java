@@ -132,6 +132,11 @@ public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> implem
         rv.title = "RecycleView滚动到指定位置";
         mDataList.add(rv);
 
+        UIEntity sharedAnim = new UIEntity();
+        sharedAnim.index = UIEntity.INDEX_SHARED_ANIM;
+        sharedAnim.title = "共享元素动画";
+        mDataList.add(sharedAnim);
+
         setDataList(mDataList);
     }
 

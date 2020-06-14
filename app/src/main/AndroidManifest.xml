@@ -102,6 +102,8 @@
         <activity android:name=".ui_widget.activity.GradientDrawableActivity" />
         <activity android:name=".ui_widget.activity.TouchDelegateActivity" />
         <activity android:name=".ui_widget.activity.RvScrollerActivity" />
+        <activity android:name=".ui_widget.activity.anim.SharedAnimActivity"/>
+        <activity android:name=".ui_widget.activity.anim.SharedAnimDetailActivity"/>
 
         <activity android:name=".aidl.AidlActivity" />
 

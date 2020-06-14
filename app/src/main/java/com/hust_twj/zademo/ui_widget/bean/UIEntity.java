@@ -32,5 +32,7 @@ public class UIEntity implements Serializable {
     public static final int INDEX_TOUCH_DELEGATE = 17;
     public static final int INDEX_VIEW_PAGER = 18;
     public static final int INDEX_RECYCLE_VIEW_SCROLLER = 19;
+    public static final int INDEX_SHARED_ANIM = 20;
+    public static final int INDEX_SHARED_ANIM_DETAIL = 21;
 
 }
