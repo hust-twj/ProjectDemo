@@ -341,66 +341,74 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
 
     /**
      * 延迟操作
+     * 注意：默认执行在新线程
      */
     private void timerClick() {
         LogUtils.e("timer", "timer click" + "  " + System.currentTimeMillis());
         //timer延迟执行例子:如延迟5秒:
-        Observable.timer(5, TimeUnit.SECONDS).subscribe(new Observer<Long>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-                // LogUtils.e("timer", "timer onSubscribe" + "  " + System.currentTimeMillis());
-            }
+        Observable.timer(5, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        // LogUtils.e("timer", "timer onSubscribe" + "  " + System.currentTimeMillis());
+                    }
 
-            @Override
-            public void onNext(Long aLong) {
-                LogUtils.e("timer", "timer onNext" + "  " + System.currentTimeMillis() + "  " + aLong);
-            }
+                    @Override
+                    public void onNext(Long aLong) {
+                        LogUtils.e("timer", "timer onNext" + "  " + System.currentTimeMillis() +
+                                "  " + aLong + "  " + Thread.currentThread().getName());
+                    }
 
-            @Override
-            public void onError(Throwable e) {
-                LogUtils.e("timer", "timer onError" + "  " + System.currentTimeMillis());
-            }
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtils.e("timer", "timer onError" + "  " + System.currentTimeMillis());
+                    }
 
-            @Override
-            public void onComplete() {
-                //LogUtils.e("timer", "timer onComplete" + "  " + System.currentTimeMillis());
-            }
-        });
+                    @Override
+                    public void onComplete() {
+                        //LogUtils.e("timer", "timer onComplete" + "  " + System.currentTimeMillis());
+                    }
+                });
     }
 
     /**
      * 周期性地进行
+     * 注意：默认执行在新线程
      *
      * @param intervalSeconds 间隔周期 秒
      */
     private void clickInterval(int intervalSeconds) {
         CompositeDisposable disposable = new CompositeDisposable();
         //初始间隔0，每intervalSeconds触发一次
-        Observable.interval(0, intervalSeconds, TimeUnit.SECONDS).subscribe(new Observer<Long>() {
-            @Override
-            public void onSubscribe(Disposable d) {
-                disposable.add(d);
-            }
+        Observable.interval(0, intervalSeconds, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable.add(d);
+                    }
 
-            @Override
-            public void onNext(Long aLong) {
-                //总共执行6次
-                if (aLong >= 5) {
-                    disposable.dispose();
-                }
-                LogUtils.e("interval", "interval onNext" + "  " + System.currentTimeMillis() + "  " + aLong);
-            }
+                    @Override
+                    public void onNext(Long aLong) {
+                        //总共执行6次
+                        if (aLong >= 5) {
+                            disposable.dispose();
+                        }
+                        LogUtils.e("interval", "interval onNext" + "  " + System.currentTimeMillis() +
+                                "  " + aLong + "  " + Thread.currentThread().getName());
+                    }
 
-            @Override
-            public void onError(Throwable e) {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 
 }
