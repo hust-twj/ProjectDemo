@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_rx_java"
+        android:id="@+id/tv_rx_java_create"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="RxJava"
+        android:layout_height="80dp"
         android:gravity="center"
-        android:background="@color/app_base_color" />
+        android:text="RxJava 创建" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
 
     <TextView
         android:id="@+id/tv_back_pressure"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="（背压）取出缓存的事件"
+        android:layout_height="80dp"
         android:gravity="center"
-        android:layout_marginTop="100dp"
+        android:text="（背压）取出缓存的事件" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="timer 延迟" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/tv_interval"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="interval 间隔" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
 </LinearLayout>
