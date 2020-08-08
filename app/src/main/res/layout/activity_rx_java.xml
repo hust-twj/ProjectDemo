@@ -52,4 +52,16 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
+    <TextView
+        android:id="@+id/tv_interval_range"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="interval 倒计时  " />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
 </LinearLayout>

@@ -3,6 +3,7 @@ package com.hust_twj.zademo.third_part.rx_java;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ import io.reactivex.schedulers.Schedulers;
 public class RxJavaActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Subscription mSubscription;
+    private TextView mTvCountDown;
 
     @SuppressWarnings({"CheckResult"})
     @Override
@@ -54,6 +56,8 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
 
         findViewById(R.id.tv_timer).setOnClickListener(this);
         findViewById(R.id.tv_interval).setOnClickListener(this);
+        mTvCountDown = findViewById(R.id.tv_interval_range);
+        mTvCountDown.setOnClickListener(this);
 
         /**
          * 5、变换操作符：map()
@@ -186,6 +190,9 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.tv_interval:
                 clickInterval(5);
+                break;
+            case R.id.tv_interval_range:
+                countDown(10);
                 break;
             default:
                 break;
@@ -408,6 +415,30 @@ public class RxJavaActivity extends AppCompatActivity implements View.OnClickLis
                     public void onComplete() {
 
                     }
+                });
+    }
+
+    boolean isCountDownFinished = true;
+
+    private void countDown(int timeInSeconds) {
+        if (!isCountDownFinished) {
+            return;
+        }
+        Flowable.intervalRange(1, timeInSeconds + 1, 0, 1, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        if (timeInSeconds - aLong > 0) {
+                            isCountDownFinished = false;
+                            mTvCountDown.setText("倒计时：" + (timeInSeconds - aLong));
+                        } else {
+                            isCountDownFinished = true;
+                            mTvCountDown.setText("倒计时结束");
+                        }
+                        LogUtils.e("twj124", (timeInSeconds - aLong));
+                    }
+
                 });
     }
 
