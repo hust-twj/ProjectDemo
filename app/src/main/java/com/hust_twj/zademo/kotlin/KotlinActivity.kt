@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import com.hust_twj.zademo.R
+import com.hust_twj.zademo.kotlin.collection.CollectionJavaActivity
+import com.hust_twj.zademo.kotlin.collection.CollectionktActivity
 import kotlinx.android.synthetic.main.activity_kotlin.*
 import kotlinx.coroutines.*
 
@@ -23,8 +25,12 @@ class KotlinActivity : AppCompatActivity() {
         Log.e(TAG, "onCreate: " + System.currentTimeMillis())
 
 
-        tv_coroutine.setOnClickListener {
-            startActivity(Intent(this@KotlinActivity, CoroutineActivity::class.java))
+        tv_collection_java.setOnClickListener {
+            startActivity(Intent(this@KotlinActivity, CollectionJavaActivity::class.java))
+        }
+
+        tv_collection_kt.setOnClickListener {
+            startActivity(Intent(this@KotlinActivity, CollectionktActivity::class.java))
         }
     }
 
