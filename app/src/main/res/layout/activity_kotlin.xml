@@ -19,5 +19,26 @@
        android:background="@color/red"/>
 
 
+   <TextView
+       android:id="@+id/tv_collection_java"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:text="集合高级用法 java"
+       android:gravity="center"/>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/red"/>
+
+   <TextView
+       android:id="@+id/tv_collection_kt"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:text="集合高级用法 Kt"
+       android:gravity="center"/>
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/red"/>
 
 </LinearLayout>

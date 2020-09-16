@@ -146,6 +146,8 @@
 
         <activity android:name=".kotlin.KotlinActivity" />
         <activity android:name=".kotlin.CoroutineActivity" />
+        <activity android:name=".kotlin.collection.CollectionJavaActivity"/>
+        <activity android:name=".kotlin.collection.CollectionktActivity"/>
 
         <activity android:name=".jet_pack.JetPackActivity" />
         <activity android:name=".jet_pack.live_data.LiveDataActivity" />

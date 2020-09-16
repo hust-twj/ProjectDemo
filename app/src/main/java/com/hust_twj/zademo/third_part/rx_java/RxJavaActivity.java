@@ -1,10 +1,12 @@
 package com.hust_twj.zademo.third_part.rx_java;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.hust_twj.zademo.R;
 import com.hust_twj.zademo.utils.LogUtils;
@@ -14,6 +16,7 @@ import org.reactivestreams.Subscription;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
@@ -25,6 +28,7 @@ import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
@@ -33,9 +37,10 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * RxJava使用：
  */
-public class RxJavaActivity extends AppCompatActivity {
+public class RxJavaActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Subscription mSubscription;
+    private TextView mTvCountDown;
 
     @SuppressWarnings({"CheckResult"})
     @Override
@@ -44,14 +49,157 @@ public class RxJavaActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_rx_java);
 
+        findViewById(R.id.tv_rx_java_create).setOnClickListener(this);
+
         //背压 取出缓存
-        findViewById(R.id.tv_back_pressure).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.tv_back_pressure).setOnClickListener(this);
+
+        findViewById(R.id.tv_timer).setOnClickListener(this);
+        findViewById(R.id.tv_interval).setOnClickListener(this);
+        mTvCountDown = findViewById(R.id.tv_interval_range);
+        mTvCountDown.setOnClickListener(this);
+
+        /**
+         * 5、变换操作符：map()
+         */
+        Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
-            public void onClick(View v) {
-                mSubscription.request(2);
+            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+                emitter.onNext(1);
+                emitter.onNext(2);
+            }
+        })
+                .map(new Function<Integer, String>() {
+                    @Override
+                    public String apply(Integer integer) throws Exception {
+                        return "使用 Map变换操作符 将事件" + integer + "的参数从 整型" + integer + " 变换成 字符串类型" + integer;
+                    }
+                }).subscribe(new Consumer<String>() {
+            @Override
+            public void accept(String s) throws Exception {
+                LogUtils.e("map", s);
             }
         });
 
+
+        /**
+         * 6、Subscriber
+         */
+        Subscriber<String> subscriber = new Subscriber<String>() {
+            @Override
+            public void onSubscribe(Subscription s) {
+
+            }
+
+            @Override
+            public void onNext(String s) {
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        };
+
+        /**
+         * 7、线程切换
+         *
+         * Thread run() 所在线程为 :Thread-32
+         * Observer onSubscribe() 所在线程为 :Thread-32
+         * Observable subscribe() 所在线程为 :RxCachedThreadScheduler-1
+         * Observer onNext() 所在线程为 :main
+         * Observer onNext() 所在线程为 :main
+         * Observer onComplete() 所在线程为 :main
+         */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                Log.e("thread", "Thread run() 所在线程为 :" + Thread.currentThread().getName());
+
+                Observable.create(new ObservableOnSubscribe<String>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                        Log.e("thread", "Observable subscribe() 所在线程为 :" + Thread.currentThread().getName());
+                        emitter.onNext("emitter 1");
+                        emitter.onNext("emitter 2");
+                        emitter.onComplete();
+                    }
+                })
+                        .flatMap(new Function<String, ObservableSource<String>>() {
+                            @Override
+                            public ObservableSource<String> apply(String s) throws Exception {
+                                final List<String> list = new ArrayList<>();
+                                for (int i = 0; i < 3; i++) {
+                                    list.add("我是事件 " + s + "拆分后的子事件" + i);
+                                    // 通过flatMap中将被观察者生产的事件序列先进行拆分，再将每个事件转换为一个新的发送三个String事件
+                                    // 最终合并，再发送给被观察者
+                                }
+                                return Observable.fromIterable(list);
+                            }
+                        })
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<String>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                Log.e("thread", "Observer onSubscribe() 所在线程为 :" + Thread.currentThread().getName());
+                            }
+
+                            @Override
+                            public void onNext(String s) {
+                                Log.e("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName() + "  " + s);
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                Log.e("thread", "Observer onError() 所在线程为 :" + Thread.currentThread().getName());
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                Log.e("thread", "Observer onComplete() 所在线程为 :" + Thread.currentThread().getName());
+                            }
+                        });
+            }
+        }).start();
+
+
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_rx_java_create:
+                createClick();
+                break;
+            case R.id.tv_back_pressure:
+                //背压 取出缓存
+                mSubscription.request(2);
+                break;
+            case R.id.tv_timer:
+                timerClick();
+                break;
+
+            case R.id.tv_interval:
+                clickInterval(5);
+                break;
+            case R.id.tv_interval_range:
+                countDown(10);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void createClick() {
         /**
          * 方式1：完整式create创建Observable
          * 整体方法调用顺序：观察者.onSubscribe（）> 被观察者.subscribe（）> 观察者.onNext（）>观察者.onComplete()
@@ -196,118 +344,102 @@ public class RxJavaActivity extends AppCompatActivity {
                     }
                 });
 
-        /**
-         * 5、变换操作符：map()
-         */
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                emitter.onNext(1);
-                emitter.onNext(2);
-            }
-        })
-                .map(new Function<Integer, String>() {
-                    @Override
-                    public String apply(Integer integer) throws Exception {
-                        return "使用 Map变换操作符 将事件" + integer + "的参数从 整型" + integer + " 变换成 字符串类型" + integer;
-                    }
-                }).subscribe(new Consumer<String>() {
-            @Override
-            public void accept(String s) throws Exception {
-                LogUtils.e("map", s);
-            }
-        });
-
-
-        /**
-         * 6、Subscriber
-         */
-        Subscriber<String> subscriber = new Subscriber<String>() {
-            @Override
-            public void onSubscribe(Subscription s) {
-
-            }
-
-            @Override
-            public void onNext(String s) {
-
-            }
-
-            @Override
-            public void onError(Throwable t) {
-
-            }
-
-            @Override
-            public void onComplete() {
-
-            }
-        };
-
-        /**
-         * 7、线程切换
-         *
-         * Thread run() 所在线程为 :Thread-32
-         * Observer onSubscribe() 所在线程为 :Thread-32
-         * Observable subscribe() 所在线程为 :RxCachedThreadScheduler-1
-         * Observer onNext() 所在线程为 :main
-         * Observer onNext() 所在线程为 :main
-         * Observer onComplete() 所在线程为 :main
-         */
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                Log.e("thread", "Thread run() 所在线程为 :" + Thread.currentThread().getName());
-
-                Observable.create(new ObservableOnSubscribe<String>() {
-                    @Override
-                    public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                        Log.e("thread", "Observable subscribe() 所在线程为 :" + Thread.currentThread().getName());
-                        emitter.onNext("emitter 1");
-                        emitter.onNext("emitter 2");
-                        emitter.onComplete();
-                    }
-                })
-                        .flatMap(new Function<String, ObservableSource<String>>() {
-                            @Override
-                            public ObservableSource<String> apply(String s) throws Exception {
-                                final List<String> list = new ArrayList<>();
-                                for (int i = 0; i < 3; i++) {
-                                    list.add("我是事件 " + s + "拆分后的子事件" + i);
-                                    // 通过flatMap中将被观察者生产的事件序列先进行拆分，再将每个事件转换为一个新的发送三个String事件
-                                    // 最终合并，再发送给被观察者
-                                }
-                                return Observable.fromIterable(list);
-                            }
-                        })
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Observer<String>() {
-                            @Override
-                            public void onSubscribe(Disposable d) {
-                                Log.e("thread", "Observer onSubscribe() 所在线程为 :" + Thread.currentThread().getName());
-                            }
-
-                            @Override
-                            public void onNext(String s) {
-                                Log.e("thread", "Observer onNext() 所在线程为 :" + Thread.currentThread().getName() + "  " + s);
-                            }
-
-                            @Override
-                            public void onError(Throwable e) {
-                                Log.e("thread", "Observer onError() 所在线程为 :" + Thread.currentThread().getName());
-                            }
-
-                            @Override
-                            public void onComplete() {
-                                Log.e("thread", "Observer onComplete() 所在线程为 :" + Thread.currentThread().getName());
-                            }
-                        });
-            }
-        }).start();
-
     }
 
+    /**
+     * 延迟操作
+     * 注意：默认执行在新线程
+     */
+    private void timerClick() {
+        LogUtils.e("timer", "timer click" + "  " + System.currentTimeMillis());
+        //timer延迟执行例子:如延迟5秒:
+        Observable.timer(5, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        // LogUtils.e("timer", "timer onSubscribe" + "  " + System.currentTimeMillis());
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        LogUtils.e("timer", "timer onNext" + "  " + System.currentTimeMillis() +
+                                "  " + aLong + "  " + Thread.currentThread().getName());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        LogUtils.e("timer", "timer onError" + "  " + System.currentTimeMillis());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        //LogUtils.e("timer", "timer onComplete" + "  " + System.currentTimeMillis());
+                    }
+                });
+    }
+
+    /**
+     * 周期性地进行
+     * 注意：默认执行在新线程
+     *
+     * @param intervalSeconds 间隔周期 秒
+     */
+    private void clickInterval(int intervalSeconds) {
+        CompositeDisposable disposable = new CompositeDisposable();
+        //初始间隔0，每intervalSeconds触发一次
+        Observable.interval(0, intervalSeconds, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Long>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        disposable.add(d);
+                    }
+
+                    @Override
+                    public void onNext(Long aLong) {
+                        //总共执行6次
+                        if (aLong >= 5) {
+                            disposable.dispose();
+                        }
+                        LogUtils.e("interval", "interval onNext" + "  " + System.currentTimeMillis() +
+                                "  " + aLong + "  " + Thread.currentThread().getName());
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    boolean isCountDownFinished = true;
+
+    private void countDown(int timeInSeconds) {
+        if (!isCountDownFinished) {
+            return;
+        }
+        Flowable.intervalRange(1, timeInSeconds + 1, 0, 1, TimeUnit.SECONDS)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Long>() {
+                    @Override
+                    public void accept(Long aLong) throws Exception {
+                        if (timeInSeconds - aLong > 0) {
+                            isCountDownFinished = false;
+                            mTvCountDown.setText("倒计时：" + (timeInSeconds - aLong));
+                        } else {
+                            isCountDownFinished = true;
+                            mTvCountDown.setText("倒计时结束");
+                        }
+                        LogUtils.e("twj124", (timeInSeconds - aLong));
+                    }
+
+                });
+    }
 
 }
