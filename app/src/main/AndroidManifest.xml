@@ -141,6 +141,8 @@
         <activity android:name=".third_part.retrofit.AboutRetrofitActivity" />
         <activity android:name=".third_part.retrofit.proxy.ProxyActivity" />
         <activity android:name=".third_part.glide.GlideActivity"/>
+        <activity android:name=".third_part.dagger.DaggerActivity"/>
+        <activity android:name=".third_part.dagger.Dagger2Activity"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity" />
 
