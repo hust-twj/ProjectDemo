@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.hust_twj.zademo.R
+import com.hust_twj.zademo.view.scroller.ViewScrollerActivity
 import kotlinx.android.synthetic.main.activity_view.*
 
 /**
@@ -22,9 +23,11 @@ class ViewActivity : Activity() {
 
         view_dispatch.setOnClickListener {
             startActivity(Intent(this@ViewActivity, ViewDispatchActivity::class.java))
+        }
 
+        view_scroller.setOnClickListener {
+            startActivity(Intent(this@ViewActivity, ViewScrollerActivity::class.java))
         }
     }
-
 
 }
