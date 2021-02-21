@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/property_animation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="属性动画"
+        android:textSize="19sp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/frame_animation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="帧动画"
+        android:textSize="19sp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
+</LinearLayout>

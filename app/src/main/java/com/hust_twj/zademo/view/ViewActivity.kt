@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import com.hust_twj.zademo.R
+import com.hust_twj.zademo.view.animation.ViewAnimationActivity
 import com.hust_twj.zademo.view.scroller.ViewScrollerActivity
 import kotlinx.android.synthetic.main.activity_view.*
 
@@ -27,6 +28,10 @@ class ViewActivity : Activity() {
 
         view_scroller.setOnClickListener {
             startActivity(Intent(this@ViewActivity, ViewScrollerActivity::class.java))
+        }
+
+        tv_animation.setOnClickListener {
+            startActivity(Intent(this@ViewActivity, ViewAnimationActivity::class.java))
         }
     }
 

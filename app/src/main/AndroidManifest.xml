@@ -118,6 +118,8 @@
         <activity android:name=".view.ViewDispatchActivity" />
         <activity android:name=".view.ViewRequestLayoutActivity" />
         <activity android:name=".view.scroller.ViewScrollerActivity"/>
+        <activity android:name=".view.animation.ViewAnimationActivity"/>
+        <activity android:name=".view.animation.ViewPropertyActivity"/>
 
         <activity android:name=".ui_params.UIParamsActivity" />
 

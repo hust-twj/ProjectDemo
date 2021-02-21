@@ -43,4 +43,17 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
+    <TextView
+        android:id="@+id/tv_animation"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="动画"
+        android:textSize="19sp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
+
 </LinearLayout>
