@@ -44,6 +44,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val COMOMON_TAG = "twj124"
+    }
 
     //val touchHelper? : ItemTouchHelper = null
     override fun onCreate(savedInstanceState: Bundle?) {

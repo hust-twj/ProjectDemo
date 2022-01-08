@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.hust_twj.zademo.R
 import com.hust_twj.zademo.view.animation.ViewAnimationActivity
+import com.hust_twj.zademo.view.event.ActionCancelActivity
 import com.hust_twj.zademo.view.scroller.ViewScrollerActivity
 import kotlinx.android.synthetic.main.activity_view.*
 
@@ -32,6 +33,10 @@ class ViewActivity : Activity() {
 
         tv_animation.setOnClickListener {
             startActivity(Intent(this@ViewActivity, ViewAnimationActivity::class.java))
+        }
+
+        action_cancel.setOnClickListener {
+            startActivity(Intent(this@ViewActivity, ActionCancelActivity::class.java))
         }
     }
 
