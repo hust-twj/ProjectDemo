@@ -130,18 +130,18 @@ public class LiveShareDialog extends Dialog implements View.OnClickListener {
                 dismiss();
                 break;
             case R.id.tv_live_share_we_chat:
-                ShareTools shareWeChat = new ShareTools(mActivity);
-                shareWeChat.showWechatShare(mTitle, mShareText, mShareImgUrl, mShareUrl);
+//                ShareTools shareWeChat = new ShareTools(mActivity);
+//                shareWeChat.showWechatShare(mTitle, mShareText, mShareImgUrl, mShareUrl);
                 dismiss();
                 break;
             case R.id.tv_live_share_moment:
-                ShareTools shareMoment = new ShareTools(mActivity);
-                shareMoment.showWechatMomentsShare(mTitle, mShareText, mShareImgUrl, mShareUrl);
+//                ShareTools shareMoment = new ShareTools(mActivity);
+//                shareMoment.showWechatMomentsShare(mTitle, mShareText, mShareImgUrl, mShareUrl);
                 dismiss();
                 break;
             case R.id.tv_live_share_qq:
-                ShareTools shareQQ = new ShareTools(mActivity);
-                shareQQ.showQQShare(mTitle, mShareText, mShareImgUrl, mShareUrl);
+//                ShareTools shareQQ = new ShareTools(mActivity);
+//                shareQQ.showQQShare(mTitle, mShareText, mShareImgUrl, mShareUrl);
                 dismiss();
                 break;
             case R.id.tv_live_share_copy_link:

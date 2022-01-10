@@ -4,11 +4,11 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'com.mob.sdk'
-
 //apply plugin: 'apk_change_name'
 
 apply plugin: 'android-aspectjx'
+
+apply plugin: 'me.ele.lancet'
 
 task helloWorld {
     group = "Hello World"
@@ -45,35 +45,7 @@ nihao.doFirst {
     println("doFirst  nihao")
 }
 
-MobSDK {
-    appKey "29fe80bb5ba40"
-    appSecret "c6972df17f80f8e04484b26afaed4780"
 
-    ShareSDK {
-        devInfo {
-            Wechat {
-                appId "wx4868b35061f87885"
-                appSecret "64020361b8ec4c99936c0e3999a9f249"
-                userName "gh_afb25ac019c9"
-                path "pages/index/index.html?id=1"
-                withShareTicket true
-                miniprogramType 2
-            }
-            QQ {
-                appId "100371282"
-                appKey "aed9b0303e3ed1e27bae87c33761161d"
-            }
-            WechatMoments {
-                appId "wx4868b35061f87885"
-                appSecret "64020361b8ec4c99936c0e3999a9f249"
-            }
-            QZone {
-                appId "1107003400"
-                appKey "hEFs5rBxTlAUhjsI"
-            }
-        }
-    }
-}
 
 android {
     compileSdkVersion 28
@@ -184,4 +156,6 @@ dependencies {
 
     api "com.google.dagger:dagger:${rootProject.dagger_version}"
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.dagger_version}"
+
+    compileOnly 'me.ele:lancet-base:1.0.6'
 }
