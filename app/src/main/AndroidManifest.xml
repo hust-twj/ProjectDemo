@@ -147,6 +147,8 @@
         <activity android:name=".third_part.glide.GlideActivity"/>
         <activity android:name=".third_part.dagger.DaggerActivity"/>
         <activity android:name=".third_part.dagger.Dagger2Activity"/>
+        <activity android:name=".third_part.lancet.LancetActivity"/>
+        <activity android:name=".third_part.lancet.LancetActivity2"/>
 
         <activity android:name=".jvm.invoke.InvokeActivity" />
 

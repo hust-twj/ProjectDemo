@@ -9,6 +9,8 @@ import com.hust_twj.zademo.third_part.dagger.Dagger2Activity
 import com.hust_twj.zademo.third_part.data_binding.DataBindingActivity
 import com.hust_twj.zademo.third_part.event_bus.EventBusDemoActivity
 import com.hust_twj.zademo.third_part.glide.GlideActivity
+import com.hust_twj.zademo.third_part.lancet.LancetActivity
+import com.hust_twj.zademo.third_part.lancet.LancetActivity2
 import com.hust_twj.zademo.third_part.leak_canary.LeakCanaryActivity
 import com.hust_twj.zademo.third_part.okhttp.OkHttpActivity
 import com.hust_twj.zademo.third_part.retrofit.AboutRetrofitActivity
@@ -60,6 +62,10 @@ class ThirdPartActivity : AppCompatActivity() {
 
         tv_dagger.setOnClickListener {
             startActivity(Intent(this@ThirdPartActivity, Dagger2Activity::class.java))
+        }
+
+        tv_lancet.setOnClickListener{
+            startActivity(Intent(this@ThirdPartActivity, LancetActivity::class.java))
         }
     }
 
