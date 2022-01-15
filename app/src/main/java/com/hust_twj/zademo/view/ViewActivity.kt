@@ -38,6 +38,10 @@ class ViewActivity : Activity() {
         action_cancel.setOnClickListener {
             startActivity(Intent(this@ViewActivity, ActionCancelActivity::class.java))
         }
+
+        tv_flow_layout.setOnClickListener {
+            startActivity(Intent(this@ViewActivity, FlowLayoutActivity::class.java))
+        }
     }
 
 }

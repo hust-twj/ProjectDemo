@@ -121,6 +121,7 @@
         <activity android:name=".view.animation.ViewAnimationActivity"/>
         <activity android:name=".view.animation.ViewPropertyActivity"/>
         <activity android:name=".view.event.ActionCancelActivity"/>
+        <activity android:name=".view.FlowLayoutActivity"/>
 
         <activity android:name=".ui_params.UIParamsActivity" />
 
