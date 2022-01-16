@@ -157,4 +157,8 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.dagger_version}"
 
     compileOnly 'me.ele:lancet-base:1.0.6'
+
+    //stetho
+    debugImplementation 'com.facebook.stetho:stetho:1.5.1'
+
 }
